@@ -15,30 +15,14 @@
               "state": {
                 "file": "Test - Obsidian Notes/Test Canvas.canvas",
                 "viewState": {
-                  "x": 0,
-                  "y": -465,
-                  "zoom": 0
-                }
-              }
-            }
-          },
-          {
-            "id": "89649d685c9fb23f",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-                "viewState": {
-                  "x": 92.5,
-                  "y": -667.4996527451965,
-                  "zoom": -0.44956887200855344
+                  "x": -160.5,
+                  "y": -647,
+                  "zoom": -0.166693553684966
                 }
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,8 +72,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -105,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+                "file": "Test - Obsidian Notes/Test Canvas.canvas",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -122,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+                "file": "Test - Obsidian Notes/Test Canvas.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas"
+                "file": "Test - Obsidian Notes/Test Canvas.canvas"
               }
             }
           }
@@ -167,13 +150,23 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "89649d685c9fb23f",
+  "active": "bc783be3c5495dac",
   "lastOpenFiles": [
+    "Test - Obsidian Notes/NoteStar2.md",
     "Test - Obsidian Notes/Test Canvas.canvas",
+    "Test - Obsidian Notes/Screenshot-example.png",
+    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
+    "Conversion from Canvas.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
+    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
+    "Test - Obsidian Notes/NeverNote.md",
+    "Test - Obsidian Notes/How To Insert Codes.md",
+    "Test - Obsidian Notes/Code block.md",
+    "Test - Obsidian Notes/Adversity Paradox.md",
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
-    "Test - Obsidian Notes/Screenshot-example.png",
     "Test - Obsidian Notes/All screenshots.md",
     "screenshot example.png.md",
     "Test - Obsidian Notes/screenshot example.png",
@@ -183,13 +176,7 @@
     "checking for git",
     "Obsidian-Backup",
     "New folder",
-    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
     "Test - Obsidian Notes/The Matrix.md",
-    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
-    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
-    "Test - Obsidian Notes/How To Insert Codes.md",
-    "Test - Obsidian Notes/Adversity Paradox.md",
-    "Test - Obsidian Notes/Code block.md",
     "OneDrive/Documents/Python Scripts",
     "OneDrive/Documents/Custom Office Templates",
     "OneDrive/Desktop/ECU/network fudamentals",
@@ -198,8 +185,6 @@
     "OneDrive/Desktop/Random/invoice/rideshare/ola/nov/PERTHX5022010150230221",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
-    "Test - Obsidian Notes/NoteStar2.md",
-    "Test - Obsidian Notes/NeverNote.md",
     "Screenshot exmaples.png.md",
     "Test - Obsidian Notes/Screenshot exmaples.png",
     "Screenshot example.md",

@@ -1,13 +1,33 @@
 {
 	"nodes":[
-		{"type":"file","file":"Test - Obsidian Notes/Screenshot-example.png","id":"16441a8318b878cb","x":-560,"y":-1040,"width":178,"height":145},
-		{"type":"text","text":"This is a card","id":"70a68e9711bf2b24","x":-240,"y":-620,"width":250,"height":50},
 		{"type":"file","file":"Test - Obsidian Notes/Red Pill and Blue Pill.md","id":"6475f3e79fbec63b","x":61,"y":-1295,"width":400,"height":400},
-		{"type":"text","text":"This too is a card","id":"cb740b1a7ff6bc1b","x":440,"y":-620,"width":250,"height":60}
+		{"type":"text","text":"This too is a card","id":"cb740b1a7ff6bc1b","x":440,"y":-620,"width":250,"height":60},
+		{"type":"file","file":"Test - Obsidian Notes/Screenshot-example.png","id":"16441a8318b878cb","x":-627,"y":-1024,"width":178,"height":145},
+		{"type":"text","text":"Move around - Space + Drag","id":"cf39263c9f72e023","x":-788,"y":-420,"width":250,"height":60},
+		{"type":"text","text":"Zoom in and out - Control + Scroll","id":"dc98ec3773ddfab5","x":-860,"y":-570,"width":250,"height":60},
+		{"type":"text","text":"Duplicate - Shift + drag","id":"7318a858a9f46bab","x":-640,"y":-170,"width":250,"height":60},
+		{"type":"text","text":"Move horizontally - Shift + scroll","id":"1e7475eb9ff2c478","x":-340,"y":-170,"width":250,"height":60},
+		{"type":"text","text":"**Bold Letter Rules - Two astricks**","id":"bb3275e2e87d5026","x":10,"y":-200,"width":250,"height":60},
+		{"type":"text","text":"***Obsidian Rules***","id":"3c7a73a6dd5f2f51","x":-172,"y":-594,"width":250,"height":60},
+		{"type":"file","file":"Test - Obsidian Notes/Pasted image 20230809180413.jpg","id":"c6c529068968d370","x":343,"y":-373,"width":400,"height":400},
+		{"type":"link","url":"https://www.offsec.com","id":"88beca32e3c04094","x":-1314,"y":-1321,"width":400,"height":400},
+		{"type":"text","text":"Select some card and view only that - Shift + 2","id":"a45939d25b18cd3a","x":524,"y":-786,"width":250,"height":60},
+		{"type":"text","text":"Adjust all in a same screen - Shift + 1","id":"c258c53b7ff8d928","x":-340,"y":-1155,"width":250,"height":60},
+		{"type":"text","text":"Link as files - [[NoteStar2]]","id":"e755ea9092793f89","x":743,"y":-480,"width":250,"height":60}
 	],
 	"edges":[
-		{"id":"0d7457def3a8891d","fromNode":"70a68e9711bf2b24","fromSide":"right","toNode":"cb740b1a7ff6bc1b","toSide":"left","label":"New card Examples"},
-		{"id":"e39859626a281435","fromNode":"70a68e9711bf2b24","fromSide":"top","toNode":"6475f3e79fbec63b","toSide":"left","label":"File Attachment Examples"},
-		{"id":"0b0168da8e743b8e","fromNode":"70a68e9711bf2b24","fromSide":"left","toNode":"16441a8318b878cb","toSide":"right","label":"Screenshot examples"}
+		{"id":"a27b84d35eac4b87","fromNode":"3c7a73a6dd5f2f51","fromSide":"top","toNode":"16441a8318b878cb","toSide":"bottom"},
+		{"id":"5577330bf9618c54","fromNode":"3c7a73a6dd5f2f51","fromSide":"top","toNode":"6475f3e79fbec63b","toSide":"left"},
+		{"id":"fbba9d9a2f7bf858","fromNode":"3c7a73a6dd5f2f51","fromSide":"right","toNode":"cb740b1a7ff6bc1b","toSide":"left"},
+		{"id":"11788c85da6164f2","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"bb3275e2e87d5026","toSide":"top"},
+		{"id":"5baeb1c35559dbc4","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"1e7475eb9ff2c478","toSide":"top"},
+		{"id":"03d209824a8e88a3","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"7318a858a9f46bab","toSide":"top"},
+		{"id":"11050fd889af6e96","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"cf39263c9f72e023","toSide":"right"},
+		{"id":"99accfa84c9ab532","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"c6c529068968d370","toSide":"top","label":"Online Pics"},
+		{"id":"648564fad1324fca","fromNode":"3c7a73a6dd5f2f51","fromSide":"left","toNode":"88beca32e3c04094","toSide":"bottom","label":"Website Page"},
+		{"id":"8d0a95f10cd0d67b","fromNode":"3c7a73a6dd5f2f51","fromSide":"top","toNode":"a45939d25b18cd3a","toSide":"left"},
+		{"id":"d396f7861609daf8","fromNode":"3c7a73a6dd5f2f51","fromSide":"top","toNode":"c258c53b7ff8d928","toSide":"bottom"},
+		{"id":"49394b782ed40b15","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"e755ea9092793f89","toSide":"top"},
+		{"id":"57871fbe557b7018","fromNode":"3c7a73a6dd5f2f51","fromSide":"bottom","toNode":"dc98ec3773ddfab5","toSide":"right"}
 	]
 }
