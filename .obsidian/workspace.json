@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "93251e2d225d83f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "chekcking for git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "file": "chekcking for git.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "file": "chekcking for git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md"
+                "file": "chekcking for git.md"
               }
             }
           }
@@ -146,12 +159,14 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "bc783be3c5495dac",
+  "active": "93251e2d225d83f2",
   "lastOpenFiles": [
+    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+    "chekcking for git.md",
+    "checking for git",
     "Obsidian-Backup",
     "New folder",
     "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
-    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
     "Test - Obsidian Notes/The Matrix.md",
     "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
     "Test - Obsidian Notes/Red Pill and Blue Pill.md",
@@ -165,8 +180,6 @@
     "OneDrive/Desktop/Random/invoice/rideshare/ola/oct",
     "OneDrive/Desktop/Random/invoice/rideshare/ola/nov/PERTHX5022010150230221",
     "OneDrive/Desktop/Random/invoice/rideshare/ola/nov",
-    "OneDrive/Desktop/Random/invoice/rideshare/ola/dec/PERTHX5022010150230221",
-    "OneDrive/Desktop/Random/invoice/rideshare/ola/dec",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Test - Obsidian Notes/Victor Frank.md",
     "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
