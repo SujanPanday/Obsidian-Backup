@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "chekcking for git.md",
+                "file": "what is this.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "chekcking for git.md",
+                "file": "what is this.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "chekcking for git.md",
+                "file": "what is this.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "chekcking for git.md"
+                "file": "what is this.md"
               }
             }
           }
@@ -162,7 +162,7 @@
   "active": "93251e2d225d83f2",
   "lastOpenFiles": [
     "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
-    "chekcking for git.md",
+    "what is this.md",
     "checking for git",
     "Obsidian-Backup",
     "New folder",
