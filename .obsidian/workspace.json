@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "f0f6131064866ab3",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea6a3200ad32be85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa84b7f07af644ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0f411e92f140299c",
+    "type": "split",
+    "children": [
+      {
+        "id": "3308f834355b73e4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bc783be3c5495dac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2faccf4470c0800e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "01e239848c25c926",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "7f936f4118b92161",
+    "type": "split",
+    "children": [
+      {
+        "id": "53d903f0972cfb7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "31abc1cff45016ef",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aec1603024483e39",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53c835357f9d87c4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e108221526dea779",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 266.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "bc783be3c5495dac",
+  "lastOpenFiles": [
+    "Obsidian-Backup",
+    "New folder",
+    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
+    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+    "Test - Obsidian Notes/The Matrix.md",
+    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
+    "Test - Obsidian Notes/How To Insert Codes.md",
+    "Test - Obsidian Notes/Adversity Paradox.md",
+    "Test - Obsidian Notes/Code block.md",
+    "OneDrive/Documents/Python Scripts",
+    "OneDrive/Documents/Custom Office Templates",
+    "OneDrive/Desktop/ECU/network fudamentals",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/oct/PERTHX5022010150230221",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/oct",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/nov/PERTHX5022010150230221",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/nov",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/dec/PERTHX5022010150230221",
+    "OneDrive/Desktop/Random/invoice/rideshare/ola/dec",
+    "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
+    "Test - Obsidian Notes/Victor Frank.md",
+    "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
+    "Test - Obsidian Notes/NoteStar2.md",
+    "Test - Obsidian Notes/NeverNote.md",
+    "Screenshot exmaples.png.md",
+    "Test - Obsidian Notes/Screenshot exmaples.png",
+    "Screenshot example.md",
+    "Proving Ground Practice/sujan.md",
+    "Sense of Control.md",
+    "Untitled.canvas",
+    "2023-08-09.md",
+    "Untitled 1.canvas"
+  ]
+}
