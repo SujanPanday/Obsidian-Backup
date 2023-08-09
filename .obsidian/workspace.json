@@ -11,15 +11,34 @@
             "id": "aa84b7f07af644ee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
-                "mode": "source",
-                "source": false
+                "file": "Test - Obsidian Notes/Test Canvas.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": -465,
+                  "zoom": 0
+                }
+              }
+            }
+          },
+          {
+            "id": "89649d685c9fb23f",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+                "viewState": {
+                  "x": 92.5,
+                  "y": -667.4996527451965,
+                  "zoom": -0.44956887200855344
+                }
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -85,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md"
+                "file": "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas"
               }
             }
           }
@@ -133,7 +153,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 266.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,10 +167,19 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "31abc1cff45016ef",
+  "active": "89649d685c9fb23f",
   "lastOpenFiles": [
-    "what is this.md",
+    "Test - Obsidian Notes/Test Canvas.canvas",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Pasted image 20230809172445.png",
+    "OSCP Full Canvas",
+    "Test - Obsidian Notes/Screenshot-example.png",
+    "Test - Obsidian Notes/All screenshots.md",
+    "screenshot example.png.md",
+    "Test - Obsidian Notes/screenshot example.png",
+    "Test - Obsidian Notes/Victor Frank.md",
     "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+    "what is this.md",
     "checking for git",
     "Obsidian-Backup",
     "New folder",
@@ -166,9 +196,7 @@
     "OneDrive/Desktop/Random/invoice/rideshare/ola/oct/PERTHX5022010150230221",
     "OneDrive/Desktop/Random/invoice/rideshare/ola/oct",
     "OneDrive/Desktop/Random/invoice/rideshare/ola/nov/PERTHX5022010150230221",
-    "OneDrive/Desktop/Random/invoice/rideshare/ola/nov",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
-    "Test - Obsidian Notes/Victor Frank.md",
     "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
     "Test - Obsidian Notes/NoteStar2.md",
     "Test - Obsidian Notes/NeverNote.md",
@@ -177,7 +205,6 @@
     "Screenshot example.md",
     "Proving Ground Practice/sujan.md",
     "Sense of Control.md",
-    "Untitled.canvas",
     "2023-08-09.md",
     "Untitled 1.canvas"
   ]
