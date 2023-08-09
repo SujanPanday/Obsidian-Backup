@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "93251e2d225d83f2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "what is this.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "what is this.md",
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "what is this.md",
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "what is this.md"
+                "file": "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md"
               }
             }
           }
@@ -159,10 +146,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "93251e2d225d83f2",
+  "active": "31abc1cff45016ef",
   "lastOpenFiles": [
-    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
     "what is this.md",
+    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
     "checking for git",
     "Obsidian-Backup",
     "New folder",
