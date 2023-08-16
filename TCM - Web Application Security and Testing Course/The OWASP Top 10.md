@@ -9,7 +9,7 @@ Installed DVWA in local machine and started to practice all methods. [[DVWA Inst
 
 ### File inclusion 
 
-1. Changing links to get secret information. 
+1. Changing links to get secret information. #localfileinclusion
 ~~~link
 http://10.10.78.153/vulnerabilities/fi/?page=/etc/passwd
 
@@ -30,7 +30,36 @@ oot:x:0:0:root:/root:/bin/bash daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin b
 ~~~
 # Cryptographic Failures
 
+1. Any misuse or lack of cryptographic security solutions.
+2. Actually a little tricky to exploit. For example: HTTP/HTTPS, weak hashing
+3. Password cracking comes under it. 
+
 # XSS Injection
+
+Abusing application functionality to create malicious JavaScript
+
+### Dom-based 
+
+Mutating the HTML document 
+
+DOM-XSS
+~~~Example
+1 Low security
+ip/vulnerabilities/xss_d/?default='></option></select> <h1>test</h1>
+
+2 High security
+ip/vulnerabilities/xss_d/?default='></option></select> <img src=x onerror="alert('XSS')"/>
+~~~
+### Reflected
+
+URL parms displayed in the page. 
+
+~~~Example
+1. <script>alert('XSS')</script>
+~~~
+### Stored 
+
+Saved data rendered for all viewers
 
 # SQL Injection
 
