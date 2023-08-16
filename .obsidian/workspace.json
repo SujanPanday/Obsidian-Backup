@@ -8,21 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "aa84b7f07af644ee",
+            "id": "f2d87d7904895ec9",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Test - Obsidian Notes/Test Canvas.canvas",
-                "viewState": {
-                  "x": -160.5,
-                  "y": -647,
-                  "zoom": -0.166693553684966
-                }
+                "file": "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "03f2f12c00ddc254",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test - Obsidian Notes/Test Canvas.canvas",
+                "file": "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -105,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test - Obsidian Notes/Test Canvas.canvas",
+                "file": "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test - Obsidian Notes/Test Canvas.canvas"
+                "file": "TCM - Web Application Security and Testing Course/The OWASP Top 10.md"
               }
             }
           }
@@ -150,15 +160,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "bc783be3c5495dac",
+  "active": "03f2f12c00ddc254",
   "lastOpenFiles": [
+    "TCM - Web Application Security and Testing Course/DVWA Installation.md",
+    "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
     "Test - Obsidian Notes/NoteStar2.md",
+    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Test - Obsidian Notes/Screenshot-example.png",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
-    "Conversion from Canvas.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+    "Conversion from Canvas.md",
     "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
     "Test - Obsidian Notes/Red Pill and Blue Pill.md",
     "Test - Obsidian Notes/NeverNote.md",
