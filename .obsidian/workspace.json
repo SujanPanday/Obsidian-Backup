@@ -13,38 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Linux PriEsc/Resources.md",
+                "file": "TCM - Linux PriEsc/Passwords & File Permissions.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b4f706bee6fc2b02",
+            "id": "769d18d967b1ef71",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3bfdaac40b7221dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+                "file": "TCM - Linux PriEsc/SUDO.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -73,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#sshkeys",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+                "file": "TCM - Linux PriEsc/SUDO.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+                "file": "TCM - Linux PriEsc/SUDO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md"
+                "file": "TCM - Linux PriEsc/SUDO.md"
               }
             }
           }
@@ -172,12 +160,15 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "3bfdaac40b7221dc",
+  "active": "769d18d967b1ef71",
   "lastOpenFiles": [
-    "Scripts Resources/Scripts Links.md",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
+    "TCM - Linux PriEsc/SUDO.md",
     "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "Scripts Resources",
     "TCM - Linux PriEsc/Resources.md",
+    "TCM - Linux PriEsc/Kernel Exploit.md",
+    "Scripts Resources/Scripts Links.md",
+    "Scripts Resources",
     "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
     "Pasted image 20230816154819.png",
     "Pasted image 20230816154808.png",
@@ -217,9 +208,6 @@
     "Screenshot exmaples.png.md",
     "Test - Obsidian Notes/Screenshot exmaples.png",
     "Screenshot example.md",
-    "Proving Ground Practice/sujan.md",
-    "Sense of Control.md",
-    "2023-08-09.md",
     "Untitled 1.canvas"
   ]
 }

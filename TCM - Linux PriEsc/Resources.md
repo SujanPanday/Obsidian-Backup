@@ -11,3 +11,19 @@
 5. All links and resources found in the course can also be found at the following repository: [https://github.com/Gr1mmie/Linux-Privilege-Escalation-Resources](https://github.com/Gr1mmie/Linux-Privilege-Escalation-Resources) 
 
 6. Tryhackme room for this course - https://tryhackme.com/room/linuxprivescarena
+
+7. LinPeas - [https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
+
+8. LinEnum - [https://github.com/rebootuser/LinEnum](https://github.com/rebootuser/LinEnum)
+
+9. Linux Exploit Suggester - [https://github.com/mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
+
+10. Linux Priv Checker - [https://github.com/sleventyeleven/linuxprivchecker](https://github.com/sleventyeleven/linuxprivchecker)
+
+[Complete and Continue](https://academy.tcm-sec.com/courses/1154399/lectures/24799431)
+
+11. Kernel Exploits - [https://github.com/lucyoa/kernel-exploits](https://github.com/lucyoa/kernel-exploits) #kernalexploit
+
+12. Payload all the things - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md 
+
+13. Hashes types example (ctrl + f)- https://hashcat.net/wiki/doku.php?id=example_hashes

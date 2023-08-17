@@ -363,3 +363,150 @@ CM@debian:~$ history
    27  lpstat -a
 ~~~
 
+### Network Enumeration
+
+- ifconfig
+~~~bash
+TCM@debian:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:ad:f1:e8:91:45  
+          inet addr:10.10.100.135  Bcast:10.10.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::ad:f1ff:fee8:9145/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:132 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:48 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:12976 (12.6 KiB)  TX bytes:7230 (7.0 KiB)
+          Interrupt:20 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:104 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:104 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:8756 (8.5 KiB)  TX bytes:8756 (8.5 KiB)
+
+~~~
+
+- ip a
+~~~bash
+TCM@debian:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:ad:f1:e8:91:45 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.100.135/16 brd 10.10.255.255 scope global eth0
+    inet6 fe80::ad:f1ff:fee8:9145/64 scope link 
+       valid_lft forever preferred_lft forever
+
+~~~
+
+- ip route
+~~~bash
+TCM@debian:~$ ip route
+10.10.0.0/16 dev eth0  proto kernel  scope link  src 10.10.100.135 
+default via 10.10.0.1 dev eth0 
+~~~
+
+- arp -a
+~~~bash
+TCM@debian:~$ arp -a
+ip-10-10-0-1.eu-west-1.compute.internal (10.10.0.1) at 02:c8:85:b5:5a:aa [ether] on eth0
+~~~
+
+- ip neigh
+~~~bash
+TCM@debian:~$ ip neigh
+10.10.0.1 dev eth0 lladdr 02:c8:85:b5:5a:aa REACHABLE
+~~~
+
+- netstat -ano
+~~~bash
+TCM@debian:~$ netstat -ano
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       Timer
+tcp        0      0 0.0.0.0:48014           0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:25              0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:34489           0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:2049            0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 0.0.0.0:53672           0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 10.10.100.135:22        10.18.4.132:55804       ESTABLISHED keepalive (6758.85/0/0)
+tcp6       0      0 :::80                   :::*                    LISTEN      off (0.00/0/0)
+tcp6       0      0 :::22                   :::*                    LISTEN      off (0.00/0/0)
+udp        0      0 0.0.0.0:37291           0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 0.0.0.0:53882           0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 0.0.0.0:2049            0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 0.0.0.0:49824           0.0.0.0:*                           off (0.00/0/0)
+udp        0      0 127.0.0.1:808           0.0.0.0:*                           off (0.00/0/0)
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     4357     /var/run/acpid.socket
+unix  2      [ ]         DGRAM                    1967     @/org/kernel/udev/udevd
+unix  2      [ ACC ]     STREAM     LISTENING     4563     /var/run/apache2/cgisock.1916
+unix  4      [ ]         DGRAM                    4253     /dev/log
+unix  3      [ ]         STREAM     CONNECTED     4953     
+unix  3      [ ]         STREAM     CONNECTED     4952     
+unix  2      [ ]         DGRAM                    4951     
+unix  3      [ ]         STREAM     CONNECTED     4812     
+unix  3      [ ]         STREAM     CONNECTED     4811     
+unix  3      [ ]         STREAM     CONNECTED     4810     
+unix  3      [ ]         STREAM     CONNECTED     4809     
+unix  3      [ ]         STREAM     CONNECTED     4808     
+unix  3      [ ]         STREAM     CONNECTED     4807     
+unix  3      [ ]         STREAM     CONNECTED     4806     
+unix  3      [ ]         STREAM     CONNECTED     4805     
+unix  2      [ ]         DGRAM                    4354     
+unix  3      [ ]         STREAM     CONNECTED     3995     
+unix  3      [ ]         STREAM     CONNECTED     3994     
+unix  3      [ ]         DGRAM                    1972     
+unix  3      [ ]         DGRAM                    1971 
+~~~
+
+### Password Hunting
+
+- grep
+~~~bash
+TCM@debian:~$ grep --color=auto rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null
+~~~
+
+- find
+~~~bash
+TCM@debian:~$ find / -name id_rsa 2> /dev/null
+/backups/supersecretkeys/id_rsa
+~~~
+
+- locate
+~~~bash
+TCM@debian:~$ locate password
+locate: warning: database `/var/cache/locate/locatedb' is more than 8 days old (actual age is 1154.8 days)
+/boot/grub/password.mod
+/boot/grub/password_pbkdf2.mod
+/etc/pam.d/common-password
+/usr/lib/grub/i386-pc/password.mod
+/usr/lib/grub/i386-pc/password_pbkdf2.mod
+/usr/share/pam/common-password
+/usr/share/pam/common-password.md5sums
+/var/cache/debconf/passwords.dat
+/var/lib/pam/password
+~~~
+
+- pwd
+~~~bash
+TCM@debian:~$ pwd
+/home/user
+~~~
+
+
+### Automated Tools
+
+- Linpeas - https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS #linpeas
+- Linux-exploit-suggester - https://github.com/The-Z-Labs/linux-exploit-suggester 
