@@ -1,0 +1,365 @@
+
+# Initial Access
+
+1. VPN connection to tryhackme
+~~~bash
+┌──(kali㉿kali)-[~/Downloads]
+└─$ sudo openvpn spandey3.ovpn
+~~~
+2. Ssh connection to the room. #ssh-dss_issues
+~~~bash
+┌──(kali㉿kali)-[~]
+└─$ ssh -oHostKeyAlgorithms=+ssh-dss TCM@10.10.141.222 
+The authenticity of host '10.10.141.222 (10.10.141.222)' can't be established.
+DSA key fingerprint is SHA256:p2NSsfvYJVk1Qe0tsNX5G2h8AaWYRn71jdz3uEodbMA.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.141.222' (DSA) to the list of known hosts.
+TCM@10.10.141.222's password: 
+Linux debian 2.6.32-5-amd64 #1 SMP Tue May 13 16:34:35 UTC 2014 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Jun 19 04:20:29 2020 from 192.168.4.51
+TCM@debian:~$ 
+
+~~~
+
+
+# Initial Enumeration
+#initialenum
+
+### System Enumeration 
+
+- uname -a 
+~~~bash
+TCM@debian:~$ uname -a
+Linux debian 2.6.32-5-amd64 #1 SMP Tue May 13 16:34:35 UTC 2014 x86_64 GNU/Linux
+~~~
+
+- cat /proc/version
+~~~bash
+TCM@debian:~$ cat /proc/version
+Linux version 2.6.32-5-amd64 (Debian 2.6.32-48squeeze6) (jmm@debian.org) (gcc version 4.3.5 (Debian 4.3.5-4) ) #1 SMP Tue May 13 16:34:35 UTC 2014
+~~~
+
+- cat /etc/issue
+~~~bash
+TCM@debian:~$ cat /etc/issue
+Debian GNU/Linux 6.0 \n \l
+~~~
+
+- lscpu 
+~~~bash
+TCM@debian:~$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        64-bit
+CPU(s):                1
+Thread(s) per core:    1
+Core(s) per socket:    1
+CPU socket(s):         1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 63
+Stepping:              2
+CPU MHz:               2400.018
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              30720K
+~~~
+
+- ps aux 
+~~~bash
+TCM@debian:~$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   8396   816 ?        Ss   23:21   0:00 init [2]  
+root         2  0.0  0.0      0     0 ?        S    23:21   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    23:21   0:00 [migration/0]
+root         4  0.0  0.0      0     0 ?        S    23:21   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S    23:21   0:00 [watchdog/0]
+root         6  0.0  0.0      0     0 ?        S    23:21   0:00 [events/0]
+root         7  0.0  0.0      0     0 ?        S    23:21   0:00 [cpuset]
+root         8  0.0  0.0      0     0 ?        S    23:21   0:00 [khelper]
+root         9  0.0  0.0      0     0 ?        S    23:21   0:00 [netns]
+root        10  0.0  0.0      0     0 ?        S    23:21   0:00 [async/mgr]
+root        11  0.0  0.0      0     0 ?        S    23:21   0:00 [pm]
+root        12  0.0  0.0      0     0 ?        S    23:21   0:00 [xenwatch]
+root        13  0.0  0.0      0     0 ?        S    23:21   0:00 [xenbus]
+root        14  0.0  0.0      0     0 ?        S    23:21   0:00 [sync_supers]
+root        15  0.0  0.0      0     0 ?        S    23:21   0:00 [bdi-default]
+root        16  0.0  0.0      0     0 ?        S    23:21   0:00 [kintegrityd/0]
+root        17  0.0  0.0      0     0 ?        S    23:21   0:00 [kblockd/0]
+root        18  0.0  0.0      0     0 ?        S    23:21   0:00 [kacpid]
+root        19  0.0  0.0      0     0 ?        S    23:21   0:00 [kacpi_notify]
+root        20  0.0  0.0      0     0 ?        S    23:21   0:00 [kacpi_hotplug]
+root        21  0.0  0.0      0     0 ?        S    23:21   0:00 [kseriod]
+root        23  0.0  0.0      0     0 ?        S    23:21   0:00 [kondemand/0]
+root        24  0.0  0.0      0     0 ?        S    23:21   0:00 [khungtaskd]
+root        25  0.0  0.0      0     0 ?        S    23:21   0:00 [kswapd0]
+root        26  0.0  0.0      0     0 ?        SN   23:21   0:00 [ksmd]
+root        27  0.0  0.0      0     0 ?        S    23:21   0:00 [aio/0]
+root        28  0.0  0.0      0     0 ?        S    23:21   0:00 [crypto/0]
+root       145  0.0  0.0      0     0 ?        S    23:21   0:00 [ata/0]
+root       146  0.0  0.0      0     0 ?        S    23:21   0:00 [ata_aux]
+root       147  0.0  0.0      0     0 ?        S    23:21   0:00 [scsi_eh_0]
+root       148  0.0  0.0      0     0 ?        S    23:21   0:00 [scsi_eh_1]
+root       178  0.0  0.0      0     0 ?        D    23:21   0:00 [kjournald]
+root       199  0.0  0.0      0     0 ?        S    23:21   0:00 [flush-202:0]
+root       243  0.0  0.0  16916   928 ?        S<s  23:21   0:00 udevd --daemon
+root       442  0.0  0.0      0     0 ?        S    23:21   0:00 [kpsmoused]
+root       959  0.0  0.0  16912   836 ?        S<   23:23   0:00 udevd --daemon
+root       960  0.0  0.0  16912   776 ?        S<   23:23   0:00 udevd --daemon
+root      1262  0.0  0.0   6796   756 ?        Ss   23:23   0:00 dhclient -v -pf /var/run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+daemon    1292  0.0  0.0   8136   540 ?        Ss   23:23   0:00 /sbin/portmap
+statd     1324  0.0  0.0  14424   892 ?        Ss   23:23   0:00 /sbin/rpc.statd
+root      1327  0.0  0.0      0     0 ?        S    23:23   0:00 [rpciod/0]
+root      1329  0.0  0.0      0     0 ?        S<   23:23   0:00 [kslowd000]
+root      1330  0.0  0.0      0     0 ?        S<   23:23   0:00 [kslowd001]
+root      1331  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsiod]
+root      1338  0.0  0.0  27064   588 ?        Ss   23:23   0:00 /usr/sbin/rpc.idmapd
+root      1565  0.0  0.0  54336  1656 ?        Sl   23:23   0:00 /usr/sbin/rsyslogd -c4
+root      1671  0.0  0.0   3960   648 ?        Ss   23:23   0:00 /usr/sbin/acpid
+root      1712  0.0  0.0      0     0 ?        S    23:23   0:00 [lockd]
+root      1713  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd4]
+root      1714  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1715  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1716  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1717  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1718  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1719  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1720  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1721  0.0  0.0      0     0 ?        S    23:23   0:00 [nfsd]
+root      1726  0.0  0.0  14668   432 ?        Ss   23:23   0:00 /usr/sbin/rpc.mountd --manage-gids
+root      1760  0.0  0.1  71424  2892 ?        Ss   23:23   0:00 /usr/sbin/apache2 -k start
+www-data  1763  0.0  0.0  71156  1988 ?        S    23:23   0:00 /usr/sbin/apache2 -k start
+www-data  1764  0.0  0.1 294852  2628 ?        Sl   23:23   0:00 /usr/sbin/apache2 -k start
+www-data  1765  0.0  0.1 294852  2644 ?        Sl   23:23   0:00 /usr/sbin/apache2 -k start
+root      1862  0.0  0.0  22440   884 ?        Ss   23:23   0:00 /usr/sbin/cron
+101       2151  0.0  0.0  32716  1024 ?        Ss   23:23   0:00 /usr/sbin/exim4 -bd -q30m
+root      2186  0.0  0.0  61864  1312 ?        Ss   23:23   0:00 nginx: master process /usr/sbin/nginx
+www-data  2190  0.0  0.0  62232  1844 ?        S    23:23   0:00 nginx: worker process
+www-data  2191  0.0  0.0  62232  1880 ?        S    23:23   0:00 nginx: worker process
+www-data  2192  0.0  0.0  62232  1844 ?        S    23:23   0:00 nginx: worker process
+www-data  2193  0.0  0.0  62232  1824 ?        S    23:23   0:00 nginx: worker process
+root      2204  0.0  0.0  49220  1164 ?        Ss   23:23   0:00 /usr/sbin/sshd
+root      2240  0.0  0.0   5972   636 tty1     Ss+  23:23   0:00 /sbin/getty 38400 tty1
+root      2241  0.0  0.0   5972   632 tty2     Ss+  23:23   0:00 /sbin/getty 38400 tty2
+root      2242  0.0  0.0   5972   636 tty3     Ss+  23:23   0:00 /sbin/getty 38400 tty3
+root      2243  0.0  0.0   5972   636 tty4     Ss+  23:23   0:00 /sbin/getty 38400 tty4
+root      2244  0.0  0.0   5972   632 tty5     Ss+  23:23   0:00 /sbin/getty 38400 tty5
+root      2245  0.0  0.0   5972   632 tty6     Ss+  23:23   0:00 /sbin/getty 38400 tty6
+root      2264  0.0  0.1  76728  3344 ?        Ss   23:25   0:00 sshd: TCM [priv] 
+TCM       2274  0.0  0.0  76728  1716 ?        S    23:26   0:00 sshd: TCM@pts/0  
+TCM       2275  0.0  0.1  19284  2076 pts/0    Ss   23:26   0:00 -bash
+TCM       2397  0.0  0.0  16380  1180 pts/0    R+   23:40   0:00 ps aux
+~~~
+
+### User Enumeration
+#userenum
+
+- whoami
+~~~bash
+TCM@debian:~$ whoami
+TCM
+~~~
+
+- id
+~~~bash
+TCM@debian:~$ id
+uid=1000(TCM) gid=1000(user) groups=1000(user),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev)
+~~~
+
+- sudo -l
+~~~bash
+TCM@debian:~$ sudo -l 
+Matching Defaults entries for TCM on this host:
+    env_reset, env_keep+=LD_PRELOAD
+
+User TCM may run the following commands on this host:
+    (root) NOPASSWD: /usr/sbin/iftop
+    (root) NOPASSWD: /usr/bin/find
+    (root) NOPASSWD: /usr/bin/nano
+    (root) NOPASSWD: /usr/bin/vim
+    (root) NOPASSWD: /usr/bin/man
+    (root) NOPASSWD: /usr/bin/awk
+    (root) NOPASSWD: /usr/bin/less
+    (root) NOPASSWD: /usr/bin/ftp
+    (root) NOPASSWD: /usr/bin/nmap
+    (root) NOPASSWD: /usr/sbin/apache2
+    (root) NOPASSWD: /bin/more
+~~~
+
+- cat /etc/passwd
+~~~bash
+TCM@debian:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+Debian-exim:x:101:103::/var/spool/exim4:/bin/false
+sshd:x:102:65534::/var/run/sshd:/usr/sbin/nologin
+statd:x:103:65534::/var/lib/nfs:/bin/false
+TCM:x:1000:1000:user,,,:/home/user:/bin/bash
+~~~
+
+- cat /etc/passwd | cut -d : -f 1
+~~~bash
+TCM@debian:~$ cat /etc/passwd | cut -d : -f 1
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+libuuid
+Debian-exim
+sshd
+statd
+TCM
+~~~
+
+- cat /etc/shadow
+~~~bash
+TCM@debian:~$ cat /etc/shadow
+root:$6$Tb/euwmK$OXA.dwMeOAcopwBl68boTG5zi65wIHsc84OWAIye5VITLLtVlaXvRDJXET..it8r.jbrlpfZeMdwD3B0fGxJI0:17298:0:99999:7:::
+daemon:*:17298:0:99999:7:::
+bin:*:17298:0:99999:7:::
+sys:*:17298:0:99999:7:::
+sync:*:17298:0:99999:7:::
+games:*:17298:0:99999:7:::
+man:*:17298:0:99999:7:::
+lp:*:17298:0:99999:7:::
+mail:*:17298:0:99999:7:::
+news:*:17298:0:99999:7:::
+uucp:*:17298:0:99999:7:::
+proxy:*:17298:0:99999:7:::
+www-data:*:17298:0:99999:7:::
+backup:*:17298:0:99999:7:::
+list:*:17298:0:99999:7:::
+irc:*:17298:0:99999:7:::
+gnats:*:17298:0:99999:7:::
+nobody:*:17298:0:99999:7:::
+libuuid:!:17298:0:99999:7:::
+Debian-exim:!:17298:0:99999:7:::
+sshd:*:17298:0:99999:7:::
+statd:*:17299:0:99999:7:::
+TCM:$6$hDHLpYuo$El6r99ivR20zrEPUnujk/DgKieYIuqvf9V7M.6t6IZzxpwxGIvhqTwciEw16y/B.7ZrxVk1LOHmVb/xyEyoUg.:18431:0:99999:7:::
+~~~
+
+- cat /etc/group
+~~~bash
+TCM@debian:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:TCM
+floppy:x:25:TCM
+tape:x:26:
+sudo:x:27:
+audio:x:29:TCM
+dip:x:30:TCM
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:TCM
+sasl:x:45:
+plugdev:x:46:TCM
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+libuuid:x:101:
+crontab:x:102:
+Debian-exim:x:103:
+ssh:x:104:
+user:x:1000:
+ssl-cert:x:105:
+~~~
+
+- history
+~~~bash
+CM@debian:~$ history
+    1  ls -al
+    2  cat .bash_history 
+    3  ls -al
+    4  mysql -h somehost.local -uroot -ppassword123
+    5  exit
+    6  cd /tmp
+    7  clear
+    8  ifconfig
+    9  netstat -antp
+   10  nano myvpn.ovpn 
+   11  ls
+   12  cd tools/
+   13  mkdir linux-exploit-suggester
+   14  cd linux-exploit-suggester/
+   15  nano linux-exploit-suggester.sh
+   16  chmod +x linux-exploit-suggester.sh 
+   17  cat /etc/issue
+   18  uname -a
+   19  cat /etc/lsb-release
+   20  cat /etc/passwd | cut -d: -f1
+   21  awk -F: '($3 == "0") {print}' /etc/passwd
+   22  cat /proc/version
+   23  uname -a
+   24  hostname
+   25  lscpu
+   26  cat /etc/profile
+   27  lpstat -a
+~~~
+
