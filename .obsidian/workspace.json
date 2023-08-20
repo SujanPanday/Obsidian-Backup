@@ -8,67 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "03f2f12c00ddc254",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Passwords & File Permissions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "769d18d967b1ef71",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "084bf837fbafa26d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "50f8c6d45a638a83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Resources/Scripts Links.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6616dc99b5678c1f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground Play/SoSimple.md",
+                "file": "TCM - Linux PriEsc/Other SUID Escalation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "45285259988987c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Capabilities.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e0595744525849cd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "#nmap",
+                "query": "id_rsa",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,8 +90,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -135,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Proving Ground Play/SoSimple.md",
+                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Proving Ground Play/SoSimple.md",
+                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Proving Ground Play/SoSimple.md"
+                "file": "TCM - Linux PriEsc/Kernel Exploit.md"
               }
             }
           }
@@ -197,19 +172,22 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2faccf4470c0800e",
+  "active": "e0595744525849cd",
   "lastOpenFiles": [
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
-    "TCM - Linux PriEsc/Kernel Exploit.md",
     "TCM - Linux PriEsc/SUID - Set User ID.md",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/SUDO.md",
-    "Proving Ground Play/SoSimple.md",
-    "Resources/Important commands.md",
-    "Resources/Scripts Links.md",
-    "TCM - Linux PriEsc/Pasted image 20230818185424.png",
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
+    "TCM - Linux PriEsc/Capabilities.md",
+    "TCM - Linux PriEsc/Kernel Exploit.md",
+    "Images",
     "TCM - Linux PriEsc/Resources.md",
+    "Proving Ground Play/SoSimple.md",
+    "Resources/Scripts Links.md",
+    "Resources/Important commands.md",
+    "Images/Pasted image 20230818185424.png",
     "Resources",
     "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
     "Pasted image 20230816154819.png",
@@ -233,9 +211,6 @@
     "Test - Obsidian Notes/All screenshots.md",
     "screenshot example.png.md",
     "Test - Obsidian Notes/screenshot example.png",
-    "Test - Obsidian Notes/Victor Frank.md",
-    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
-    "what is this.md",
     "checking for git",
     "Obsidian-Backup",
     "New folder",
@@ -243,7 +218,6 @@
     "OneDrive/Documents/Custom Office Templates",
     "OneDrive/Desktop/ECU/network fudamentals",
     "OneDrive/Desktop/Random/invoice/rideshare/ola/oct/PERTHX5022010150230221",
-    "OneDrive/Desktop/Random/invoice/rideshare/ola/oct",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Test - Obsidian Notes/Screenshot exmaples.png",
     "Untitled 1.canvas"
