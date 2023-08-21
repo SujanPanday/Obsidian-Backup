@@ -42,9 +42,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4f2ed22df2b29c1c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground Play/Stapler.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "47e0953977b21431",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/SUDO.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -73,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "id_rsa",
+                "query": "dirb",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +114,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -110,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
+                "file": "TCM - Linux PriEsc/SUDO.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
+                "file": "TCM - Linux PriEsc/SUDO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Kernel Exploit.md"
+                "file": "TCM - Linux PriEsc/SUDO.md"
               }
             }
           }
@@ -172,21 +197,23 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e0595744525849cd",
+  "active": "47e0953977b21431",
   "lastOpenFiles": [
-    "TCM - Linux PriEsc/SUID - Set User ID.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
-    "TCM - Linux PriEsc/Capabilities.md",
+    "TRE_1.md",
+    "Proving Ground Play/Stapler.md",
     "TCM - Linux PriEsc/Kernel Exploit.md",
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
+    "TCM - Linux PriEsc/SUID - Set User ID.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "TCM - Linux PriEsc/Capabilities.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "Proving Ground Play/SoSimple.md",
+    "Resources/Important commands.md",
+    "TCM - Linux PriEsc/SUDO.md",
     "Images",
     "TCM - Linux PriEsc/Resources.md",
-    "Proving Ground Play/SoSimple.md",
     "Resources/Scripts Links.md",
-    "Resources/Important commands.md",
     "Images/Pasted image 20230818185424.png",
     "Resources",
     "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
@@ -209,7 +236,6 @@
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
     "Test - Obsidian Notes/All screenshots.md",
-    "screenshot example.png.md",
     "Test - Obsidian Notes/screenshot example.png",
     "checking for git",
     "Obsidian-Backup",
