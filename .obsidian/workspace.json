@@ -8,67 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6616dc99b5678c1f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Other SUID Escalation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "45285259988987c2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Capabilities.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e0595744525849cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Kernel Exploit.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4f2ed22df2b29c1c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proving Ground Play/Stapler.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "47e0953977b21431",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md",
+                "file": "TCM - Linux PriEsc/Scheduled Tasks.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dirb",
+                "query": "tag:#http",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -135,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md",
+                "file": "TCM - Linux PriEsc/Scheduled Tasks.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md",
+                "file": "TCM - Linux PriEsc/Scheduled Tasks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/SUDO.md"
+                "file": "TCM - Linux PriEsc/Scheduled Tasks.md"
               }
             }
           }
@@ -197,22 +148,22 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "47e0953977b21431",
+  "active": "2faccf4470c0800e",
   "lastOpenFiles": [
-    "TRE_1.md",
+    "Proving Ground Play/SoSimple.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "TCM - Linux PriEsc/SUDO.md",
     "Proving Ground Play/Stapler.md",
     "TCM - Linux PriEsc/Kernel Exploit.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/SUID - Set User ID.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/Capabilities.md",
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
     "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "Proving Ground Play/SoSimple.md",
-    "Resources/Important commands.md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "Images",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "TCM - Linux PriEsc/Resources.md",
+    "TRE_1.md",
+    "TCM - Linux PriEsc/SUID - Set User ID.md",
+    "Resources/Important commands.md",
+    "Images",
     "Resources/Scripts Links.md",
     "Images/Pasted image 20230818185424.png",
     "Resources",

