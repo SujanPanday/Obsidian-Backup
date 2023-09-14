@@ -1,0 +1,16 @@
+### Checklist for OSCP exam. 
+
+1. Information Gathering 
+2. Vulnerability Scanning
+3. Web Application Attacks
+4. Antivirus Evasion
+5. Password Attacks
+6. Fixing Exploits
+7. Locating Pubic Exploits
+8. Windows Privilege Escalation
+9. Linux Privilege Escalation
+10. Port Redirection and SSH Tunneling
+11. Tunneling Through Deep Packet Inspection
+12. The Metasploit Framework
+13. Active Directory 
+14. Report Writing 
