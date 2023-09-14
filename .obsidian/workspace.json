@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -148,8 +147,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2faccf4470c0800e",
+  "active": "47e0953977b21431",
   "lastOpenFiles": [
+    "Useful scripts",
+    "New folder",
     "Proving Ground Play/SoSimple.md",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/SUDO.md",
@@ -186,11 +187,9 @@
     "Test - Obsidian Notes/Adversity Paradox.md",
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
-    "Test - Obsidian Notes/All screenshots.md",
     "Test - Obsidian Notes/screenshot example.png",
     "checking for git",
     "Obsidian-Backup",
-    "New folder",
     "OneDrive/Documents/Python Scripts",
     "OneDrive/Documents/Custom Office Templates",
     "OneDrive/Desktop/ECU/network fudamentals",
