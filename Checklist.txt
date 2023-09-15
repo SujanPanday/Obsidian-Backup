@@ -1,16 +1,75 @@
 ### Checklist for OSCP exam. 
 
 1. Information Gathering 
+
+
+
 2. Vulnerability Scanning
+
+
+
 3. Web Application Attacks
+
+
+
 4. Antivirus Evasion
+
+
+
 5. Password Attacks
+
+
+
 6. Fixing Exploits
+
+
+
 7. Locating Pubic Exploits
+
+
+
 8. Windows Privilege Escalation
+
+
+
 9. Linux Privilege Escalation
+
+9.1. System Enumeration 
+a. uname -a #Give details about system and OS
+b. cat /proc/version #Give OS version details
+c. lscpu #Give memory details
+d. ps aux #Give running services details
+
+9.2. User Enumeration 
+a. Whoami #Show who is the current user
+b. id #Show user name and id
+c. sudo -l #show file that do not need root users
+d. cat /etc/passwd #show username without password
+e. cat /etc/passwd | cut -d : -f 1 #Grepping only username from passwd file
+f. cat /etc/group #show group names
+g. history #shows all previous commands
+
+9.3. Network Enumeration 
+a. 
+
+
 10. Port Redirection and SSH Tunneling
+
+
+
 11. Tunneling Through Deep Packet Inspection
+
+
+
 12. The Metasploit Framework
+
+
+
 13. Active Directory 
+
+
+
 14. Report Writing 
+
+
+
