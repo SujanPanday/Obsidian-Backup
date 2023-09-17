@@ -62,8 +62,15 @@ a. grep --color=auto -rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null #shows
 b. locate password | more #locate password files and directories
 c. find / -name id_rsa 2> /dev/null #finding id rsa keys
 d. find / -name authorized_keys 2> /dev/null #finding authorized keys
-e. 
 
+9.5. Kernel Exploits
+a. dirtycow exploit
+
+9.6. Passwords and File permissions
+a. history or cat bash_history #shows privous commands
+b. find . -type f -exec grep -i -I "PASSWORD" {} /dev/null \; #shows password containing lines
+c. cat /etc/passwd #shows shadow files 
+d. 
 
 
 10. Port Redirection and SSH Tunneling
