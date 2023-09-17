@@ -50,7 +50,20 @@ f. cat /etc/group #show group names
 g. history #shows all previous commands
 
 9.3. Network Enumeration 
-a. 
+a. ifconfig #show Ip addresses
+b. ip a #Shows IP address
+c. ip route #Network pathways
+d. arp -a #Shows ARP table
+e. ip neigh #Shows ip state
+f. netstat -ano #Shows ports and traffic flow
+
+9.4. Password Hunting
+a. grep --color=auto -rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null #shows all the password word filtering from  all logs 
+b. locate password | more #locate password files and directories
+c. find / -name id_rsa 2> /dev/null #finding id rsa keys
+d. find / -name authorized_keys 2> /dev/null #finding authorized keys
+e. 
+
 
 
 10. Port Redirection and SSH Tunneling
