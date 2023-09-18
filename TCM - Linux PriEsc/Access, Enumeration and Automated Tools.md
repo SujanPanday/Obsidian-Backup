@@ -1,4 +1,4 @@
-his
+
 # Initial Access
 
 1. VPN connection to tryhackme
@@ -475,7 +475,7 @@ unix  3      [ ]         DGRAM                    1971
 
 - grep
 ~~~bash
-TCM@debian:~$ grep --color=auto rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null
+TCM@debian:~$ grep --color=auto -rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null
 ~~~
 
 - find
@@ -486,7 +486,7 @@ TCM@debian:~$ find / -name id_rsa 2> /dev/null
 
 - locate
 ~~~bash
-TCM@debian:~$ locate password
+TCM@debian:~$ locate password | more
 locate: warning: database `/var/cache/locate/locatedb' is more than 8 days old (actual age is 1154.8 days)
 /boot/grub/password.mod
 /boot/grub/password_pbkdf2.mod
