@@ -37,14 +37,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+                "file": "TCM - Linux PriEsc/Scheduled Tasks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "913d6ae2061cf0e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/NFS Root Squashing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d6a00c4613d39b75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Docker.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -73,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "rsa",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +114,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -110,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+                "file": "TCM - Linux PriEsc/Docker.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+                "file": "TCM - Linux PriEsc/Docker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md"
+                "file": "TCM - Linux PriEsc/Docker.md"
               }
             }
           },
@@ -182,8 +207,13 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "eab12e7ee8663409",
+  "active": "d6a00c4613d39b75",
   "lastOpenFiles": [
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "TCM - Linux PriEsc/Docker.md",
+    "TCM - Linux PriEsc/NFS Root Squashing.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "TCM - Linux PriEsc/Capabilities.md",
     "TCM - Linux PriEsc/Other SUID Escalation.md",
     "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
@@ -191,7 +221,6 @@
     "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/linpeas.sh",
     "Useful scripts/LinEnum.sh",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
     "Useful scripts/Scripts.md",
     "TRE_1.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
@@ -199,13 +228,11 @@
     "TCM - Linux PriEsc/SUDO.md",
     "TCM - Linux PriEsc/Kernel Exploit.md",
     "TCM - Linux PriEsc/Resources.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "Checklist.txt",
     "Useful scripts",
     "New folder",
     "Proving Ground Play/SoSimple.md",
     "Proving Ground Play/Stapler.md",
-    "TCM - Linux PriEsc/Capabilities.md",
     "Resources/Important commands.md",
     "Images",
     "Resources/Scripts Links.md",
@@ -224,8 +251,6 @@
     "Conversion from Canvas.md",
     "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
     "Test - Obsidian Notes/Red Pill and Blue Pill.md",
-    "Test - Obsidian Notes/NeverNote.md",
-    "Test - Obsidian Notes/How To Insert Codes.md",
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
     "Test - Obsidian Notes/screenshot example.png",
