@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "eab12e7ee8663409",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md"
+                "file": "TCM - Linux PriEsc/Capstone 2 - Anonymous.md"
               }
             }
           },
@@ -170,17 +182,18 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "373bbaafa6888c57",
+  "active": "eab12e7ee8663409",
   "lastOpenFiles": [
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
+    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "Useful scripts/linuxprivchecker.py",
     "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/linpeas.sh",
     "Useful scripts/LinEnum.sh",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "Useful scripts/Scripts.md",
     "TRE_1.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "TCM - Linux PriEsc/SUID - Set User ID.md",
     "TCM - Linux PriEsc/SUDO.md",
@@ -216,7 +229,6 @@
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
     "Test - Obsidian Notes/screenshot example.png",
-    "checking for git",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Test - Obsidian Notes/Screenshot exmaples.png",
     "Untitled 1.canvas"
