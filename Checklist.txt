@@ -1,16 +1,103 @@
 ### Checklist for OSCP exam. 
 
 1. Information Gathering 
+
+
+
 2. Vulnerability Scanning
+
+
+
 3. Web Application Attacks
+
+
+
 4. Antivirus Evasion
+
+
+
 5. Password Attacks
+
+
+
 6. Fixing Exploits
+
+
+
 7. Locating Pubic Exploits
+
+
+
 8. Windows Privilege Escalation
+
+
+
 9. Linux Privilege Escalation
+
+9.1. System Enumeration 
+a. uname -a #Give details about system and OS
+b. cat /proc/version #Give OS version details
+c. lscpu #Give memory details
+d. ps aux #Give running services details
+
+9.2. User Enumeration 
+a. Whoami #Show who is the current user
+b. id #Show user name and id
+c. sudo -l #show file that do not need root users
+d. cat /etc/passwd #show username without password
+e. cat /etc/passwd | cut -d : -f 1 #Grepping only username from passwd file
+f. cat /etc/group #show group names
+g. history #shows all previous commands
+
+9.3. Network Enumeration 
+a. ifconfig #show Ip addresses
+b. ip a #Shows IP address
+c. ip route #Network pathways
+d. arp -a #Shows ARP table
+e. ip neigh #Shows ip state
+f. netstat -ano #Shows ports and traffic flow
+
+9.4. Password Hunting
+a. grep --color=auto -rnw '/' -ie "PASSWORD=" --color=always 2> /dev/null #shows all the password word filtering from  all logs 
+b. locate password | more #locate password files and directories
+c. find / -name id_rsa 2> /dev/null #finding id rsa keys
+d. find / -name authorized_keys 2> /dev/null #finding authorized keys
+
+9.5. Kernel Exploits
+a. dirtycow exploit
+
+9.6. Passwords and File permissions
+a. history or cat bash_history #shows privous commands
+b. find . -type f -exec grep -i -I "PASSWORD" {} /dev/null \; #shows password containing lines
+c. cat /etc/passwd #shows user names 
+d. cat /etc/shadow #shows shadow password
+e. unshadow passwd shadow #combine user and shadow file which can be cracked using hashcat
+f. find / -name authorized_keys 2> /dev/null #find authorized kesy
+g. find / -name id_rsa 2> /dev/null #find id rsa keys
+
+9.7. SUOD
+a. sudo -l #shows all non root user commands then use gtfobins
+
+9.8. SUID 
+a. find / -perm -u=s -type f 2>/dev/null #list out suid permission files
+
 10. Port Redirection and SSH Tunneling
+
+
+
 11. Tunneling Through Deep Packet Inspection
+
+
+
 12. The Metasploit Framework
+
+
+
 13. Active Directory 
+
+
+
 14. Report Writing 
+
+
+
