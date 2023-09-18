@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "nmap",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,8 +78,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -173,6 +172,10 @@
   },
   "active": "373bbaafa6888c57",
   "lastOpenFiles": [
+    "Useful scripts/linuxprivchecker.py",
+    "Useful scripts/linux-exploit-suggester.sh",
+    "Useful scripts/linpeas.sh",
+    "Useful scripts/LinEnum.sh",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "Useful scripts/Scripts.md",
@@ -210,14 +213,10 @@
     "Test - Obsidian Notes/Red Pill and Blue Pill.md",
     "Test - Obsidian Notes/NeverNote.md",
     "Test - Obsidian Notes/How To Insert Codes.md",
-    "Test - Obsidian Notes/Code block.md",
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
     "Test - Obsidian Notes/screenshot example.png",
     "checking for git",
-    "Obsidian-Backup",
-    "OneDrive/Documents/Python Scripts",
-    "OneDrive/Documents/Custom Office Templates",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Test - Obsidian Notes/Screenshot exmaples.png",
     "Untitled 1.canvas"
