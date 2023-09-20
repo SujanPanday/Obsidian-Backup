@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "14ffbb60aca0b46c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -114,8 +126,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -135,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Docker.md",
+                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Docker.md",
+                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Docker.md"
+                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md"
               }
             }
           },
@@ -207,10 +218,13 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "d6a00c4613d39b75",
+  "active": "14ffbb60aca0b46c",
   "lastOpenFiles": [
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
+    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
     "TCM - Linux PriEsc/Docker.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "TCM - Linux PriEsc/NFS Root Squashing.md",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/Capabilities.md",
@@ -248,9 +262,6 @@
     "Test - Obsidian Notes/Screenshot-example.png",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Conversion from Canvas.md",
-    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
-    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
     "Pasted image 20230809172445.png",
     "OSCP Full Canvas",
     "Test - Obsidian Notes/screenshot example.png",
