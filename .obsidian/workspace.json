@@ -8,54 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "47e0953977b21431",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Useful scripts/Scripts.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "373bbaafa6888c57",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "eab12e7ee8663409",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/Scheduled Tasks.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "913d6ae2061cf0e9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/NFS Root Squashing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d6a00c4613d39b75",
             "type": "leaf",
             "state": {
@@ -78,9 +30,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f7af47b9692c5e24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "732cd512957fac1e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1dcca2005a1fac7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Linux PriEsc/Capstone 3 - Tomghost.md"
+                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md"
               }
             }
           },
@@ -218,24 +206,29 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "14ffbb60aca0b46c",
+  "active": "1dcca2005a1fac7e",
   "lastOpenFiles": [
-    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "TCM- Practical Ethical Hacking/Pasted image 20230921141637.png",
+    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+    "Pasted image 20230921145800.png",
+    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
+    "TCM- Practical Ethical Hacking",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
     "TCM - Linux PriEsc/Docker.md",
+    "Useful scripts/Scripts.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "Useful scripts/linuxprivchecker.py",
+    "Useful scripts/linux-exploit-suggester.sh",
+    "Useful scripts/LinEnum.sh",
+    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
     "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "TCM - Linux PriEsc/NFS Root Squashing.md",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
     "TCM - Linux PriEsc/Capabilities.md",
     "TCM - Linux PriEsc/Other SUID Escalation.md",
     "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "Useful scripts/linuxprivchecker.py",
-    "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/linpeas.sh",
-    "Useful scripts/LinEnum.sh",
-    "Useful scripts/Scripts.md",
     "TRE_1.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "TCM - Linux PriEsc/SUID - Set User ID.md",
@@ -255,18 +248,13 @@
     "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
     "Pasted image 20230816154819.png",
     "Pasted image 20230816154808.png",
-    "TCM - Web Application Security and Testing Course/DVWA Installation.md",
-    "Test - Obsidian Notes/NoteStar2.md",
-    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Test - Obsidian Notes/Screenshot-example.png",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Pasted image 20230809172445.png",
-    "OSCP Full Canvas",
     "Test - Obsidian Notes/screenshot example.png",
     "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
-    "Test - Obsidian Notes/Screenshot exmaples.png",
     "Untitled 1.canvas"
   ]
 }
