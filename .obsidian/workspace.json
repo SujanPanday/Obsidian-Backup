@@ -66,9 +66,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ac14d6596baa2d27",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "21852b406506f8bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -134,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md"
+                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md"
               }
             }
           },
@@ -206,12 +230,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "1dcca2005a1fac7e",
+  "active": "bc783be3c5495dac",
   "lastOpenFiles": [
-    "TCM- Practical Ethical Hacking/Pasted image 20230921141637.png",
-    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
+    "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
+    "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
+    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
-    "Pasted image 20230921145800.png",
+    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM- Practical Ethical Hacking/Pasted image 20230921145800.png",
+    "TCM- Practical Ethical Hacking/Pasted image 20230921141637.png",
     "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
     "TCM- Practical Ethical Hacking",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
@@ -242,10 +271,8 @@
     "Proving Ground Play/Stapler.md",
     "Resources/Important commands.md",
     "Images",
-    "Resources/Scripts Links.md",
     "Images/Pasted image 20230818185424.png",
     "Resources",
-    "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
     "Pasted image 20230816154819.png",
     "Pasted image 20230816154808.png",
     "Test - Obsidian Notes/Test Canvas.canvas",
@@ -253,8 +280,6 @@
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Pasted image 20230809172445.png",
-    "Test - Obsidian Notes/screenshot example.png",
-    "OneDrive/Documents/R/win-library/4.1/farver/help/figures/logo.svg",
     "Untitled 1.canvas"
   ]
 }
