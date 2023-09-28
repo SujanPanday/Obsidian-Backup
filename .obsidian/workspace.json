@@ -18,8 +18,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "28d8b42438dc86a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "420f0b9a64dda812",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Active Directory.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -48,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "find / -typ",
+                "query": "format",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -86,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+                "file": "Active Directory.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+                "file": "Active Directory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md"
+                "file": "Active Directory.md"
               }
             }
           },
@@ -158,16 +183,19 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "21852b406506f8bb",
+  "active": "420f0b9a64dda812",
   "lastOpenFiles": [
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
+    "Active Directory.md",
     "Useful scripts/Scripts.md",
+    "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
+    "Pasted image 20230927082739.png",
+    "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
+    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "TCM - Linux PriEsc/Docker.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
     "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
@@ -197,7 +225,6 @@
     "New folder",
     "Proving Ground Play/SoSimple.md",
     "Proving Ground Play/Stapler.md",
-    "Resources/Important commands.md",
     "Images",
     "Images/Pasted image 20230818185424.png",
     "Resources",
@@ -205,7 +232,6 @@
     "Pasted image 20230816154808.png",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Test - Obsidian Notes/Screenshot-example.png",
-    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Untitled 1.canvas"
   ]

@@ -4,5 +4,5 @@ Keep the script for future references
 ```
 kali - dhclient
 
-windows - ifconfig /renew
+windows - ipconfig /renew
 ```
