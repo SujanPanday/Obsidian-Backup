@@ -163,7 +163,13 @@ b. Require strong user passwords (e.g., >14 characters in length and limit commo
 
 
 #### SMB Relay Attacks Overview
+Instead of Cracking hashes gathered with Responder, we can instead relay those hashes to specific machines and potentially gain access
 
+1. Requirements
+a. SMB signing must be disabled or not enforced on the target. 
+b. Relayed user credentials must be admin on machine for any real value. 
+
+#### SMB Relay Attacks Lab
 
 
 ## Post - Compromise Enumeration
@@ -183,3 +189,6 @@ b. Require strong user passwords (e.g., >14 characters in length and limit commo
 
 
 ## Case Studies 
+
+
+## Post Exploitation

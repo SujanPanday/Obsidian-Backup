@@ -1,0 +1,266 @@
+
+## Image OSINT
+
+#### Reverse Image Searching 
+Google Image Search - [https://images.google.com](https://images.google.com/)
+
+Yandex - [https://yandex.com](https://yandex.com/)
+
+TinEye - [https://tineye.com](https://tineye.com/)
+
+#### Viewing EXIF Data
+Jeffrey's Image Metadata Viewer - [https://exifdata.com/](EXIFDATA)
+
+```
+┌──(kali㉿kali)-[~]
+└─$ exiftool Downloads/dog.JPG 
+ExifTool Version Number         : 12.57
+File Name                       : dog.JPG
+Directory                       : Downloads
+File Size                       : 3.9 MB
+File Modification Date/Time     : 2023:09:28 22:36:41-04:00
+File Access Date/Time           : 2023:09:28 22:36:41-04:00
+File Inode Change Date/Time     : 2023:09:28 22:36:41-04:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Make                            : Apple
+Camera Model Name               : iPhone 4S
+Orientation                     : Rotate 90 CW
+X Resolution                    : 72
+Y Resolution                    : 72
+Resolution Unit                 : inches
+Software                        : 5.0.1
+Modify Date                     : 2012:03:11 12:01:53
+Y Cb Cr Positioning             : Centered
+Exposure Time                   : 1/1842
+F Number                        : 2.4
+Exposure Program                : Program AE
+ISO                             : 64
+Exif Version                    : 0221
+Date/Time Original              : 2012:03:11 12:01:53
+Create Date                     : 2012:03:11 12:01:53
+Components Configuration        : Y, Cb, Cr, -
+Shutter Speed Value             : 1/1842
+Aperture Value                  : 2.4
+Brightness Value                : 10.39054726
+Metering Mode                   : Multi-segment
+Flash                           : Off, Did not fire
+Focal Length                    : 4.3 mm
+Subject Area                    : 1631 1223 881 881
+Flashpix Version                : 0100
+Color Space                     : sRGB
+Exif Image Width                : 3264
+Exif Image Height               : 2448
+Sensing Method                  : One-chip color area
+Exposure Mode                   : Auto
+White Balance                   : Auto
+Focal Length In 35mm Format     : 35 mm
+Scene Capture Type              : Standard
+Sharpness                       : Normal
+GPS Latitude Ref                : North
+GPS Longitude Ref               : West
+GPS Altitude Ref                : Above Sea Level
+GPS Time Stamp                  : 17:30:26
+GPS Img Direction Ref           : True North
+GPS Img Direction               : 191.2603175
+Compression                     : JPEG (old-style)
+Thumbnail Offset                : 914
+Thumbnail Length                : 9959
+Image Width                     : 3264
+Image Height                    : 2448
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Aperture                        : 2.4
+Image Size                      : 3264x2448
+Megapixels                      : 8.0
+Scale Factor To 35 mm Equivalent: 8.2
+Shutter Speed                   : 1/1842
+Thumbnail Image                 : (Binary data 9959 bytes, use -b option to extract)
+GPS Altitude                    : 182 m Above Sea Level
+GPS Latitude                    : 41 deg 40' 43.20" N
+GPS Longitude                   : 83 deg 39' 21.00" W
+Circle Of Confusion             : 0.004 mm
+Field Of View                   : 54.4 deg
+Focal Length                    : 4.3 mm (35 mm equivalent: 35.0 mm)
+GPS Position                    : 41 deg 40' 43.20" N, 83 deg 39' 21.00" W
+Hyperfocal Distance             : 2.08 m
+Light Value                     : 14.0
+
+```
+
+#### Physical Location OSINT
+Check out the google maps satellite view. 
+
+#### Identifying Geographical Locations
+GeoGuessr - [https://www.geoguessr.com](https://www.geoguessr.com/)
+
+GeoGuessr - The Top Tips, Tricks and Techniques - [https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/](https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/)
+
+
+## Email OSINT
+Hunter.io - [https://hunter.io/](https://hunter.io/)
+
+Phonebook.cz - [https://phonebook.cz/](https://phonebook.cz/)
+
+VoilaNorbert - [https://www.voilanorbert.com/](https://www.voilanorbert.com/)
+
+Email Hippo - [https://tools.verifyemailaddress.io/](https://tools.verifyemailaddress.io/)
+
+Email Checker - [https://email-checker.net/validate](https://email-checker.net/validate)
+
+Clearbit Connect - [https://chrome.google.com/webstore/detail/clearbit-connect-supercha/pmnhcgfcafcnkbengdcanjablaabjplo?hl=en](https://chrome.google.com/webstore/detail/clearbit-connect-supercha/pmnhcgfcafcnkbengdcanjablaabjplo?hl=en)
+
+
+## Password OSINT
+Dehashed - [https://dehashed.com/](https://dehashed.com/)
+
+WeLeakInfo - [https://weleakinfo.to/v2/](https://weleakinfo.to/v2/)
+
+LeakCheck - [https://leakcheck.io/](https://leakcheck.io/)
+
+SnusBase - [https://snusbase.com/](https://snusbase.com/)
+
+Scylla.sh - [https://scylla.sh/](https://scylla.sh/)
+
+HaveIBeenPwned - [https://haveibeenpwned.com/](https://haveibeenpwned.com/)
+
+
+## Username OSINT
+#### Hunting Usernames and Accounts
+NameChk - [https://namechk.com/](https://namechk.com/)
+
+WhatsMyName - [https://whatsmyname.app/](https://whatsmyname.app/)
+
+NameCheckup - [https://namecheckup.com/](https://namecheckup.com/)
+
+
+## People OSINT
+
+#### Searching for People
+WhitePages - [https://www.whitepages.com/](https://www.whitepages.com/)
+
+TruePeopleSearch - [https://www.truepeoplesearch.com/](https://www.truepeoplesearch.com/)
+
+FastPeopleSearch - [https://www.fastpeoplesearch.com/](https://www.fastpeoplesearch.com/)
+
+FastBackgroundCheck - [https://www.fastbackgroundcheck.com/](https://www.fastbackgroundcheck.com/)
+
+WebMii - [https://webmii.com/](https://webmii.com/)
+
+PeekYou - [https://peekyou.com/](https://peekyou.com/)
+
+411 - [https://www.411.com/](https://www.411.com/)
+
+Spokeo - [https://www.spokeo.com/](https://www.spokeo.com/)
+
+That'sThem - [https://thatsthem.com/](https://thatsthem.com/)
+
+
+#### Voter Records
+Voter Records - [https://www.voterrecords.com](https://www.voterrecords.com/)
+
+
+#### Hunting Phone Numbers
+TrueCaller - [https://www.truecaller.com/](https://www.truecaller.com/)
+
+CallerID Test - [https://calleridtest.com/](https://calleridtest.com/)
+
+Infobel - [https://infobel.com/](https://infobel.com/)
+
+#### Discovering Birthdates
+Google intext search: intext:"birthday"
+
+#### Searching for Resumes
+Google intext search or filter out
+
+
+## Social Media OSINT
+
+#### Twitter
+Twitter Advanced Search - [https://twitter.com/search-advanced](https://twitter.com/search-advanced)
+Time frame, geolocation can narrow down searches. 
+
+Social Bearing - [https://socialbearing.com/](https://socialbearing.com/)
+
+Twitonomy - [https://www.twitonomy.com/](https://www.twitonomy.com/)
+
+Sleeping Time - [http://sleepingtime.org/](http://sleepingtime.org/)
+
+Mentionmapp - [https://mentionmapp.com/](https://mentionmapp.com/)
+
+Tweetbeaver - [https://tweetbeaver.com/](https://tweetbeaver.com/)
+
+Spoonbill.io - [http://spoonbill.io/](http://spoonbill.io/)
+
+Tinfoleak - [https://tinfoleak.com/](https://tinfoleak.com/)
+
+TweetDeck - [https://tweetdeck.com/](https://tweetdeck.com/)
+
+#### Facebook
+Sowdust Github - [https://sowdust.github.io/fb-search/](https://sowdust.github.io/fb-search/)
+
+IntelligenceX Facebook Search - [https://intelx.io/tools?tab=facebook](https://intelx.io/tools?tab=facebook)
+
+#### Instagram
+Wopita - [https://wopita.com/](https://wopita.com/)
+
+Code of a Ninja - [https://codeofaninja.com/tools/find-instagram-user-id/](https://codeofaninja.com/tools/find-instagram-user-id/)
+
+InstaDP - [https://www.instadp.com/](https://www.instadp.com/)
+
+ImgInn - [https://imginn.com/](https://imginn.com/)
+
+#### Snapchat
+Snapchat Maps - [https://map.snapchat.com](https://map.snapchat.com/)
+
+#### Reddit 
+Check out in the actual reddit page. 
+
+#### Linkedin
+Check out in the actual linkedin website
+
+#### Tiktok 
+Check on tiktok platform
+
+
+## Website OSINT
+BuiltWith - [https://builtwith.com/](https://builtwith.com/)
+
+Domain Dossier - [https://centralops.net/co/](https://centralops.net/co/)
+
+DNSlytics - [https://dnslytics.com/reverse-ip](https://dnslytics.com/reverse-ip)
+
+SpyOnWeb - [https://spyonweb.com/](https://spyonweb.com/)
+
+Virus Total - [https://www.virustotal.com/](https://www.virustotal.com/)
+
+Visual Ping - [https://visualping.io/](https://visualping.io/)
+
+Back Link Watch - [http://backlinkwatch.com/index.php](http://backlinkwatch.com/index.php)
+
+View DNS - [https://viewdns.info/](https://viewdns.info/)
+
+Pentest-Tools Subdomain Finder - [https://pentest-tools.com/information-gathering/find-subdomains-of-domain#](https://pentest-tools.com/information-gathering/find-subdomains-of-domain#)
+
+Spyse - [https://spyse.com/](https://spyse.com/)
+
+crt.sh - [https://crt.sh/](https://crt.sh/)
+
+Shodan - [https://shodan.io](https://shodan.io/)
+
+Wayback Machine - [https://web.archive.org/](https://web.archive.org/)
+
+
+## Business OSINT
+Open Corporates - [https://opencorporates.com/](https://opencorporates.com/)
+
+AI HIT - [https://www.aihitdata.com/](https://www.aihitdata.com/)
+
+
+## Wireless OSINT
+WiGLE - [https://wigle.net/](https://wigle.net/)

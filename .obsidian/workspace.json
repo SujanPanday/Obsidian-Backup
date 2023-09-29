@@ -37,14 +37,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Active Directory.md",
+                "file": "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1b604daeade8e71d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM OSINT/Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6cea37530cd0b23a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM OSINT/OSINT Options.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5fe65f48d439d60a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM OSINT/LABS.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -73,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "format",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,8 +126,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Active Directory.md",
+                "file": "TCM OSINT/LABS.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -128,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Active Directory.md",
+                "file": "TCM OSINT/LABS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Active Directory.md"
+                "file": "TCM OSINT/LABS.md"
               }
             }
           },
@@ -183,13 +218,19 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "420f0b9a64dda812",
+  "active": "bc783be3c5495dac",
   "lastOpenFiles": [
+    "TCM OSINT/OSINT Options.md",
+    "TCM OSINT/LABS.md",
+    "EXIFDATA.md",
+    "TCM OSINT/Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
+    "TCM OSINT",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "Active Directory.md",
     "Useful scripts/Scripts.md",
     "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
-    "Pasted image 20230927082739.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
     "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
     "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
@@ -218,21 +259,15 @@
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "TCM - Linux PriEsc/SUID - Set User ID.md",
     "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Kernel Exploit.md",
-    "TCM - Linux PriEsc/Resources.md",
     "Checklist.txt",
     "Useful scripts",
     "New folder",
-    "Proving Ground Play/SoSimple.md",
-    "Proving Ground Play/Stapler.md",
     "Images",
     "Images/Pasted image 20230818185424.png",
-    "Resources",
     "Pasted image 20230816154819.png",
     "Pasted image 20230816154808.png",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Test - Obsidian Notes/Screenshot-example.png",
-    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Untitled 1.canvas"
   ]
 }
