@@ -13,26 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b1cc61feefa39b91",
+            "id": "15211cff4cbea532",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/TMUX Commands.md",
+                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f34a8c770a67d10b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -82,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200.5,
-    "collapsed": true
+    "width": 200.5
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -99,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Useful scripts/TMUX Commands.md",
+                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -116,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Useful scripts/TMUX Commands.md",
+                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Useful scripts/TMUX Commands.md"
+                "file": "TCM - External Pentest Playbook/ALL IN ONE.md"
               }
             }
           },
@@ -171,47 +182,47 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "b1cc61feefa39b91",
+  "active": "f34a8c770a67d10b",
   "lastOpenFiles": [
-    "Useful scripts/Scripts.md",
-    "Useful scripts/TMUX Commands.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold and Initial Enumeration.md",
-    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
-    "TCM - External Pentest Playbook/ALL IN ONE.md",
-    "TCM OSINT/4. Final Remarks and challenge.md",
     "TCM OSINT/3. LABS.md",
+    "TCM OSINT/4. Final Remarks and challenge.md",
+    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
     "TCM OSINT/2. OSINT Options.md",
+    "TCM - External Pentest Playbook/ALL IN ONE.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "TCM - Linux PriEsc/SUID - Set User ID.md",
+    "TCM - Linux PriEsc/SUDO.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "TCM - Linux PriEsc/Resources.md",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
+    "TCM - Linux PriEsc/NFS Root Squashing.md",
+    "TCM - Linux PriEsc/Kernel Exploit.md",
+    "TCM - Linux PriEsc/Docker.md",
+    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "TCM - Linux PriEsc/Capabilities.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "TCM- Practical Ethical Hacking/6 - Active Directory.md",
     "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
     "TCM - External Pentest Playbook",
-    "EXIFDATA.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
     "TCM OSINT",
     "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
-    "TCM - Linux PriEsc/Captsone 4 - ConvertMyVideo.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "TCM - Linux PriEsc/Docker.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
     "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
-    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
-    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
-    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
     "TCM- Practical Ethical Hacking/Pasted image 20230921145800.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230921141637.png",
-    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
     "TCM- Practical Ethical Hacking",
     "Useful scripts/linuxprivchecker.py",
     "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/LinEnum.sh",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "TCM - Linux PriEsc/NFS Root Squashing.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/Capabilities.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
     "Useful scripts/linpeas.sh",
     "Checklist.txt",
     "Useful scripts",

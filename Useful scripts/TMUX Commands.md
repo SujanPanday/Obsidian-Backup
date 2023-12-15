@@ -15,6 +15,8 @@ c. Move from one terminal to another: Ctrl+b and arrows keys
 11. Create new Session: tmux new -s name
 12. Removing tmux session: tmux kill-session -t docker. 
 13. Exiting: exit 
+14. Start Scrolling: Ctrl+b and [, use arrows to navigate. 
+15. Quit Scrolling: Ctrl+c
 
 
 ```
