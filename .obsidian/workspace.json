@@ -8,43 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "72df4e36e04d5c12",
+            "id": "1e5b0fe51dde981f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "15211cff4cbea532",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f34a8c770a67d10b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
+                "file": "PWK 200 Course + Exercise/1-5 TOPICS.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200.5
+    "width": 318.5
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
+                "file": "PWK 200 Course + Exercise/1-5 TOPICS.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - External Pentest Playbook/ALL IN ONE.md",
+                "file": "PWK 200 Course + Exercise/1-5 TOPICS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - External Pentest Playbook/ALL IN ONE.md"
+                "file": "PWK 200 Course + Exercise/1-5 TOPICS.md"
               }
             }
           },
@@ -182,36 +157,39 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "f34a8c770a67d10b",
+  "active": "1e5b0fe51dde981f",
   "lastOpenFiles": [
-    "TCM OSINT/3. LABS.md",
-    "TCM OSINT/4. Final Remarks and challenge.md",
-    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
-    "TCM OSINT/2. OSINT Options.md",
-    "TCM - External Pentest Playbook/ALL IN ONE.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "TCM - Linux PriEsc/SUID - Set User ID.md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/Resources.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
-    "TCM - Linux PriEsc/NFS Root Squashing.md",
-    "TCM - Linux PriEsc/Kernel Exploit.md",
-    "TCM - Linux PriEsc/Docker.md",
-    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "TCM - Linux PriEsc/Capabilities.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
-    "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
-    "TCM - External Pentest Playbook",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
+    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "PWK 200 Course + Exercise/25 Trying Harder - The Challenge Labs.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "Untitled",
+    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "ws",
+    "FULL OSCP CHECKLIST.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Resources/Scripts Links.md",
+    "Resources/Important commands.md",
+    "Proving Ground Play/Stapler.md",
+    "PWK 200 Lab/F",
+    "Proving Ground Play/SoSimple.md",
+    "TCM - External Pentest Playbook",
     "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
     "TCM OSINT",
     "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
@@ -224,9 +202,6 @@
     "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/LinEnum.sh",
     "Useful scripts/linpeas.sh",
-    "Checklist.txt",
-    "Useful scripts",
-    "New folder",
     "Images/Pasted image 20230818185424.png",
     "Pasted image 20230816154819.png",
     "Pasted image 20230816154808.png",
