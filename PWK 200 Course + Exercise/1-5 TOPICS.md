@@ -24,4 +24,16 @@ ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" learner@192.
 
 #### 5. Report Writing for Penetration Testers 
 
+A typical penetration test comprises the following stages:
+
+    Defining the Scope
+    Information Gathering
+    Vulnerability Detection
+    Initial Foothold
+    Privilege Escalation
+    Lateral Movement
+    Reporting/Analysis
+    Lessons Learned/Remediation
+
+
 
