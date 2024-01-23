@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/6. Information Gathering.md",
+                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a96d5bae8c5a3a6b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/6. Information Gathering.md",
+                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/6. Information Gathering.md",
+                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/6. Information Gathering.md"
+                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md"
               }
             }
           },
@@ -172,11 +184,20 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "1d70d0fc09e9b2c8",
+  "active": "a96d5bae8c5a3a6b",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
     "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
     "PWK 200 Lab/Flags.md",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "TCM - Linux PriEsc/SUDO.md",
+    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "TCM OSINT/2. OSINT Options.md",
+    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
     "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
     "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
     "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
@@ -191,18 +212,9 @@
     "PWK 200 Course + Exercise/13. Fixing Exploits.md",
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/25 Trying Harder - The Challenge Labs.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
     "Untitled",
-    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
     "ws",
-    "FULL OSCP CHECKLIST.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Resources/Scripts Links.md",
-    "Resources/Important commands.md",
-    "Proving Ground Play/Stapler.md",
     "PWK 200 Lab/F",
     "TCM - External Pentest Playbook",
     "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
