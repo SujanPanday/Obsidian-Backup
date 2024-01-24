@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "91fb19856650e330",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+                "file": "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+                "file": "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md"
+                "file": "PWK 200 Course + Exercise/9. Common Web Application Attacks.md"
               }
             }
           },
@@ -172,11 +184,12 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "1d70d0fc09e9b2c8",
+  "active": "bc783be3c5495dac",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
