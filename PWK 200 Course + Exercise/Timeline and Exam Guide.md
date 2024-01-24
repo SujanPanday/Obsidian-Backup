@@ -40,4 +40,38 @@
 3. Brup Free
 4. Dirbuster
 5. Multi handler (aka exploit/multi/handler) and msfvenom for all machines
+## VPN Connection
 
+A vpn connection file will be provided during the exam which needs to be used with openvpn for vpn connection. 
+
+## Machine Revert
+
+24 Reverts limitations. Only revert if required and check the machine after reverting, you will lose the working file in it after reverting. 
+
+## Exam Proof File Names 
+
+Proof.txt (only accessible to the root or administrator user) and Local.txt (File is accessible to an unprivileged user account)
+
+## Point Disqualification
+
+Restricting tool usages, metasploit and meterpreter usages in multiple machines, local.txt or proof.txt without an interactive shell screenshot and lack of documentation 
+
+## Suggested Documentation Templates
+
+[https://www.offsec.com/pwk-online/OSCP-Exam-Report.docx](https://www.offsec.com/pwk-online/OSCP-Exam-Report.docx) 
+
+## Bonus Points 
+
+80% of correction solutions in every module’s lab and 30 correct proof.txt hashes from the challenge labs (It is important to submit both local.txt and proof.txt where applicable).
+
+## Contact Protocol 
+
+Contact live chat in case of any need but do not expect any hints. 
+
+## Submission Instructions
+
+PDF format, name format "OSCP-OS-XXXXX-Exam-Report.pdf", archived with .7z file from kali machine without password, not more than 200 mb, upload .7 file at [https://upload.offsec.com](https://upload.offsec.com), check md5 hash of local and uploaded file, will receive confirmation email after submitting file. 
+
+## Results 
+
+Expect within 10 business days.
