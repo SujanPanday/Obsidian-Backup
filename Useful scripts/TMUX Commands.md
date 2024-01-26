@@ -1,4 +1,4 @@
-```
+Phy```
 1. Installation:  sudo apt-get install tmux
 2. Getting started: tmux
 3. Splitting within same screen:

@@ -3,7 +3,7 @@ PROOF GUIDE
 
 -------------------------------------------
 
-MEDTECH
+MEDTECH (10)
 
 .120 - proof only
 .121 - proof only
@@ -18,7 +18,7 @@ MEDTECH
 
 -------------------------------------------
 
-RELIA
+RELIA (15)
 
 .189 - proof only
 .191 - proof only
@@ -40,7 +40,7 @@ RELIA
 
 -------------------------------------------
 
-SKYLARK 
+SKYLARK (20)
 
 .223 - local + proof
 .225 - local + proof
@@ -97,5 +97,5 @@ OSCP C
 
 .152 - proof only (domain joined - DC01)
 .153 - NONE (domain joined - MS01)
-.154 - NONE (domain joined - MS02) (edited)
+.154 - NONE (domain joined - MS02)
 

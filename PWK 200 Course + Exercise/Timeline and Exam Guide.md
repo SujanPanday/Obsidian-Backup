@@ -75,3 +75,53 @@ PDF format, name format "OSCP-OS-XXXXX-Exam-Report.pdf", archived with .7z file 
 ## Results 
 
 Expect within 10 business days.
+
+## Proving Ground Play (Linux Boxes)
+
+| Easy - 5 | Intermediate - 8 | Hard - 10 |
+| ---- | ---- | ---- |
+| Monitoring | eLection1 | InsanityHosting |
+| DriftingBlues6 | Stapler |  |
+| Blogger | DC-9 |  |
+| Amaterasu |  |  |
+| BBSCute |  |  |
+| 25 | 24 | 10 |
+|  |  | Total = 60  |
+
+
+## Proving Grounds Practice 
+
+#### Linux Boxes
+
+| Easy - 10 | Intermediate - 10 | Intermediate - 20 | Hard - 25 |
+| ---- | ---- | ---- | ---- |
+| Twiggy | Crane | Pelican | Blackgate |
+| Exfiltrated | Image | Boolean | Clue |
+| Astronaut | PC | Cockpit | Zipper |
+| Codo | Plum | Educated |  |
+| GLPI | Press | Extplorer |  |
+| Hub | PyLoader | Marshalled |  |
+| Law |  |  |  |
+| RubyDome |  |  |  |
+| 80 | 60 | 120 | 75 |
+|  |  |  | Total = 335 |
+
+#### Windows Boxes
+
+| Easy - 10 | Intermediate - 10 | Intermediate - 20 | Hard - 25 |
+| ---- | ---- | ---- | ---- |
+| Helpdesk | Kyoto | Authby | Heist |
+| Algernon | Nara | Hutch |  |
+| Internal |  | Jacko |  |
+| Kevin |  | Resourced |  |
+| Squid |  |  |  |
+| 50 | 20 | 80 | 25 |
+|  |  |  | Total = 175  |
+
+Total = 570 Points, 46 machine
+Each day = 40 Points, 3 machine
+
+
+https://sirensecurity.io/blog/ 
+
+[Online - Reverse Shell Generator (revshells.com)](https://www.revshells.com/) 
