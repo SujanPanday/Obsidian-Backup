@@ -20,24 +20,12 @@
             }
           },
           {
-            "id": "f61fe5ace70f610d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "f756df313cb6bf49",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "<?php+system($_GET[\"cmd\"]); ?>",
+                "query": "python interac",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -184,16 +172,16 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "f61fe5ace70f610d",
+  "active": "f756df313cb6bf49",
   "lastOpenFiles": [
     "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "Useful scripts/Scripts.md",
     "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
