@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/10. SQL Injection Attacks.md"
+                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md"
               }
             }
           },
@@ -174,8 +174,8 @@
   },
   "active": "f756df313cb6bf49",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
     "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
