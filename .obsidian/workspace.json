@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "python interac",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -172,8 +173,11 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "f756df313cb6bf49",
+  "active": "2faccf4470c0800e",
   "lastOpenFiles": [
+    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+    "PWK 200 Lab/Flags.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
     "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
@@ -181,12 +185,10 @@
     "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
     "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
     "Useful scripts/Scripts.md",
     "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "Useful scripts/TMUX Commands.md",
-    "PWK 200 Lab/Flags.md",
     "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
     "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
     "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",

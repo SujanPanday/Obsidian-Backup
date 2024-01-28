@@ -76,9 +76,9 @@ PDF format, name format "OSCP-OS-XXXXX-Exam-Report.pdf", archived with .7z file 
 
 Expect within 10 business days.
 
-## Proving Ground Play (Linux Boxes)
+## Proving Ground Play (Linux Boxes) = 5 
 
-| Easy - 5 | Intermediate - 8 | Hard - 10 |
+| Easy - 5 (2) | Intermediate - 8 (2) | Hard - 10 (1) |
 | ---- | ---- | ---- |
 | Monitoring | eLection1 | InsanityHosting |
 | DriftingBlues6 | Stapler |  |
@@ -91,9 +91,9 @@ Expect within 10 business days.
 
 ## Proving Grounds Practice 
 
-#### Linux Boxes
+#### Linux Boxes = 8
 
-| Easy - 10 | Intermediate - 10 | Intermediate - 20 | Hard - 25 |
+| Easy - 10 (3) | Intermediate - 10 (2) | Intermediate - 20 (2) | Hard - 25 (1) |
 | ---- | ---- | ---- | ---- |
 | Twiggy | Crane | Pelican | Blackgate |
 | Exfiltrated | Image | Boolean | Clue |
@@ -106,9 +106,9 @@ Expect within 10 business days.
 | 80 | 60 | 120 | 75 |
 |  |  |  | Total = 335 |
 
-#### Windows Boxes
+#### Windows Boxes = 7
 
-| Easy - 10 | Intermediate - 10 | Intermediate - 20 | Hard - 25 |
+| Easy - 10 (3) | Intermediate - 10 (1) | Intermediate - 20 (2) | Hard - 25 (1) |
 | ---- | ---- | ---- | ---- |
 | Helpdesk | Kyoto | Authby | Heist |
 | Algernon | Nara | Hutch |  |
