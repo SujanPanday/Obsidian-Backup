@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+                "file": "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
                 "mode": "source",
                 "source": false
               }
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+                "file": "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+                "file": "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md"
+                "file": "PWK 200 Course + Exercise/12. Locating Public Exploits.md"
               }
             }
           },
@@ -173,35 +173,36 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2faccf4470c0800e",
+  "active": "f756df313cb6bf49",
   "lastOpenFiles": [
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
     "PWK 200 Lab/Flags.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
     "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "Useful scripts/Scripts.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "TCM - Linux PriEsc/Passwords & File Permissions.md",
     "Useful scripts/TMUX Commands.md",
     "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
     "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
     "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
     "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
     "TCM - Linux PriEsc/SUDO.md",
     "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
     "TCM OSINT/2. OSINT Options.md",
     "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
     "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
     "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
     "Untitled",
     "ws",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
