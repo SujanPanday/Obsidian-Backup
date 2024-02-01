@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "id_rsa",
+                "query": "power enc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -160,7 +160,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "09d59a0ac6ad792e",
+  "active": "2faccf4470c0800e",
   "lastOpenFiles": [
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "Proving Ground Play/SoSimple.md",
