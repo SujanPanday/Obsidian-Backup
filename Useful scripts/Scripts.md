@@ -44,3 +44,38 @@ https://linuxsimply.com/linux-basics/package-management/dependencies/the-followi
 ```
 https://ironhackers.es/en/cheatsheet/transferir-archivos-post-explotacion-cheatsheet/
 ```
+
+7. Hacktricks if running out of ideas. 
+```
+https://book.hacktricks.xyz/
+```
+
+8. Rustscan instead of nmap
+```
+1. Scan open ports. 
+rustscan -a 192.168.187.122 --ulimit 5000
+
+2. Nano and paste open ports - open-ports.txt
+
+3. List down open ports in one line with comma. 
+cat open-ports.txt | cut -f1 -d '/' | tr '\n' ','
+
+4. Or straight can scan with nmap
+nmap -p$(cat open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -sC -Sv -oA $ip 
+
+5. Decrease mtu rate if needed 
+ifconfig tun0 mtu 1250
+
+```
+
+9. Allocating IP. 
+```
+export ip=10.10.10.10
+echo $ip
+```
+
+10. Alternative for gobuster 
+```
+feroxbuster -u http://$ip/
+```
+

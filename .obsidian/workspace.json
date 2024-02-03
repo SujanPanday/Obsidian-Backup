@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
+                "file": "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3c367d5c7b957377",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IPSEC watchlist/Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "60cb31a6c61a544f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -48,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "power enc",
+                "query": "win",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -86,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md"
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md"
               }
             }
           },
@@ -160,18 +185,31 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2faccf4470c0800e",
+  "active": "60cb31a6c61a544f",
   "lastOpenFiles": [
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "Proving Ground Play/SoSimple.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+    "PWK 200 Lab/Flags.md",
     "Useful scripts/Scripts.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "TCM - Windows PriEsc/3. Capstone Challenge.md",
+    "IPSEC watchlist/Notes.md",
+    "Images/Pasted image 20230818185424.png",
+    "Proving Ground Play/Stapler.md",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Proving Ground Play/SoSimple.md",
+    "S1ren Walkthrough/Notes.md",
+    "S1ren Walkthrough.md",
+    "S1ren Walkthrough",
+    "IPSEC watchlist",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
-    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
-    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
     "PWK 200 Course + Exercise/Pasted image 20240131083231.png",
     "PWK 200 Course + Exercise/1-5 TOPICS.md",
@@ -179,21 +217,9 @@
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "PWK 200 Course + Exercise/13. Fixing Exploits.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
     "PWK 200 Course + Exercise/6. Information Gathering.md",
     "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
-    "PWK 200 Lab/Flags.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "Useful scripts/TMUX Commands.md",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
-    "Untitled",
     "ws",
-    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "PWK 200 Lab/F",
     "TCM - External Pentest Playbook",
     "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
@@ -207,8 +233,6 @@
     "Useful scripts/linuxprivchecker.py",
     "Useful scripts/linux-exploit-suggester.sh",
     "Useful scripts/LinEnum.sh",
-    "Useful scripts/linpeas.sh",
-    "Images/Pasted image 20230818185424.png",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Untitled 1.canvas"
   ]
