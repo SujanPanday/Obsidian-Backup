@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
                 "mode": "source",
                 "source": false
               }
@@ -90,8 +90,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -128,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md"
+                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md"
               }
             }
           },
@@ -187,9 +186,23 @@
   },
   "active": "60cb31a6c61a544f",
   "lastOpenFiles": [
+    "TCM - Linux PriEsc/Capabilities.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "TCM - Linux PriEsc/SUID - Set User ID.md",
+    "TCM - Linux PriEsc/SUDO.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "TCM - Linux PriEsc/Resources.md",
+    "TCM - Linux PriEsc/Passwords & File Permissions.md",
+    "TCM - Linux PriEsc/Other SUID Escalation.md",
+    "TCM - Linux PriEsc/NFS Root Squashing.md",
+    "TCM - Linux PriEsc/Kernel Exploit.md",
+    "TCM - Linux PriEsc/Docker.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
     "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
     "PWK 200 Lab/Flags.md",
     "Useful scripts/Scripts.md",
@@ -202,23 +215,10 @@
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Proving Ground Play/SoSimple.md",
     "S1ren Walkthrough/Notes.md",
-    "S1ren Walkthrough.md",
     "S1ren Walkthrough",
     "IPSEC watchlist",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
     "PWK 200 Course + Exercise/Pasted image 20240131083231.png",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
-    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
     "ws",
     "PWK 200 Lab/F",
     "TCM - External Pentest Playbook",
