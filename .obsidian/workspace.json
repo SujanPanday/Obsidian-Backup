@@ -4,47 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "ea6a3200ad32be85",
+        "id": "caf4eb408635b2c3",
         "type": "tabs",
         "children": [
           {
-            "id": "09d59a0ac6ad792e",
+            "id": "5cb56e207075a79d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "3c367d5c7b957377",
+            "id": "a89a3f3ad4742397",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "60cb31a6c61a544f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+                "file": "PWK 200 Lab/Methodology - Full Scripts.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "database_admin",
+                "query": "credential roasting",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +77,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/20. The Metasploit Framework.md"
+                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md"
               }
             }
           },
@@ -184,38 +172,40 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "60cb31a6c61a544f",
+  "active": "2faccf4470c0800e",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "IPSEC watchlist/Notes.md",
-    "Useful scripts/Ligolo-ng.md",
-    "Pasted image 20240205124349.png",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
-    "Useful scripts/Scripts.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
-    "TCM - Linux PriEsc/Resources.md",
-    "TCM - Linux PriEsc/Capabilities.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "TCM - Linux PriEsc/SUID - Set User ID.md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
-    "TCM - Linux PriEsc/NFS Root Squashing.md",
-    "TCM - Linux PriEsc/Kernel Exploit.md",
-    "TCM - Linux PriEsc/Docker.md",
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "PWK 200 Course + Exercise/25 Trying Harder - The Challenge Labs.md",
+    "PWK 200 Lab/Methodology - Full Scripts.md",
+    "OSCP - Methodology/Methodology - Full Scripts.md",
+    "OSCP - Methodology",
     "PWK 200 Lab/Flags.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "Images/Pasted image 20230818185424.png",
+    "PWK 200 Lab/C - 154.md",
+    "PWK 200 Lab/C - 153.md",
+    "PWK 200 Lab/C - 152.md",
+    "PWK 200 Lab/C - 157.md",
+    "PWK 200 Lab/C - 156.md",
+    "PWK 200 Lab/C - 155.md",
+    "PWK 200 Lab/B - 148.md",
+    "PWK 200 Lab/B - 147.md",
+    "PWK 200 Lab/B - 146.md",
+    "PWK 200 Lab/B - 151.md",
+    "PWK 200 Lab/B - 150.md",
+    "PWK 200 Lab/B - 149.md",
+    "PWK 200 Lab/A - 142.md",
+    "PWK 200 Lab/A - 141.md",
+    "PWK 200 Lab/A - 140.md",
+    "PWK 200 Lab/A - 145.md",
+    "PWK 200 Lab/A - 144.md",
+    "PWK 200 Lab/A - 143.md",
+    "PWK 200 Lab/Relia - 30.md",
+    "PWK 200 Lab/Relia - 21.md",
+    "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
+    "Useful scripts/Pasted image 20240205124349.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Images/Pasted image 20230818185424.png",
+    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
     "S1ren Walkthrough",
     "IPSEC watchlist",
     "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
@@ -228,11 +218,9 @@
     "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
-    "TCM- Practical Ethical Hacking/Pasted image 20230921145800.png",
     "TCM- Practical Ethical Hacking",
     "Useful scripts/linuxprivchecker.py",
     "Useful scripts/linux-exploit-suggester.sh",
-    "Useful scripts/LinEnum.sh",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Untitled 1.canvas"
   ]
