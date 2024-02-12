@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "credential roasting",
+                "query": "dcsyn",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,8 +77,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md"
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md"
               }
             }
           },
@@ -172,12 +171,21 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2faccf4470c0800e",
+  "active": "5cb56e207075a79d",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
     "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Course + Exercise/25 Trying Harder - The Challenge Labs.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "Useful scripts/Ligolo-ng.md",
+    "Useful scripts/Scripts.md",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
     "PWK 200 Lab/Methodology - Full Scripts.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "PWK 200 Course + Exercise/25 Trying Harder - The Challenge Labs.md",
     "OSCP - Methodology/Methodology - Full Scripts.md",
     "OSCP - Methodology",
     "PWK 200 Lab/Flags.md",
@@ -192,15 +200,6 @@
     "PWK 200 Lab/B - 146.md",
     "PWK 200 Lab/B - 151.md",
     "PWK 200 Lab/B - 150.md",
-    "PWK 200 Lab/B - 149.md",
-    "PWK 200 Lab/A - 142.md",
-    "PWK 200 Lab/A - 141.md",
-    "PWK 200 Lab/A - 140.md",
-    "PWK 200 Lab/A - 145.md",
-    "PWK 200 Lab/A - 144.md",
-    "PWK 200 Lab/A - 143.md",
-    "PWK 200 Lab/Relia - 30.md",
-    "PWK 200 Lab/Relia - 21.md",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
     "Useful scripts/Pasted image 20240205124349.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
