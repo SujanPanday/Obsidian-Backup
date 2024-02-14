@@ -61,7 +61,7 @@ rustscan -a 192.168.187.122 --ulimit 5000
 cat open-ports.txt | cut -f1 -d '/' | tr '\n' ','
 
 4. Or straight can scan with nmap
-nmap -p$(cat open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -sC -Sv -oA $ip 
+nmap -p$(cat open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -T4 -A $ip 
 
 5. Decrease mtu rate if needed 
 ifconfig tun0 mtu 1250

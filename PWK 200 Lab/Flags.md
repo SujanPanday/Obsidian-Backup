@@ -5,16 +5,16 @@ PROOF GUIDE
 
 MEDTECH (10)
 
-.120 - proof only
-.121 - proof only
+.120 - proof only (Done)
+.121 - proof only (DONE)
 .122 - local and proof
-.10 - proof only
-.11 - local and proof 
-.12 - local and proof 
+.10 - proof only (Done)
+.11 - local and proof  (DONE)
+.12 - local and proof  
 .13 - proof only
-.14 - local only 
-.82 - proof only
-.83 - local and proof 
+.14 - local only (Done)
+.82 - proof only (Done)
+.83 - local and proof (Done)
 
 -------------------------------------------
 
