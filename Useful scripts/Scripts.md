@@ -79,3 +79,15 @@ echo $ip
 feroxbuster -u http://$ip/
 ```
 
+11. Upgrade shells to full tty
+```
+https://0xffsec.com/handbook/shells/full-tty/
+
+SHELL=/bin/bash script -q /dev/null
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+stty raw -echo && fg
+
+
+```
