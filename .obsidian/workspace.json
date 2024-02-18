@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Flags.md",
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Medtech.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "winrm",
+                "query": ".git",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/Relia.md"
+                "file": "PWK 200 Lab/OSCP - A.md"
               }
             }
           },
@@ -197,34 +197,34 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "f46bc91f59b80f91",
+  "active": "7b423a5f3d0ef191",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
     "Useful scripts/Scripts.md",
-    "PWK 200 Lab/Flags.md",
-    "PWK 200 Lab/Relia.md",
-    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "Useful scripts/TMUX Commands.md",
     "PWK 200 Lab/Medtech.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "Proving Ground Play/SoSimple.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Lab/Flags.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "PWK 200 Lab/Relia.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
     "Proving Ground Play/Stapler.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
     "TCM - Linux PriEsc/SUDO.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
     "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "Useful scripts/Ligolo-ng.md",
     "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "Proving Ground Play/SoSimple.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
-    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
     "OSCP - Methodology",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
     "Useful scripts/Pasted image 20240205124349.png",
