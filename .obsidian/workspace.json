@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "TCM- Practical Ethical Hacking/6 - Active Directory.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ".git",
+                "query": "ntlmv2 ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -199,8 +199,14 @@
   },
   "active": "7b423a5f3d0ef191",
   "lastOpenFiles": [
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
     "Useful scripts/Scripts.md",
     "PWK 200 Lab/OSCP - A.md",
+    "PWK 200 Lab/Relia.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
     "Useful scripts/TMUX Commands.md",
     "PWK 200 Lab/Medtech.md",
     "TCM - Linux PriEsc/Scheduled Tasks.md",
@@ -208,17 +214,11 @@
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
     "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
     "Proving Ground Play/SoSimple.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
     "PWK 200 Lab/Flags.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Lab/Relia.md",
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
     "Proving Ground Play/Stapler.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
     "TCM - Linux PriEsc/SUDO.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
