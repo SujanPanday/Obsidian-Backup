@@ -7,10 +7,7 @@ Mary.Williams
 Celia.almeda
 Administrator
 
-#### Passwords
-
-
-#### Pathways
+#### Passwords 
 
 
 #### Workstation and Server Names

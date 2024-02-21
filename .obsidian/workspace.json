@@ -37,7 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+                "file": "PWK 200 Lab/Flags.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2be11b9db019b44d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +61,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PWK 200 Lab/OSCP - C.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -85,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ntlmv2 ",
+                "query": "find ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,12 +114,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 423.5
+    "width": 451.5
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -123,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PWK 200 Lab/OSCP - C.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PWK 200 Lab/OSCP - C.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md"
+                "file": "PWK 200 Lab/OSCP - C.md"
               }
             }
           },
@@ -199,35 +210,34 @@
   },
   "active": "7b423a5f3d0ef191",
   "lastOpenFiles": [
-    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
     "Useful scripts/Scripts.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "PWK 200 Lab/Relia.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "Useful scripts/TMUX Commands.md",
-    "PWK 200 Lab/Medtech.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "Proving Ground Play/SoSimple.md",
-    "PWK 200 Lab/Flags.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "Proving Ground Play/Stapler.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "TCM - Linux PriEsc/SUDO.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "TCM - Linux PriEsc/Access, Enumeration and Automated Tools.md",
     "Useful scripts/Ligolo-ng.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "Useful scripts/Pasted image 20240205124349.png",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "PWK 200 Lab/Medtech.md",
+    "PWK 200 Lab/Flags.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "PWK 200 Lab/Relia.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "Proving Ground Play/SoSimple.md",
+    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
     "OSCP - Methodology",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
-    "Useful scripts/Pasted image 20240205124349.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Images/Pasted image 20230818185424.png",
     "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
