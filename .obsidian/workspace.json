@@ -8,31 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5cb56e207075a79d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Useful scripts/Scripts.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f46bc91f59b80f91",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a89a3f3ad4742397",
+            "id": "c1b9e1b36568a42e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -44,31 +20,31 @@
             }
           },
           {
-            "id": "2be11b9db019b44d",
+            "id": "e384ebc84d3f7308",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7b423a5f3d0ef191",
+            "id": "d33de417f8efbbe4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/OSCP - C.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mingw32-gcc",
+                "query": "crontab",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -135,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/OSCP - C.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/OSCP - C.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/OSCP - C.md"
+                "file": "Proving Ground/ALL - PLAY.md"
               }
             }
           },
@@ -209,35 +185,36 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "7b423a5f3d0ef191",
+  "active": "d33de417f8efbbe4",
   "lastOpenFiles": [
-    "Useful scripts/Scripts.md",
-    "PWK 200 Lab/OSCP - C.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "PWK 200 Lab/Exam Report.md",
     "PWK 200 Lab/Flags.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "Useful scripts/Ligolo-ng.md",
-    "Useful scripts/Pasted image 20240205124349.png",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "PWK 200 Lab/Medtech.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "TCM - Linux PriEsc/Scheduled Tasks.md",
+    "Useful scripts/Scripts.md",
     "PWK 200 Lab/Relia.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
     "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "Proving Ground Play/SoSimple.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
+    "Proving Ground/ALL - PLAY.md",
+    "Useful scripts/Pasted image 20240205124349.png",
+    "Useful scripts/Ligolo-ng.md",
+    "TCM - Linux PriEsc/SUDO.md",
+    "Resources/Important commands.md",
+    "Resources/Scripts Links.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "Proving Ground/Linux - Practice.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "Hack The Box/HBT - Linux Boxes.md",
+    "Proving Ground/Windows - Practice.md",
+    "Proving Ground Play/Stapler.md",
+    "Hack The Box/HBT - Windows Boxes.md",
+    "Hack The Box",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "PWK 200 Lab/OSCP - B.md",
     "OSCP - Methodology",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
@@ -257,7 +234,6 @@
     "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
     "TCM- Practical Ethical Hacking",
     "Useful scripts/linuxprivchecker.py",
-    "Useful scripts/linux-exploit-suggester.sh",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Untitled 1.canvas"
   ]

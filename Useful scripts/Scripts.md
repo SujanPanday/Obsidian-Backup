@@ -91,3 +91,20 @@ stty raw -echo && fg
 
 
 ```
+
+12. Machine not working
+```
+Can you try to do the following to resolve your issue
+
+disconnect from your VPN and run the command "sudo killall -w openvpn"
+logout from your Portal and clear your browsers data and cache
+please also run the commands below
+
+sudo bash -c " echo nameserver 8.8.8.8 > /etc/resolv.conf"
+sudo bash -c " echo nameserver 8.8.4.4 >> /etc/resolv.conf"
+sudo chattr +i /etc/resolv.conf
+
+download a new VPN pack (make sure that you are on your Course Page and not on the Main Page) and make sure to delete all the old VPN's
+
+Once done, please try to reconnect to your VPN and see how it goes.
+```
