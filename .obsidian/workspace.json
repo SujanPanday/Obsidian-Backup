@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "caf4eb408635b2c3",
+        "id": "902bb63cbf61b1c4",
         "type": "tabs",
         "children": [
           {
-            "id": "c1b9e1b36568a42e",
+            "id": "c2aac68e3f31b7b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Medtech.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e384ebc84d3f7308",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,14 +25,37 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
+                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1c5b654809ab1861",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7d96f1f878c76faa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PNPT Exam Review.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +84,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "certu",
+                "query": "1.8.21p2",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -111,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md"
+                "file": "PWK 200 Lab/Relia.md"
               }
             }
           },
@@ -185,34 +196,34 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "d33de417f8efbbe4",
+  "active": "c2aac68e3f31b7b5",
   "lastOpenFiles": [
-    "PWK 200 Lab/Medtech.md",
-    "Useful scripts/Ligolo-ng.md",
-    "Useful scripts/Scripts.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "TCM - Windows PriEsc/3. Capstone Challenge.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PNPT Exam Review.md",
     "PWK 200 Lab/Relia.md",
+    "TCM - Linux PriEsc/4. SUDO.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
+    "TCM - Web Application Security and Testing Course/DVWA Installation.md",
+    "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
+    "TCM - Linux PriEsc/Resources.md",
     "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
     "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "TCM - Linux PriEsc/Capstone 2 - Anonymous.md",
     "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "TCM - Linux PriEsc/10. Docker.md",
     "TCM - Linux PriEsc/9. NFS Root Squashing.md",
+    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "TCM - Linux PriEsc/7. Capabilities.md",
     "TCM - Linux PriEsc/6. Other SUID Escalation.md",
     "TCM - Linux PriEsc/5. SUID - Set User ID.md",
-    "TCM - Linux PriEsc/4. SUDO.md",
     "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
     "TCM - Linux PriEsc/2. Kernel Exploit.md",
-    "TCM - Linux PriEsc/Resources.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
     "Useful scripts/Pasted image 20240205124349.png",
     "Hack The Box",
     "OSCP - Methodology",
