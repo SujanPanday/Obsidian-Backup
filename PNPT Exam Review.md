@@ -427,114 +427,137 @@ adminuser:x:1001:1001:,,,:/home/adminuser:/bin/bash
 
 # 15
 ```
-┌──(kali㉿kali)-[~/Downloads]
-└─$ sudo nmap -sT -A --top-ports=20 10.10.10.15 -Pn
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-03-01 09:48 EST
 Nmap scan report for 10.10.10.15
-Host is up (0.00053s latency).
-
-PORT     STATE SERVICE       VERSION
-21/tcp   open  tcpwrapped
-22/tcp   open  tcpwrapped
-|_ssh-hostkey: ERROR: Script execution failed (use -d to debug)
-23/tcp   open  tcpwrapped
-25/tcp   open  tcpwrapped
-|_smtp-commands: Couldn't establish connection on port 25
-53/tcp   open  tcpwrapped
-80/tcp   open  tcpwrapped
-110/tcp  open  tcpwrapped
-111/tcp  open  tcpwrapped
-135/tcp  open  msrpc         Microsoft Windows RPC
-139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
-143/tcp  open  tcpwrapped
-443/tcp  open  tcpwrapped
-445/tcp  open  microsoft-ds?
-993/tcp  open  tcpwrapped
-995/tcp  open  tcpwrapped
-1723/tcp open  tcpwrapped
-3306/tcp open  tcpwrapped
-3389/tcp open  tcpwrapped
-5900/tcp open  tcpwrapped
-8080/tcp open  tcpwrapped
-Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
-OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
-No OS matches for host
+Host is up (0.60s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT    STATE SERVICE       VERSION
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds?
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
+|_clock-skew: -3s
 | smb2-security-mode: 
 |   3:1:1: 
 |_    Message signing enabled but not required
 | smb2-time: 
-|   date: 2024-03-01T14:49:28
+|   date: 2024-03-03T04:34:47
 |_  start_date: N/A
 
-TRACEROUTE (using proto 1/icmp)
-HOP RTT       ADDRESS
-1   305.72 ms 10.8.0.1
-2   ... 30
-
-OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 55.17 seconds
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 588.43 seconds
 
 ```
 
 # 25
 ```
 
-proxychains nmap -sT -A --top-ports=20 10.10.10.25  
-PORT     STATE  SERVICE       VERSION
-21/tcp   closed ftp
-22/tcp   closed ssh
-23/tcp   closed telnet
-25/tcp   closed smtp
-53/tcp   closed domain
-80/tcp   open   http          Microsoft IIS httpd 10.0
+Nmap scan report for 10.10.10.25
+Host is up (0.54s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT     STATE SERVICE       VERSION
+80/tcp   open  http          Microsoft IIS httpd 10.0
 |_http-server-header: Microsoft-IIS/10.0
 | http-methods: 
 |_  Potentially risky methods: TRACE
 |_http-title: IIS Windows
-110/tcp  closed pop3
-111/tcp  closed rpcbind
-135/tcp  open   msrpc         Microsoft Windows RPC
-139/tcp  open   netbios-ssn   Microsoft Windows netbios-ssn
-143/tcp  closed imap
-443/tcp  closed https
-445/tcp  open   microsoft-ds?
-993/tcp  closed imaps
-995/tcp  closed pop3s
-1723/tcp closed pptp
-3306/tcp closed mysql
-3389/tcp open   ms-wbt-server Microsoft Terminal Services
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=BYPASS.thepastamentors.com
+| Not valid before: 2024-02-29T12:33:37
+|_Not valid after:  2024-08-30T12:33:37
+|_ssl-date: 2024-03-03T04:37:40+00:00; -4s from scanner time.
 | rdp-ntlm-info: 
 |   Target_Name: THEPASTAMENTORS
 |   NetBIOS_Domain_Name: THEPASTAMENTORS
 |   NetBIOS_Computer_Name: BYPASS
 |   DNS_Domain_Name: thepastamentors.com
 |   DNS_Computer_Name: BYPASS.thepastamentors.com
+|   DNS_Tree_Name: thepastamentors.com
 |   Product_Version: 10.0.19041
-|_  System_Time: 2024-03-01T14:17:39+00:00
-| ssl-cert: Subject: commonName=BYPASS.thepastamentors.com
-| Not valid before: 2024-02-29T12:33:37
-|_Not valid after:  2024-08-30T12:33:37
-|_ssl-date: 2024-03-01T14:17:52+00:00; +1s from scanner time.
-5900/tcp closed vnc
-8080/tcp closed http-proxy
+|_  System_Time: 2024-03-03T04:37:25+00:00
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
-| smb2-time: 
-|   date: 2024-03-01T14:17:39
-|_  start_date: N/A
 | smb2-security-mode: 
 |   3:1:1: 
 |_    Message signing enabled but not required
+|_clock-skew: mean: -3s, deviation: 0s, median: -4s
+| smb2-time: 
+|   date: 2024-03-03T04:37:28
+|_  start_date: N/A
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 72.25 seconds
+Nmap done: 1 IP address (1 host up) scanned in 682.96 seconds
+
 ```
 
 # 35
+```
+Nmap scan report for 10.10.10.35
+Host is up (0.000039s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE SERVICE    VERSION
+135/tcp  open  tcpwrapped
+139/tcp  open  tcpwrapped
+445/tcp  open  tcpwrapped
+3389/tcp open  tcpwrapped
 
+Host script results:
+|_smb2-security-mode: SMB: Failed to connect to host: Nsock connect failed immediately
+|_smb2-time: ERROR: Script execution failed (use -d to debug)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 3081.29 seconds
+
+```
 
 # 225
+```
+Nmap scan report for 10.10.10.225
+Host is up (0.54s latency).
+Not shown: 988 closed tcp ports (conn-refused)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-03-03 04:36:55Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: thepastamentors.com0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: thepastamentors.com0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=TPM-DC.thepastamentors.com
+| Not valid before: 2024-02-29T12:34:08
+|_Not valid after:  2024-08-30T12:34:08
+|_ssl-date: 2024-03-03T04:38:11+00:00; -4s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: THEPASTAMENTORS
+|   NetBIOS_Domain_Name: THEPASTAMENTORS
+|   NetBIOS_Computer_Name: TPM-DC
+|   DNS_Domain_Name: thepastamentors.com
+|   DNS_Computer_Name: TPM-DC.thepastamentors.com
+|   DNS_Tree_Name: thepastamentors.com
+|   Product_Version: 10.0.17763
+|_  System_Time: 2024-03-03T04:37:52+00:00
+Service Info: Host: TPM-DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2024-03-03T04:37:59
+|_  start_date: N/A
+|_clock-skew: mean: -4s, deviation: 0s, median: -4s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 703.98 seconds
+
+```

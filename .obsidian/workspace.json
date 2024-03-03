@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,13 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PNPT Exam Review.md",
+                "file": "PWK 200 Lab/OSCP - B.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -84,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "1.8.21p2",
+                "query": "udp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -122,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "PWK 200 Lab/OSCP - B.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "PWK 200 Lab/OSCP - B.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/Relia.md"
+                "file": "PWK 200 Lab/OSCP - B.md"
               }
             }
           },
@@ -196,34 +197,34 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "c2aac68e3f31b7b5",
+  "active": "7d96f1f878c76faa",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Lab/Medtech.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
     "PNPT Exam Review.md",
-    "PWK 200 Lab/Relia.md",
-    "TCM - Linux PriEsc/4. SUDO.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "TCM - Web Application Security and Testing Course/DVWA Installation.md",
-    "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
-    "TCM - Linux PriEsc/Resources.md",
-    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
+    "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "TCM OSINT/3. LABS.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "TCM - Linux PriEsc/Capstone 1 - Lazyadmin (Tryhackme).md",
+    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
+    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "TCM OSINT/4. Final Remarks and challenge.md",
+    "TCM OSINT/2. OSINT Options.md",
     "TCM - Linux PriEsc/10. Docker.md",
-    "TCM - Linux PriEsc/9. NFS Root Squashing.md",
     "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "TCM - Linux PriEsc/7. Capabilities.md",
     "TCM - Linux PriEsc/6. Other SUID Escalation.md",
     "TCM - Linux PriEsc/5. SUID - Set User ID.md",
-    "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
-    "TCM - Linux PriEsc/2. Kernel Exploit.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
     "Useful scripts/Pasted image 20240205124349.png",
     "Hack The Box",
     "OSCP - Methodology",
