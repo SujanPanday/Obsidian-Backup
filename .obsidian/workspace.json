@@ -8,48 +8,48 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c2aac68e3f31b7b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d33de417f8efbbe4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1c5b654809ab1861",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "7d96f1f878c76faa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f13c1395295f8e2c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "PWK 200 Lab/OSCP - B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "39a7e9143cb99cde",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Lab/OSCP - C.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "23e705a4bcd65349",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground/Linux - Practice.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "udp",
+                "query": "helpdesk",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,8 +102,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/OSCP - B.md",
+                "file": "Proving Ground/Linux - Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/OSCP - B.md",
+                "file": "Proving Ground/Linux - Practice.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/OSCP - B.md"
+                "file": "Proving Ground/Linux - Practice.md"
               }
             }
           },
@@ -197,34 +196,36 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "7d96f1f878c76faa",
+  "active": "23e705a4bcd65349",
   "lastOpenFiles": [
-    "PWK 200 Lab/Medtech.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "Useful scripts/Scripts.md",
+    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
+    "Proving Ground/Linux - Practice.md",
+    "Proving Ground/Windows - Practice.md",
+    "Proving Ground/ALL - PLAY.md",
+    "Hack The Box/HBT - Windows Boxes.md",
+    "Hack The Box/HBT - Linux Boxes.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "PNPT Exam Review.md",
-    "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Lab/Relia.md",
     "PWK 200 Lab/OSCP - A.md",
     "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "TCM OSINT/3. LABS.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
-    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
-    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
-    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
-    "TCM OSINT/4. Final Remarks and challenge.md",
-    "TCM OSINT/2. OSINT Options.md",
-    "TCM - Linux PriEsc/10. Docker.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
-    "TCM - Linux PriEsc/7. Capabilities.md",
-    "TCM - Linux PriEsc/6. Other SUID Escalation.md",
-    "TCM - Linux PriEsc/5. SUID - Set User ID.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "Test - Obsidian Notes/Adversity Paradox.md",
+    "Test - Obsidian Notes/Code block.md",
+    "Test - Obsidian Notes/How To Insert Codes.md",
+    "Test - Obsidian Notes/NeverNote.md",
+    "Test - Obsidian Notes/NoteStar2.md",
+    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
+    "Test - Obsidian Notes/Test Canvas.canvas",
+    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
     "Useful scripts/Pasted image 20240205124349.png",
     "Hack The Box",
     "OSCP - Methodology",
@@ -243,10 +244,8 @@
     "TCM OSINT",
     "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
     "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
-    "TCM- Practical Ethical Hacking/Pasted image 20230922151216.png",
     "TCM- Practical Ethical Hacking",
     "Useful scripts/linuxprivchecker.py",
-    "Test - Obsidian Notes/Test Canvas.canvas",
     "Untitled 1.canvas"
   ]
 }

