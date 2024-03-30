@@ -4,23 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "902bb63cbf61b1c4",
+        "id": "7acf73db04a518f7",
         "type": "tabs",
+        "dimension": 41.532517707662585,
         "children": [
           {
-            "id": "7d96f1f878c76faa",
+            "id": "f13c1395295f8e2c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM OSINT/2. OSINT Options.md",
+                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f13c1395295f8e2c",
+            "id": "83456e5b03c35a22",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,43 +33,40 @@
             }
           },
           {
-            "id": "39a7e9143cb99cde",
+            "id": "e17fa307011a13c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bf53dae4f310601c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proving Ground/Linux - Practice.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2d1c763c3d63bcf6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
+      },
+      {
+        "id": "902bb63cbf61b1c4",
+        "type": "tabs",
+        "dimension": 58.467482292337415,
+        "children": [
+          {
+            "id": "ca0c05c5542fb076",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "viewState": {
+                  "x": -488.97242125739353,
+                  "y": -1306.848609584998,
+                  "zoom": -1.6666666666666665
+                }
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "chisel",
+                "query": "impacket",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -118,7 +116,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 322.5
+    "width": 322.5,
+    "collapsed": true
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +150,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md"
+                "file": "OSCP Full Canvas/Universal Checklist.canvas"
               }
             }
           },
@@ -208,54 +207,54 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "bf53dae4f310601c",
+  "active": "ca0c05c5542fb076",
   "lastOpenFiles": [
-    "Useful scripts/Scripts.md",
-    "Proving Ground/Linux - Practice.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Lab/OSCP - C.md",
-    "PNPT Exam Review.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "Proving Ground/ALL - PLAY.md",
-    "Pasted image 20240316205939.png",
-    "PWK 200 Lab/OSCP - A.md",
-    "Proving Ground/Windows - Practice.md",
-    "Pasted image 20240316195214.png",
-    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "PWK 200 Course + Exercise/Timeline and Exam Guide.md",
-    "Useful scripts/Pasted image 20240205124349.png",
-    "Useful scripts/Ligolo-ng.md",
-    "Test - Obsidian Notes/Adversity Paradox.md",
-    "Useful scripts/TMUX Commands.md",
-    "TCM - Linux PriEsc/3. Passwords & File Permissions.md",
     "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "Useful scripts/Scripts.md",
     "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
+    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "Pasted image 20240330095526.png",
     "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "Resources/Important commands.md",
-    "Resources/Scripts Links.md",
-    "S1ren Walkthrough/Notes.md",
+    "PNPT Exam Review.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "Pasted image 20240330073626.png",
+    "Pasted image 20240330073602.png",
+    "Pasted image 20240330073540.png",
+    "Web Enumeration.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Web Enumeration.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "Pasted image 20240329180137.png",
+    "Pasted image 20240329180106.png",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "Proving Ground/Linux - Practice.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
+    "Proving Ground/Windows - Practice.md",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "Pasted image 20240316205939.png",
+    "Pasted image 20240316195214.png",
+    "Useful scripts/Pasted image 20240205124349.png",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Hack The Box",
     "OSCP - Methodology",
-    "PWK 200 Course + Exercise/Pasted image 20240208104841.png",
-    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Images/Pasted image 20230818185424.png",
-    "PWK 200 Course + Exercise/Pasted image 20240126125828.png",
     "S1ren Walkthrough",
     "IPSEC watchlist",
-    "PWK 200 Course + Exercise/Pasted image 20240127085835.png",
-    "PWK 200 Course + Exercise/Pasted image 20240131083231.png",
     "ws",
     "PWK 200 Lab/F",
     "TCM - External Pentest Playbook",
-    "TCM- Practical Ethical Hacking/Pasted image 20230927082739.png",
     "TCM OSINT",
     "TCM- Practical Ethical Hacking",
     "Untitled 1.canvas"

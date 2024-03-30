@@ -25,7 +25,7 @@
 		{"type":"text","text":"22. Attacking Active Directory Authenticaiton","id":"0d8691edab597f27","x":-442,"y":725,"width":250,"height":60},
 		{"type":"text","text":"23. Lateral Movement in Active Directory","id":"b87917bd7198a360","x":-660,"y":575,"width":250,"height":60},
 		{"type":"text","text":"24. Assembling the Pieces","id":"7f0c45e7f5d40c48","x":-785,"y":410,"width":250,"height":50},
-		{"id":"bbce3aaa899d3307","x":-817,"y":190,"width":250,"height":60,"type":"text","text":"25. Trying Harder: The Challenge Labs"}
+		{"id":"bbce3aaa899d3307","type":"text","text":"25. Trying Harder: The Challenge Labs","x":-817,"y":190,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"5fe7f7c7b1f8558f","fromNode":"a892c224671193d7","fromSide":"left","toNode":"5b006934fbd7c736","toSide":"right"},
