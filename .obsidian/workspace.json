@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/15. Password Attacks.md",
+                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,13 +38,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "902bb63cbf61b1c4",
@@ -55,14 +56,11 @@
             "id": "ca0c05c5542fb076",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
-                "viewState": {
-                  "x": -488.97242125739353,
-                  "y": -1306.848609584998,
-                  "zoom": -1.6666666666666665
-                }
+                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -116,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 322.5,
-    "collapsed": true
+    "width": 322.5
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -133,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -173,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas"
+                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md"
               }
             }
           },
@@ -209,10 +206,26 @@
   },
   "active": "ca0c05c5542fb076",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+    "Test - Obsidian Notes/NoteStar2.md",
+    "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
+    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
+    "Test - Obsidian Notes/Screenshot-example.png",
+    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
+    "Test - Obsidian Notes/NeverNote.md",
+    "Test - Obsidian Notes/How To Insert Codes.md",
+    "Test - Obsidian Notes/Code block.md",
+    "Test - Obsidian Notes/Adversity Paradox.md",
+    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
+    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
+    "Useful scripts/TMUX Commands.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
+    "Proving Ground/ALL - PLAY.md",
+    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "Useful scripts/Scripts.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
     "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
     "PWK 200 Course + Exercise/13. Fixing Exploits.md",
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
@@ -226,27 +239,11 @@
     "Web Enumeration.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Web Enumeration.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Lab/OSCP - A.md",
     "Pasted image 20240329180137.png",
     "Pasted image 20240329180106.png",
-    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
-    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "Proving Ground/Linux - Practice.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "Proving Ground/Windows - Practice.md",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
     "Pasted image 20240316205939.png",
     "Pasted image 20240316195214.png",
-    "Useful scripts/Pasted image 20240205124349.png",
-    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Hack The Box",
     "OSCP - Methodology",
