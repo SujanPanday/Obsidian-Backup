@@ -6,22 +6,10 @@
       {
         "id": "7acf73db04a518f7",
         "type": "tabs",
-        "dimension": 41.532517707662585,
+        "dimension": 39.01918976545842,
         "children": [
           {
             "id": "f13c1395295f8e2c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "83456e5b03c35a22",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -33,34 +21,49 @@
             }
           },
           {
+            "id": "83456e5b03c35a22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Lab/Relia.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e17fa307011a13c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "PWK 200 Lab/Flags.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "902bb63cbf61b1c4",
         "type": "tabs",
-        "dimension": 58.467482292337415,
+        "dimension": 60.98081023454158,
         "children": [
           {
             "id": "ca0c05c5542fb076",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
-                "mode": "source",
-                "source": false
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "viewState": {
+                  "x": 3290.876113941217,
+                  "y": -85.42901531604684,
+                  "zoom": -0.6666666666666663
+                }
               }
             }
           }
@@ -93,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "impacket",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,11 +113,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 322.5
+    "width": 322.5,
+    "collapsed": true
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -130,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
+                "file": "PWK 200 Lab/Relia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md"
+                "file": "PWK 200 Lab/Relia.md"
               }
             }
           },
@@ -204,46 +209,46 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "ca0c05c5542fb076",
+  "active": "83456e5b03c35a22",
   "lastOpenFiles": [
-    "Test - Obsidian Notes/The 6 Most Important Keys to Typing in Markdown.md",
-    "Test - Obsidian Notes/NoteStar2.md",
-    "Test - Obsidian Notes/Referencing Links and Images Insertion.md",
-    "Test - Obsidian Notes/Red Pill and Blue Pill.md",
-    "Test - Obsidian Notes/Screenshot-example.png",
-    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
-    "Test - Obsidian Notes/NeverNote.md",
-    "Test - Obsidian Notes/How To Insert Codes.md",
-    "Test - Obsidian Notes/Code block.md",
-    "Test - Obsidian Notes/Adversity Paradox.md",
-    "Test - Obsidian Notes/The 8 Most Important Settings in Obsidian.md",
-    "Test - Obsidian Notes/The 8 Most Important Hotkeys in Obsidian.md",
-    "Useful scripts/TMUX Commands.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
-    "Proving Ground/ALL - PLAY.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "Useful scripts/Scripts.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Lab/Relia.md",
+    "PWK 200 Lab/Flags.md",
     "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
-    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "Pasted image 20240330095526.png",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "Sujan_Pandey_PNPT_Exam_Report.pdf",
+    "PWK 200 Lab/Medtech.md",
+    "PWK 200 Lab/Exam Report.md",
+    "Proving Ground/ALL - PLAY.md",
     "TCM - Windows PriEsc/2. Escalation Paths.md",
     "PNPT Exam Review.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "Proving Ground/Windows - Practice.md",
+    "Pasted image 20240405132623.png",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "Pasted image 20240404120212.png",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "Useful scripts/TMUX Commands.md",
+    "Test - Obsidian Notes/NeverNote.md",
+    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
+    "Test - Obsidian Notes/Screenshot-example.png",
+    "Pasted image 20240330095526.png",
     "Pasted image 20240330073626.png",
     "Pasted image 20240330073602.png",
     "Pasted image 20240330073540.png",
-    "Web Enumeration.md",
-    "Sujan_Pandey_PNPT_Exam_Report.pdf",
-    "Web Enumeration.md",
     "Pasted image 20240329180137.png",
     "Pasted image 20240329180106.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Pasted image 20240316205939.png",
-    "Pasted image 20240316195214.png",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Hack The Box",
     "OSCP - Methodology",

