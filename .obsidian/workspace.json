@@ -6,7 +6,7 @@
       {
         "id": "7acf73db04a518f7",
         "type": "tabs",
-        "dimension": 39.01918976545842,
+        "dimension": 39.12579957356076,
         "children": [
           {
             "id": "f13c1395295f8e2c",
@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "TCM - Linux PriEsc/8. Scheduled Tasks.md",
                 "mode": "source",
                 "source": false
               }
@@ -26,7 +26,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "Proving Ground/Linux - Practice.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e56e3eb0da202ff4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground/Windows - Practice.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,7 +50,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/Flags.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fd29b89f02bfe9e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,7 +74,7 @@
       {
         "id": "902bb63cbf61b1c4",
         "type": "tabs",
-        "dimension": 60.98081023454158,
+        "dimension": 60.87420042643923,
         "children": [
           {
             "id": "ca0c05c5542fb076",
@@ -60,8 +84,8 @@
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 3290.876113941217,
-                  "y": -85.42901531604684,
+                  "x": -627.4941547341225,
+                  "y": -1548.0836847530727,
                   "zoom": -0.6666666666666663
                 }
               }
@@ -96,7 +120,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "exfil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -135,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/Relia.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/Relia.md"
+                "file": "OSCP Full Canvas/Universal Checklist.canvas"
               }
             }
           },
@@ -209,37 +233,37 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "83456e5b03c35a22",
+  "active": "ca0c05c5542fb076",
   "lastOpenFiles": [
+    "Proving Ground/Linux - Practice.md",
+    "Proving Ground/Windows - Practice.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
     "Useful scripts/Scripts.md",
-    "PWK 200 Lab/Relia.md",
+    "Proving Ground/ALL - PLAY.md",
+    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Lab/OSCP - A.md",
     "PWK 200 Lab/Flags.md",
+    "PWK 200 Lab/Skylark.md",
+    "PWK 200 Lab/Relia.md",
     "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+    "Useful scripts/Ligolo-ng.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "PWK 200 Lab/OSCP - B.md",
     "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "PWK 200 Lab/Medtech.md",
     "PWK 200 Lab/Exam Report.md",
-    "Proving Ground/ALL - PLAY.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
     "PNPT Exam Review.md",
     "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "PWK 200 Lab/OSCP - C.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Lab/OSCP - B.md",
     "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "Proving Ground/Windows - Practice.md",
     "Pasted image 20240405132623.png",
     "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
     "Pasted image 20240404120212.png",
     "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "Useful scripts/TMUX Commands.md",
-    "Test - Obsidian Notes/NeverNote.md",
     "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
     "Test - Obsidian Notes/Screenshot-example.png",
     "Pasted image 20240330095526.png",
