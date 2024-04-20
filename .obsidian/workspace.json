@@ -4,60 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "7acf73db04a518f7",
+        "id": "4e0a4893cc1c8ec9",
         "type": "tabs",
-        "dimension": 39.12579957356076,
+        "dimension": 99.99999999999999,
         "children": [
           {
-            "id": "f13c1395295f8e2c",
+            "id": "15fe7f3e9970dbc0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Linux PriEsc/8. Scheduled Tasks.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "83456e5b03c35a22",
+            "id": "ca0c05c5542fb076",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
-                "mode": "source",
-                "source": false
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "viewState": {
+                  "x": 2028.5240993358796,
+                  "y": -348.1987980334562,
+                  "zoom": -0.333333333333333
+                }
               }
             }
           },
           {
-            "id": "e56e3eb0da202ff4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proving Ground/Windows - Practice.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e17fa307011a13c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fd29b89f02bfe9e9",
+            "id": "f0d6e689d3871f69",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -67,28 +46,13 @@
                 "source": false
               }
             }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "902bb63cbf61b1c4",
-        "type": "tabs",
-        "dimension": 60.87420042643923,
-        "children": [
+          },
           {
-            "id": "ca0c05c5542fb076",
+            "id": "e3104d0cbd0518c6",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
-                "viewState": {
-                  "x": -627.4941547341225,
-                  "y": -1548.0836847530727,
-                  "zoom": -0.6666666666666663
-                }
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -120,7 +84,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "exfil",
+                "query": "miche",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -137,13 +101,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 322.5,
-    "collapsed": true
+    "width": 322.5
   },
   "right": {
     "id": "7f936f4118b92161",
@@ -159,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas"
+                "file": "Proving Ground/ALL - PLAY.md"
               }
             }
           },
@@ -233,45 +195,45 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "ca0c05c5542fb076",
+  "active": "15fe7f3e9970dbc0",
   "lastOpenFiles": [
-    "Proving Ground/Linux - Practice.md",
-    "Proving Ground/Windows - Practice.md",
-    "OSCP Full Canvas/Universal Checklist.canvas",
-    "Useful scripts/Scripts.md",
-    "Proving Ground/ALL - PLAY.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
-    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "PWK 200 Lab/Flags.md",
-    "PWK 200 Lab/Skylark.md",
     "PWK 200 Lab/Relia.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
-    "Useful scripts/Ligolo-ng.md",
-    "PWK 200 Lab/OSCP - C.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "Useful scripts/Scripts.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "PWK 200 Lab/Medtech.md",
+    "PWK 200 Lab/Flags.md",
     "PWK 200 Lab/Exam Report.md",
-    "PNPT Exam Review.md",
-    "PWK 200 Course + Exercise/23. Lateral Movement in Active Directory.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "TCM- Practical Ethical Hacking/5 - Exploit Development (Buffer Overflows).md",
+    "TCM- Practical Ethical Hacking/6 - Active Directory.md",
+    "TCM- Practical Ethical Hacking/3 - Introduction to Python.md",
+    "TCM- Practical Ethical Hacking/2 - Introduction to Linux.md",
+    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM OSINT/4. Final Remarks and challenge.md",
+    "TCM OSINT/3. LABS.md",
+    "TCM OSINT/2. OSINT Options.md",
+    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
+    "TCM - Windows PriEsc/3. Capstone Challenge.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "TCM - Web Application Security and Testing Course/The OWASP Top 10.md",
+    "TCM - Web Application Security and Testing Course/DVWA Installation.md",
+    "TCM - Linux PriEsc/Resources.md",
+    "TCM - Linux PriEsc/Capstone 5 - Brainpan 1.md",
+    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
     "Pasted image 20240405132623.png",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
     "Pasted image 20240404120212.png",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "Test - Obsidian Notes/Pasted image 20230809180413.jpg",
-    "Test - Obsidian Notes/Screenshot-example.png",
     "Pasted image 20240330095526.png",
     "Pasted image 20240330073626.png",
     "Pasted image 20240330073602.png",
     "Pasted image 20240330073540.png",
     "Pasted image 20240329180137.png",
-    "Pasted image 20240329180106.png",
+    "Pasted image 20240316195214.png",
+    "Pasted image 20240316205939.png",
+    "Useful scripts/Pasted image 20240205124349.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Hack The Box",
