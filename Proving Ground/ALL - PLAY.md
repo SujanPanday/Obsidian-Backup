@@ -1731,3 +1731,65 @@ mini.php
 3. Obtained foothold and local.txt
 
 4. Use pwnkit for priesc and obtained root.txt 
+
+
+## SunsetNoontide
+```
+msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) > 
+
+  1   payload/cmd/unix/bind_perl  
+
+priv. esc. : root root creds. 
+```
+
+## CyberSploit1
+```
+username from source page: itsskv
+passwords from /roborts.txt
+
+ssh login. 
+
+Kernal exploit:37292
+```
+
+## Katana
+```
+1. Upload monkey pentest php file on 8088
+
+2. Access it with 8715 port
+
+3. Priv esc with python2.7
+```
+
+## PyExp
+```
+hydra bruteforce for mysql pass with root user : prettywoman
+
+mysql login, found out fernet keys. Decrypt it. https://asecuritysite.com/encryption/ferdecode
+
+priv esc: sudo -l (just give python sudo command for root)
+```
+
+## Vegeta1
+```
+/bumla directory have .wav file. 
+
+Decode .wav file through online and found cresds. Trunks:u$3r
+
+Add new root at /etc/passwd
+```
+
+
+## Lampiao 
+```
+Found 2 user tiago and eder on 1898 port
+
+create password list using cewl. 
+cewl http://192.168.248.48:1898/?q=node/1 -w pass.txt
+
+Hydra bruteforce found creds: Tiago:virgulino
+
+Ssh login and run linpeas. Found 40847 vulnerable. 
+
+Exploit and get root. 
+```

