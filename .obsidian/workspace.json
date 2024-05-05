@@ -15,9 +15,9 @@
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 2011.5881953919702,
-                  "y": 115.13570556779987,
-                  "zoom": -0.6666666666666667
+                  "x": 3019.923204886137,
+                  "y": -25.851976149370657,
+                  "zoom": 0.33333333333333365
                 }
               }
             }
@@ -40,7 +40,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Virtual Hacking Labs/1. BASIC.md",
+                "file": "Useful scripts/Scripts.md",
                 "mode": "source",
                 "source": false
               }
@@ -52,7 +52,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,14 +64,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/1-5 TOPICS.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -100,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cewl",
+                "query": "update ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Virtual Hacking Labs/1. BASIC.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Virtual Hacking Labs/1. BASIC.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Virtual Hacking Labs/1. BASIC.md"
+                "file": "Proving Ground/ALL - PLAY.md"
               }
             }
           },
@@ -212,47 +212,47 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "f0d6e689d3871f69",
+  "active": "e5d7b530258a909b",
   "lastOpenFiles": [
-    "Virtual Hacking Labs/2. Advanced.md",
-    "Proving Ground/ALL - PLAY.md",
-    "Virtual Hacking Labs/1. BASIC.md",
     "Useful scripts/Scripts.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "Proving Ground/ALL - PLAY.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "TCM - Linux PriEsc/4. SUDO.md",
+    "Virtual Hacking Labs/2. Advanced.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "Proving Ground/Linux - Practice.md",
+    "Virtual Hacking Labs/1. BASIC.md",
+    "PWK 200 Lab/OSCP - C.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
+    "Pasted image 20240503084511.png",
+    "Pasted image 20240503084506.png",
+    "TCM OSINT/3. LABS.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "Exam Report.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "Pasted image 20240501201158.png",
     "Pasted image 20240501201139.png",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "TCM - Linux PriEsc/4. SUDO.md",
-    "OSCP Full Canvas/Universal Checklist.canvas",
     "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
     "Proving Ground/Windows - Practice.md",
-    "Proving Ground/Linux - Practice.md",
     "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "Exam Report.md",
     "PWK 200 Lab/OSCP - A.md",
     "Virtual Hacking Labs/3. Advanced+.md",
     "Virtual Hacking Labs/4. Fourth 10 machine.md",
     "Virtual Hacking Labs/5. Remaining machine.md",
-    "TCM - Linux PriEsc/Capstone 4 - ConvertMyVideo.md",
-    "PWK 200 Lab/Relia.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Untitled",
     "Virtual Hacking Labs",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Course + Exercise/6. Information Gathering.md",
     "Pasted image 20240425014426.png",
     "Pasted image 20240425014320.png",
     "Pasted image 20240425014221.png",
     "Pasted image 20240425014203.png",
     "Pasted image 20240425014008.png",
     "Pasted image 20240425013924.png",
-    "Pasted image 20240425013831.png",
-    "Pasted image 20240425013749.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Hack The Box",
