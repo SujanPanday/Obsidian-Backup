@@ -16,7 +16,7 @@
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
                   "x": 3019.923204886137,
-                  "y": -25.851976149370657,
+                  "y": 195.59047060019313,
                   "zoom": 0.33333333333333365
                 }
               }
@@ -64,14 +64,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "Proving Ground/Linux - Practice.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -100,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "update ",
+                "query": "zipper",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "Proving Ground/Linux - Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "Proving Ground/Linux - Practice.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md"
+                "file": "Proving Ground/Linux - Practice.md"
               }
             }
           },
@@ -212,14 +212,14 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e5d7b530258a909b",
+  "active": "91629da18e389edb",
   "lastOpenFiles": [
-    "Useful scripts/Scripts.md",
-    "OSCP Full Canvas/Universal Checklist.canvas",
     "Proving Ground/ALL - PLAY.md",
+    "Virtual Hacking Labs/2. Advanced.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "Useful scripts/Scripts.md",
     "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
     "TCM - Linux PriEsc/4. SUDO.md",
-    "Virtual Hacking Labs/2. Advanced.md",
     "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
     "Proving Ground/Linux - Practice.md",
     "Virtual Hacking Labs/1. BASIC.md",
