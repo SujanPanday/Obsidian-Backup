@@ -15,10 +15,22 @@
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 3019.923204886137,
-                  "y": 195.59047060019313,
-                  "zoom": 0.33333333333333365
+                  "x": 2668.2422060945637,
+                  "y": -272.91578942377396,
+                  "zoom": 0.3333333333333332
                 }
+              }
+            }
+          },
+          {
+            "id": "43fb5ebd2740071d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground/ALL - PLAY.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -28,7 +40,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Virtual Hacking Labs/2. Advanced.md",
+                "file": "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,7 +76,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
+                "file": "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b15c15f9d0cc3df9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -100,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "zipper",
+                "query": "photogra",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +179,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
+                "file": "Proving Ground/ALL - PLAY.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md"
+                "file": "Proving Ground/ALL - PLAY.md"
               }
             }
           },
@@ -212,38 +236,38 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "91629da18e389edb",
+  "active": "e5d7b530258a909b",
   "lastOpenFiles": [
-    "Proving Ground/ALL - PLAY.md",
-    "Virtual Hacking Labs/2. Advanced.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
     "Useful scripts/Scripts.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "TCM - Linux PriEsc/4. SUDO.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
+    "Proving Ground/ALL - PLAY.md",
+    "PWK 200 Lab/OSCP - A.md",
     "Proving Ground/Linux - Practice.md",
+    "Proving Ground/Windows - Practice.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Lab/OSCP - B.md",
+    "Virtual Hacking Labs/2. Advanced.md",
     "Virtual Hacking Labs/1. BASIC.md",
+    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PNPT Exam Review.md",
+    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "Exam Report.md",
     "PWK 200 Lab/OSCP - C.md",
+    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
+    "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
+    "IPSEC watchlist/Notes.md",
+    "TCM - Linux PriEsc/4. SUDO.md",
     "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
     "TCM - Linux PriEsc/8. Scheduled Tasks.md",
     "Pasted image 20240503084511.png",
     "Pasted image 20240503084506.png",
     "TCM OSINT/3. LABS.md",
     "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "Exam Report.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "Pasted image 20240501201158.png",
     "Pasted image 20240501201139.png",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "Proving Ground/Windows - Practice.md",
-    "TCM - Linux PriEsc/Capstone 3 - Tomghost.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "Virtual Hacking Labs/3. Advanced+.md",
-    "Virtual Hacking Labs/4. Fourth 10 machine.md",
-    "Virtual Hacking Labs/5. Remaining machine.md",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Untitled",
     "Virtual Hacking Labs",
@@ -255,7 +279,7 @@
     "Pasted image 20240425013924.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Test - Obsidian Notes/Test Canvas.canvas",
-    "Hack The Box",
+    "Ippsec and S1ren Videos notes",
     "OSCP - Methodology",
     "S1ren Walkthrough",
     "IPSEC watchlist",

