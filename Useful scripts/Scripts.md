@@ -150,3 +150,9 @@ On Windows:
 Downloading mimikatz.log:
 
 `C:\Windows> lget mimikatz.log [*] Downloading ADMIN$\mimikatz.log`
+
+
+### Remove empty lines form a file. 
+```bash
+sed -z '$ s/\n$//'
+```

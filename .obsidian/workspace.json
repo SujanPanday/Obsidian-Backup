@@ -15,9 +15,9 @@
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 2668.2422060945637,
-                  "y": -272.91578942377396,
-                  "zoom": 0.3333333333333332
+                  "x": 1535.0098531467645,
+                  "y": -4353.8028245358455,
+                  "zoom": -0.333333333333333
                 }
               }
             }
@@ -64,7 +64,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,8 +94,7 @@
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -124,7 +123,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "photogra",
+                "query": "cut",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -162,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -202,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md"
+                "file": "OSCP Full Canvas/Universal Checklist.canvas"
               }
             }
           },
@@ -236,14 +235,16 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e5d7b530258a909b",
+  "active": "15fe7f3e9970dbc0",
   "lastOpenFiles": [
-    "OSCP Full Canvas/Universal Checklist.canvas",
     "Useful scripts/Scripts.md",
-    "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
-    "Proving Ground/ALL - PLAY.md",
-    "PWK 200 Lab/OSCP - A.md",
+    "TCM - Windows PriEsc/2. Escalation Paths.md",
     "Proving Ground/Linux - Practice.md",
+    "Proving Ground/ALL - PLAY.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
+    "TCM - Linux PriEsc/2. Kernel Exploit.md",
+    "PWK 200 Lab/OSCP - A.md",
     "Proving Ground/Windows - Practice.md",
     "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
     "PWK 200 Lab/OSCP - B.md",
@@ -265,7 +266,6 @@
     "Pasted image 20240503084511.png",
     "Pasted image 20240503084506.png",
     "TCM OSINT/3. LABS.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
     "Pasted image 20240501201158.png",
     "Pasted image 20240501201139.png",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",

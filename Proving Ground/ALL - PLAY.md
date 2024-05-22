@@ -2049,3 +2049,27 @@ d. ssh foothold, add new root /etc/passwd, rooted.
 1. Found Koken CMS 0.22.24 on port 8000 which have arbitary file upload exploit. Upload reverseh monkey php file and obtained foothold. 
 2. use php suid for privesc. 
 ```
+
+## Potato
+```
+1. Found /admin page at port 80. 
+2. Burp requeater
+a. /admin - username=admin&password[]=='' (logged in)
+b. /admin/dashboard.php?page=log - file=../../../../../etc/passwd (found user creds webadmin, crack hash)
+3. ssh login, sudo -l to privesc
+a. sudo /bin/nice /notes/../home/webadmin/1.sh
+```
+
+## Dawn
+```
+1. Found /log subdirectory, found pspy64 output which show web-content file cronjob. 
+2. Upload it with smb under ITDEPT with reverse shell command. 
+3. Foothold. Rooted with zsh SUID. 
+```
+
+## Sumo
+```
+1. Nikto shows vulnerability with 'shellshock'
+2. Foothold with. msf6 exploit(multi/http/apache_mod_cgi_bash_env_exec)
+3. Privesc with dirtycow. 
+```

