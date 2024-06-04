@@ -8,46 +8,58 @@
         "type": "tabs",
         "children": [
           {
-            "id": "15fe7f3e9970dbc0",
+            "id": "59450362aa552017",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 1535.0098531467645,
-                  "y": -4353.8028245358455,
-                  "zoom": -0.333333333333333
+                  "x": 1653.705356128247,
+                  "y": 4394.921762357862,
+                  "zoom": -0.9999999999999996
                 }
               }
             }
           },
           {
-            "id": "43fb5ebd2740071d",
+            "id": "e5d7b530258a909b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/ALL - PLAY.md",
+                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "59450362aa552017",
+            "id": "15fe7f3e9970dbc0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
+                "file": "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f0d6e689d3871f69",
+            "id": "9da103a8c51286f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PWK 200 Lab/Skylark.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "84204154a9d83141",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -59,42 +71,19 @@
             }
           },
           {
-            "id": "e5d7b530258a909b",
+            "id": "50079b1572ef2ae1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCM - Windows PriEsc/2. Escalation Paths.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "91629da18e389edb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b15c15f9d0cc3df9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
+                "file": "Useful scripts/Ligolo-ng.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -123,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cut",
+                "query": "impacket-ps",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "PWK 200 Lab/Skylark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +167,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
+                "file": "PWK 200 Lab/Skylark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas"
+                "file": "PWK 200 Lab/Skylark.md"
               }
             }
           },
@@ -235,49 +224,48 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "15fe7f3e9970dbc0",
+  "active": "9da103a8c51286f9",
   "lastOpenFiles": [
-    "Useful scripts/Scripts.md",
+    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
+    "PWK 200 Lab/Skylark.md",
     "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "Proving Ground/Linux - Practice.md",
-    "Proving Ground/ALL - PLAY.md",
-    "OSCP Full Canvas/Universal Checklist.canvas",
-    "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
-    "TCM - Linux PriEsc/2. Kernel Exploit.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "Proving Ground/Windows - Practice.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "Virtual Hacking Labs/2. Advanced.md",
-    "Virtual Hacking Labs/1. BASIC.md",
-    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
     "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "PNPT Exam Review.md",
-    "TCM- Practical Ethical Hacking/4 - Ethical Hacking Methodology.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
     "Exam Report.md",
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
+    "Useful scripts/Ligolo-ng.md",
+    "MS - 900 Microsoft 365 Fundamentals.md",
+    "PWK 200 Lab/Exam Report.md",
+    "PWK 200 Lab/Flags.md",
+    "Useful scripts/Scripts.md",
+    "Proving Ground/Linux - Practice.md",
+    "Pasted image 20240603155119.png",
+    "Pasted image 20240603155111.png",
+    "PWK 200 Lab/OSCP - B.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "Proving Ground/Windows - Practice.md",
+    "TCM - Linux PriEsc/5. SUID - Set User ID.md",
+    "PWK 200 Lab/Relia.md",
+    "PWK 200 Lab/Medtech.md",
+    "Virtual Hacking Labs/2. Advanced.md",
     "PWK 200 Lab/OSCP - C.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
-    "IPSEC watchlist/Notes.md",
-    "TCM - Linux PriEsc/4. SUDO.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
+    "Proving Ground/ALL - PLAY.md",
+    "Sujan_Pandey_PNPT_Exam_Report.pdf",
+    "Images/Pasted image 20230818185424.png",
+    "Useful scripts/Pasted image 20240205124349.png",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Pasted image 20240503084511.png",
     "Pasted image 20240503084506.png",
-    "TCM OSINT/3. LABS.md",
     "Pasted image 20240501201158.png",
     "Pasted image 20240501201139.png",
-    "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Untitled",
     "Virtual Hacking Labs",
     "Pasted image 20240425014426.png",
     "Pasted image 20240425014320.png",
-    "Pasted image 20240425014221.png",
-    "Pasted image 20240425014203.png",
-    "Pasted image 20240425014008.png",
-    "Pasted image 20240425013924.png",
-    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Ippsec and S1ren Videos notes",
     "OSCP - Methodology",

