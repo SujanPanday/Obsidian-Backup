@@ -15,9 +15,9 @@
               "state": {
                 "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "viewState": {
-                  "x": 1653.705356128247,
-                  "y": 4394.921762357862,
-                  "zoom": -0.9999999999999996
+                  "x": -114.32913846672506,
+                  "y": 4353.29876391205,
+                  "zoom": 3.3306690738754696e-16
                 }
               }
             }
@@ -28,31 +28,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "15fe7f3e9970dbc0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9da103a8c51286f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PWK 200 Lab/Skylark.md",
+                "file": "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
                 "mode": "source",
                 "source": false
               }
@@ -81,9 +57,32 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "31c4cf2329d9cb2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Practise.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ba966d2f6a9e0328",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proving Ground/Windows - Practice.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +111,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "impacket-ps",
+                "query": "hutch",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -150,7 +149,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/Skylark.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,7 +166,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/Skylark.md",
+                "file": "OSCP Full Canvas/Universal Checklist.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -190,7 +189,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/Skylark.md"
+                "file": "OSCP Full Canvas/Universal Checklist.canvas"
               }
             }
           },
@@ -224,37 +223,37 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "9da103a8c51286f9",
+  "active": "59450362aa552017",
   "lastOpenFiles": [
-    "PWK 200 Course + Exercise/24. Assembling the Pieces.md",
-    "PWK 200 Lab/Skylark.md",
-    "TCM - Windows PriEsc/2. Escalation Paths.md",
-    "PWK 200 Course + Exercise/15. Password Attacks.md",
-    "Exam Report.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
-    "PWK 200 Course + Exercise/22. Attacking Active Directory Authentication.md",
-    "Useful scripts/Ligolo-ng.md",
-    "MS - 900 Microsoft 365 Fundamentals.md",
-    "PWK 200 Lab/Exam Report.md",
-    "PWK 200 Lab/Flags.md",
+    "Proving Ground/Windows - Practice.md",
+    "Practise.md",
     "Useful scripts/Scripts.md",
+    "PWK 200 Lab/Medtech.md",
+    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
+    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
+    "Useful scripts/Ligolo-ng.md",
+    "Virtual Hacking Labs/2. Advanced.md",
+    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
+    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
+    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
+    "PWK 200 Course + Exercise/15. Password Attacks.md",
+    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
+    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "Exam Report.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "PWK 200 Course + Exercise/8. Introduction to Web Application Attacks.md",
+    "PWK 200 Course + Exercise/7. Vulnerability Scanning.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
     "Proving Ground/Linux - Practice.md",
+    "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Pasted image 20240603155119.png",
     "Pasted image 20240603155111.png",
-    "PWK 200 Lab/OSCP - B.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "Proving Ground/Windows - Practice.md",
-    "TCM - Linux PriEsc/5. SUID - Set User ID.md",
-    "PWK 200 Lab/Relia.md",
-    "PWK 200 Lab/Medtech.md",
-    "Virtual Hacking Labs/2. Advanced.md",
-    "PWK 200 Lab/OSCP - C.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
-    "Proving Ground/ALL - PLAY.md",
-    "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Images/Pasted image 20230818185424.png",
     "Useful scripts/Pasted image 20240205124349.png",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",

