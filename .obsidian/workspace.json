@@ -141,8 +141,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -236,7 +235,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "305cfdfec5883778",
+  "active": "bc783be3c5495dac",
   "lastOpenFiles": [
     "Useful scripts/Scripts.md",
     "Virtual Hacking Labs/1. BASIC.md",
