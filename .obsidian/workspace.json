@@ -11,48 +11,9 @@
             "id": "59450362aa552017",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "OSCP Full Canvas/Universal Checklist.canvas",
-                "viewState": {
-                  "x": 3176.845626292196,
-                  "y": 280.639950048554,
-                  "zoom": -0.3333333333333334
-                }
-              }
-            }
-          },
-          {
-            "id": "e5d7b530258a909b",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "Proving Ground/Linux - Practice.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "50079b1572ef2ae1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Virtual Hacking Labs/2. Advanced.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ba966d2f6a9e0328",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Useful scripts/Scripts.md",
+                "file": "PWK 200 Lab/Medtech.md",
                 "mode": "source",
                 "source": false
               }
@@ -83,19 +44,19 @@
             }
           },
           {
-            "id": "305cfdfec5883778",
+            "id": "dd3376c45d254c0e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/EXAM - 20th June.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -124,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "reboot",
+                "query": "evil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/EXAM - 20th June.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/EXAM - 20th June.md",
+                "file": "PWK 200 Lab/OSCP - A.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/EXAM - 20th June.md"
+                "file": "PWK 200 Lab/OSCP - A.md"
               }
             }
           },
@@ -237,20 +198,35 @@
   },
   "active": "bc783be3c5495dac",
   "lastOpenFiles": [
+    "OSCP Full Canvas/Universal Checklist.canvas",
+    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
+    "Proving Ground/ALL - PLAY.md",
+    "Proving Ground/Linux - Practice.md",
+    "PWK 200 Lab/Medtech.md",
+    "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
+    "PWK 200 Course + Exercise/6. Information Gathering.md",
+    "Exam Report.md",
+    "PWK 200 Lab/EXAM - 20th June.md",
+    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
+    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
+    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
+    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
+    "PWK 200 Course + Exercise/1-5 TOPICS.md",
+    "TryHackMe/Ra.md",
+    "TryHackMe",
+    "Untitled.md",
+    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
+    "Bug Bounty/HTB - Bug Bounty Hunter.md",
+    "Bug Bounty",
+    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
+    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
     "Useful scripts/Scripts.md",
     "Virtual Hacking Labs/1. BASIC.md",
     "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "Proving Ground/Linux - Practice.md",
     "PWK 200 Lab/OSCP - B.md",
     "Virtual Hacking Labs/2. Advanced.md",
-    "OSCP Full Canvas/Universal Checklist.canvas",
     "Virtual Hacking Labs/3. Advanced+.md",
     "Useful scripts/Ligolo-ng.md",
-    "TCM - Linux PriEsc/8. Scheduled Tasks.md",
-    "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
-    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
-    "PWK 200 Lab/Skylark.md",
-    "PWK 200 Lab/EXAM - 20th June.md",
     "Pasted image 20240620194401.png",
     "Pasted image 20240620194323.png",
     "Pasted image 20240620194239.png",
@@ -261,21 +237,7 @@
     "Pasted image 20240620193344.png",
     "Pasted image 20240620193242.png",
     "Pasted image 20240620193035.png",
-    "Proving Ground/OSCP 24 Week Plan Machine.md",
-    "PWK 200 Course + Exercise/18. Port Redirection and SSH Tunneling.md",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "PWK 200 Course + Exercise/20. The Metasploit Framework.md",
-    "PWK 200 Lab/OSCP - A.md",
-    "Proving Ground/Windows - Practice.md",
-    "PWK 200 Course + Exercise/19. Tunneling Through Deep Packet Inspection.md",
-    "PWK 200 Course + Exercise/17. Linux Privilege Escalation.md",
-    "Exam Report.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "Resources/Important commands.md",
-    "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
     "Sujan_Pandey_PNPT_Exam_Report.pdf",
-    "Untitled",
     "Virtual Hacking Labs",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Ippsec and S1ren Videos notes",
@@ -284,7 +246,6 @@
     "IPSEC watchlist",
     "ws",
     "PWK 200 Lab/F",
-    "TCM - External Pentest Playbook",
     "Untitled 1.canvas"
   ]
 }
