@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PNPT Exam Review.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PNPT Exam Review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md",
+                "file": "PNPT Exam Review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PWK 200 Lab/OSCP - A.md"
+                "file": "PNPT Exam Review.md"
               }
             }
           },
@@ -196,37 +196,40 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "bc783be3c5495dac",
+  "active": "dd3376c45d254c0e",
   "lastOpenFiles": [
+    "Web Enumeration.md",
+    "Practise.md",
+    "PNPT Exam Review.md",
+    "Untitled.md",
+    "Sujan_Pandey_PNPT_Exam_Report.pdf",
+    "Test - Obsidian Notes/Adversity Paradox.md",
+    "TCM- Practical Ethical Hacking/1 - Networking Refresher.md",
+    "TCM OSINT/1. Overview, Note keeping, Sock Puppets and Search Engine OSINT.md",
+    "TCM - Windows PriEsc/1. Introduction, Gaining a Foothold, Initial Enumeration and Exploring Automated Tools.md",
+    "TCM - External Pentest Playbook/ALL IN ONE.md",
+    "Resources/Important commands.md",
+    "S1ren Walkthrough/Notes.md",
+    "Resources/Scripts Links.md",
+    "Proving Ground/Windows - Practice.md",
+    "Proving Ground/OSCP 24 Week Plan Machine.md",
+    "Proving Ground/Linux - Practice.md",
+    "Proving Ground/ALL - PLAY.md",
     "OSCP Full Canvas/Universal Checklist.canvas",
     "OSCP Full Canvas/Mindmap For Techniques and Tools.canvas",
-    "Proving Ground/ALL - PLAY.md",
-    "Proving Ground/Linux - Practice.md",
+    "Ippsec and S1ren Videos notes/s1ren walkthrough.md",
+    "Ippsec and S1ren Videos notes/HBT - Windows Boxes.md",
+    "Ippsec and S1ren Videos notes/HBT - Linux Boxes.md",
+    "PWK 200 Lab/OSCP - A.md",
+    "Images/Pasted image 20230818185424.png",
+    "Bug Bounty/HTB - Bug Bounty Hunter.md",
     "PWK 200 Lab/Medtech.md",
     "PWK 200 Course + Exercise/21. Active Directory Introduction and Enumeration.md",
     "PWK 200 Course + Exercise/6. Information Gathering.md",
     "Exam Report.md",
     "PWK 200 Lab/EXAM - 20th June.md",
-    "PWK 200 Course + Exercise/14. Antivirus Evasion.md",
-    "PWK 200 Course + Exercise/13. Fixing Exploits.md",
-    "PWK 200 Course + Exercise/12. Locating Public Exploits.md",
-    "PWK 200 Course + Exercise/11. Client-side Attacks.md",
-    "PWK 200 Course + Exercise/1-5 TOPICS.md",
-    "TryHackMe/Ra.md",
     "TryHackMe",
-    "Untitled.md",
-    "PWK 200 Course + Exercise/9. Common Web Application Attacks.md",
-    "Bug Bounty/HTB - Bug Bounty Hunter.md",
     "Bug Bounty",
-    "PWK 200 Course + Exercise/10. SQL Injection Attacks.md",
-    "TCM - Linux PriEsc/1. Access, Enumeration and Automated Tools.md",
-    "Useful scripts/Scripts.md",
-    "Virtual Hacking Labs/1. BASIC.md",
-    "PWK 200 Course + Exercise/16. Windows Privilege Escalation.md",
-    "PWK 200 Lab/OSCP - B.md",
-    "Virtual Hacking Labs/2. Advanced.md",
-    "Virtual Hacking Labs/3. Advanced+.md",
-    "Useful scripts/Ligolo-ng.md",
     "Pasted image 20240620194401.png",
     "Pasted image 20240620194323.png",
     "Pasted image 20240620194239.png",
@@ -236,8 +239,6 @@
     "Pasted image 20240620193630.png",
     "Pasted image 20240620193344.png",
     "Pasted image 20240620193242.png",
-    "Pasted image 20240620193035.png",
-    "Sujan_Pandey_PNPT_Exam_Report.pdf",
     "Virtual Hacking Labs",
     "Test - Obsidian Notes/Test Canvas.canvas",
     "Ippsec and S1ren Videos notes",
